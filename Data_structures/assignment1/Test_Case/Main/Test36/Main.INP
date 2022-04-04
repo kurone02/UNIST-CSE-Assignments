@@ -1,0 +1,570 @@
+Get 0
+Print
+Print
+Print
+AddAtHead 864
+Print
+Get 0
+Print
+AddAtIndex 0 864
+Print
+Get 3
+Print
+Print
+Print
+Get 2
+K_Reverse 1
+Print
+AddAtIndex 1 864
+EvenOddSeparateSort
+MoveToHead 565
+Rotate 1
+Print
+Rotate 0
+AddAtIndex 3 864
+K_Reverse 4
+Size
+DeleteValue 411
+Get 1
+DeleteValue 172
+Get 2
+EvenOddSeparateSort
+Rotate 3
+Print
+AddAtIndex -1 864
+Get 2
+Print
+Print
+Size
+AddAtIndex 2 864
+Print
+Rotate 7
+MoveToHead 864
+Rotate 6
+AddAtIndex 0 864
+Get 8
+AddAtIndex 3 864
+Print
+Print
+AddAtIndex 0 722
+Size
+AddAtIndex 0 500
+DeleteAtIndex 2
+Get 11
+MoveToHead 864
+DeleteAtIndex 5
+CleanUp
+Get 0
+AddAtIndex 0 202
+Print
+AddAtIndex 1 202
+Reduce
+Print
+MoveToHead 772
+AddAtHead 381
+Print
+Size
+Get 1
+Size
+DeleteValue 381
+Size
+Rotate 1
+Print
+DeleteValue 202
+K_Reverse 1
+Print
+Print
+Rotate 0
+K_Reverse 1
+Reduce
+K_Reverse 1
+Print
+Print
+Print
+Rotate 0
+Print
+MoveToHead 998
+Rotate 0
+AddAtIndex 0 12
+Print
+Print
+Print
+Print
+EvenOddSeparateSort
+DeleteAtIndex 0
+Print
+DeleteAtIndex 0
+DeleteValue 835
+EvenOddSeparateSort
+Rotate 0
+Print
+Rotate 0
+AddAtIndex 0 471
+K_Reverse 1
+AddAtIndex 0 785
+AddAtIndex 0 471
+Print
+AddAtIndex 4 471
+AddAtHead 85
+CleanUp
+K_Reverse 1
+EvenOddSeparateSort
+AddAtHead 587
+MoveToHead 587
+Print
+Print
+MoveToHead 306
+Print
+Rotate 1
+EvenOddSeparateSort
+Rotate 0
+AddAtIndex 0 587
+Print
+Print
+Size
+Get 1
+Print
+AddAtIndex 3 587
+Get 0
+AddAtIndex 1 587
+Print
+Print
+Reduce
+Print
+Size
+AddAtIndex 0 587
+MoveToHead 350
+Print
+DeleteValue 587
+Get 0
+Print
+Print
+Print
+Rotate 1
+Reduce
+K_Reverse 1
+DeleteAtIndex 0
+Print
+Print
+AddAtIndex 0 816
+Print
+K_Reverse 1
+DeleteValue 795
+DeleteValue 816
+Rotate 0
+Size
+Print
+EvenOddSeparateSort
+AddAtIndex 0 661
+Rotate 1
+AddAtHead 216
+AddAtIndex 1 661
+Reduce
+DeleteAtIndex 2
+Rotate 2
+K_Reverse 2
+K_Reverse 2
+Print
+AddAtHead 908
+Reduce
+Size
+EvenOddSeparateSort
+K_Reverse 3
+MoveToHead 625
+Print
+Print
+Rotate 0
+Print
+Rotate 4
+Print
+Print
+Size
+Reduce
+Print
+Print
+MoveToHead 13
+K_Reverse 1
+MoveToHead 972
+Print
+AddAtIndex 3 908
+EvenOddSeparateSort
+AddAtIndex 3 526
+Rotate 6
+Print
+Print
+CleanUp
+K_Reverse 1
+AddAtHead 113
+MoveToHead 113
+DeleteAtIndex 0
+Print
+Print
+DeleteValue 86
+MoveToHead 914
+K_Reverse 1
+Reduce
+Get 0
+Rotate 0
+AddAtIndex 0 478
+AddAtIndex 1 478
+DeleteValue 478
+Rotate 0
+DeleteValue 50
+Print
+Size
+Print
+AddAtIndex 1 478
+Print
+AddAtHead 737
+AddAtIndex 0 478
+AddAtHead 914
+AddAtIndex 4 914
+EvenOddSeparateSort
+K_Reverse 1
+K_Reverse 9
+AddAtHead 170
+MoveToHead 707
+Get 6
+Size
+Print
+MoveToHead 327
+Rotate 5
+EvenOddSeparateSort
+Rotate 0
+Get 1
+AddAtIndex 2 914
+Print
+Get 3
+Rotate 12
+AddAtIndex 0 914
+Size
+Print
+DeleteValue 914
+Print
+AddAtIndex 2 478
+Print
+DeleteAtIndex 4
+AddAtIndex 1 170
+Print
+AddAtIndex 11 478
+Print
+Get 10
+Print
+Print
+AddAtIndex 4 170
+Print
+Get 2
+Get 14
+EvenOddSeparateSort
+Print
+DeleteAtIndex 4
+DeleteAtIndex 10
+Print
+Reduce
+EvenOddSeparateSort
+Rotate 2
+Print
+Print
+DeleteAtIndex 3
+Rotate 4
+MoveToHead 197
+K_Reverse 4
+K_Reverse 1
+Size
+MoveToHead 266
+EvenOddSeparateSort
+AddAtIndex 3 594
+K_Reverse 5
+Rotate 4
+K_Reverse 6
+Get 3
+Reduce
+Reduce
+CleanUp
+DeleteValue 757
+Print
+AddAtIndex 0 689
+AddAtHead 173
+MoveToHead 689
+Print
+DeleteAtIndex 3
+MoveToHead 173
+Get 1
+Rotate 2
+AddAtIndex 1 320
+Print
+AddAtIndex 3 732
+AddAtHead 240
+AddAtHead 659
+Print
+AddAtIndex 3 732
+Rotate 4
+AddAtHead 578
+EvenOddSeparateSort
+DeleteAtIndex 11
+AddAtHead 45
+AddAtHead 537
+DeleteValue 375
+Print
+MoveToHead 732
+DeleteValue 320
+EvenOddSeparateSort
+Print
+Print
+EvenOddSeparateSort
+AddAtHead 945
+Rotate 1
+DeleteValue 576
+Print
+Print
+CleanUp
+Size
+AddAtIndex 0 59
+Rotate 1
+Reduce
+Print
+AddAtHead 45
+Print
+Rotate 3
+MoveToHead 59
+AddAtIndex 0 966
+Print
+DeleteValue 196
+Print
+Reduce
+K_Reverse 2
+CleanUp
+DeleteValue 894
+Reduce
+Print
+AddAtIndex 0 701
+Get 0
+Reduce
+Get 0
+Get 0
+AddAtIndex 0 701
+Print
+Print
+AddAtIndex 0 701
+AddAtIndex 2 701
+Print
+AddAtHead 344
+Print
+Print
+Print
+MoveToHead 857
+K_Reverse 1
+DeleteValue 701
+Print
+AddAtIndex 3 344
+Print
+Rotate 0
+Print
+Get 5
+Print
+DeleteValue 175
+Get 4
+Rotate 6
+Print
+K_Reverse 5
+K_Reverse 1
+MoveToHead 344
+K_Reverse 1
+AddAtHead 513
+Print
+Get 1
+EvenOddSeparateSort
+Print
+MoveToHead 701
+Rotate 6
+AddAtIndex 1 701
+DeleteAtIndex 7
+Print
+Print
+Print
+Print
+Get 8
+Get 1
+DeleteAtIndex 0
+DeleteValue 344
+Print
+Print
+DeleteValue 784
+EvenOddSeparateSort
+Print
+AddAtIndex 5 778
+Reduce
+CleanUp
+DeleteAtIndex 0
+K_Reverse 1
+Print
+EvenOddSeparateSort
+Print
+Print
+AddAtHead 732
+Print
+AddAtHead 275
+K_Reverse 1
+Rotate 3
+Get 1
+Print
+Get 1
+MoveToHead 732
+MoveToHead 275
+Print
+DeleteValue 732
+AddAtHead 589
+Rotate 2
+Print
+Print
+Print
+DeleteValue 249
+Print
+AddAtIndex 0 69
+DeleteValue 69
+Rotate 1
+MoveToHead 275
+Reduce
+Print
+Print
+Size
+Print
+MoveToHead 589
+Size
+Rotate 1
+MoveToHead 569
+CleanUp
+Size
+Print
+Get 0
+DeleteAtIndex 0
+Print
+Print
+CleanUp
+DeleteValue 77
+Print
+EvenOddSeparateSort
+AddAtHead 6
+DeleteAtIndex 0
+Print
+K_Reverse 1
+Rotate 0
+AddAtIndex 0 670
+DeleteAtIndex 1
+Print
+Rotate 0
+Get 0
+K_Reverse 1
+DeleteAtIndex 1
+AddAtIndex 0 670
+Reduce
+Print
+Get 0
+AddAtIndex 1 275
+Print
+Get 3
+Print
+DeleteValue 323
+AddAtHead 424
+Print
+Print
+DeleteAtIndex 4
+Rotate 0
+AddAtIndex 0 424
+Get 0
+DeleteValue 424
+Print
+Print
+Reduce
+MoveToHead 670
+Size
+AddAtIndex 2 275
+AddAtIndex 2 275
+AddAtIndex 5 275
+Get 7
+EvenOddSeparateSort
+EvenOddSeparateSort
+AddAtIndex 0 275
+Print
+Get 7
+DeleteValue 451
+Size
+AddAtIndex 1 275
+EvenOddSeparateSort
+Print
+EvenOddSeparateSort
+K_Reverse 10
+Size
+AddAtIndex 0 275
+Size
+Print
+Reduce
+DeleteValue 275
+AddAtIndex 0 13
+Print
+Print
+AddAtIndex 2 424
+MoveToHead 85
+Rotate 6
+AddAtHead 623
+Print
+MoveToHead 424
+Print
+Print
+Size
+Print
+Reduce
+AddAtHead 908
+Get 7
+AddAtHead 694
+Get 2
+AddAtIndex 2 908
+DeleteAtIndex 7
+Size
+Rotate 4
+Get 10
+Rotate 5
+Print
+Reduce
+Get 4
+Print
+DeleteAtIndex 6
+EvenOddSeparateSort
+CleanUp
+Print
+AddAtHead 430
+Size
+Rotate 1
+Get 0
+Reduce
+Print
+Rotate 0
+Reduce
+Print
+MoveToHead 430
+Rotate 0
+Print
+Rotate 1
+Print
+Print
+Rotate 1
+Get 0
+DeleteAtIndex 0
+Print
+Get 0
+Print
+Print
+EvenOddSeparateSort
+Print
+Size
+AddAtHead 263
+Get 1
+AddAtIndex 0 263
+AddAtIndex 2 263
+MoveToHead 263
+Print
+Print
+Reduce
+AddAtIndex 0 263
+Print
+EvenOddSeparateSort

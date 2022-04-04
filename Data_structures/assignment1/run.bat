@@ -1,0 +1,1 @@
+g++ -o assign1 main.cpp LinkedList.h && .\assign1.exe
