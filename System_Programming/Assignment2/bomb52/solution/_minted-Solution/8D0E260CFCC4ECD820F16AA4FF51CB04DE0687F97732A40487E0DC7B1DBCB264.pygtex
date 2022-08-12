@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x \PYG{o}{(}int*\PYG{o}{)(}0x7 + \PYG{n+nv}{\PYGZdl{}rsp}\PYG{o}{)}
+  0x7fffffffe227: \PYG{l+m}{97} \PYG{l+s+s1}{\PYGZsq{}a\PYGZsq{}}
+\end{Verbatim}

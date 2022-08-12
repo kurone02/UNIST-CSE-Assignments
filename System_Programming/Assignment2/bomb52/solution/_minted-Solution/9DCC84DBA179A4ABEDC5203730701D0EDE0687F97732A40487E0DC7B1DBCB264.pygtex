@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x \PYG{n+nv}{\PYGZdl{}rsp}
+  0x7fffffffe210: 0x00000000
+\end{Verbatim}

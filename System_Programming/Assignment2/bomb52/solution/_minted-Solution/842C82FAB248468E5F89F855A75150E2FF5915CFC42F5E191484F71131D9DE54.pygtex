@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401064}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{29}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{cmp}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}0x2}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}eax}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401067}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{32}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jne}\PYG{+w}{    }\PYG{l+m+mh}{0x401070} \PYG{p}{\PYGZlt{}}\PYG{n+no}{phase\PYGZus{}4}\PYG{p}{+}\PYG{l+m+mi}{41}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

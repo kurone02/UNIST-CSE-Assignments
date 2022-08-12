@@ -1,0 +1,47 @@
+
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+To begin with, let's first look at the source code \textbf{bomb.c}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  input = read_line();             /* Get input                   */
+  phase_1(input);                  /* Run the phase               */
+  phase_defused();                 /* Drat!  They figured it out!
+            * Let me know how they did it. */
+  printf("Phase 1 defused. How about the next one?\n");
+
+  /* The second phase is harder.  No one will ever figure out
+    * how to defuse this... */
+  input = read_line();
+  phase_2(input);
+  phase_defused();
+  printf("That's number 2.  Keep going!\n");
+
+  /* I guess this is too easy so far.  Some more complex code will
+    * confuse people. */
+  input = read_line();
+  phase_3(input);
+  phase_defused();
+  printf("Halfway there!\n");
+
+  /* Oh yeah?  Well, how good is your math?  Try on this saucy problem! */
+  input = read_line();
+  phase_4(input);
+  phase_defused();
+  printf("So you got that one.  Try this one.\n");
+  
+  /* Round and 'round in memory we go, where we stop, the bomb blows! */
+  input = read_line();
+  phase_5(input);
+  phase_defused();
+  printf("Good work!  On to the next...\n");
+
+  /* This phase will never be used, since no one will get past the
+    * earlier ones.  But just in case, make this one extra hard. */
+  input = read_line();
+  phase_6(input);
+  phase_defused();
+\end{minted}
+
+We can see that the bomb has six phases, and each phase requires us to input a certain string to defuse. There are 6 functions correspoding to 6 phases: \begin{verbatim} phase_1, phase_2, phase_3, phase_4, phase_5, phase_6 \end{verbatim}
+
+\newpage

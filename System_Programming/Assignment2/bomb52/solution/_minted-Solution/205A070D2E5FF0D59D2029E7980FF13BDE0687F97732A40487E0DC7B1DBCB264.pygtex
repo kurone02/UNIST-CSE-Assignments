@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/s 0x402330
+  0x402330:       \PYG{l+s+s2}{\PYGZdq{}Verbosity leads to unclear, inarticulate things.\PYGZdq{}}
+\end{Verbatim}

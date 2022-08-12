@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper,oneside]{extarticle}
+\usepackage[left=20mm, right=20mm, top=1in, bottom=1.1in]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage{tikz,tkz-tab}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{subcaption}
+\usepackage{pythontex}
+\usepackage{minted}
+\usetikzlibrary{angles,patterns,calc}
+\graphicspath{ {./images/} }
+
+\newcommand{\tabularSize}{37em}
+
+\newcommand{\ROMAN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+\newcommand{\Vector}[1]{
+\overrightarrow{#1}
+}
+
+\newcommand{\OR}{\vee}
+\newcommand{\AND}{\wedge} 
+\newcommand{\XOR}{\oplus}
+\DeclareMathOperator{\lcm}{lcm}
+
+\newcounter{problem}
+\setcounter{problem}{1}
+
+\newcommand{\solution}[2]{
+  \begin{tcolorbox}
+    \textbf{\theproblem. } #1
+  \end{tcolorbox}
+  \begin{center}\textbf{Solution.}\end{center}
+  #2 \addtocounter{problem}{1}
+}
+
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\title{\textbf{{\large CSE251: System Programming}\\Assignment 2 - bomblab}}
+\author{Student name: Nguyen Minh Duc\\Student ID: 20202026}
+\date{}
+
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[LE,LO]{\textbf{CSE251: System Programming}}
+\fancyhead[RE,RO]{\textbf{Assignment 2 - bomblab}}
+\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\footrulewidth}{1pt}
+\makeatletter
+
+%\renewcommand{\thesubsection}{\Alph{subsection}}
+
+\maketitle
+
+This paper contains solutions to the assignment 2 of System Programming course (Spring 2022) at UNIST, which is to defuse the binary bomb.
+
+\tableofcontents
+
+\newpage
+
+\input{introduction}
+\input{phase_1}
+\input{phase_2}
+\input{phase_3}
+\input{phase_4}
+\input{phase_5}
+\input{phase_6}
+
+
+
+\end{document}

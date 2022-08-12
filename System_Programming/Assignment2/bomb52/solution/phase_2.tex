@@ -1,0 +1,154 @@
+\section{Phase 2}
+This is the second phase of the binary bomb. The bomb will greet you with the following lines
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase 1 defused. How about the next one?
+\end{minted}
+let's first open the \textbf{gdb} tool up, examine and put a breakpoint at the function \verb+phase_2+
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) r
+  Starting program: /home/edusc03/edusc03-052/bomb52/bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase 1 defused. How about the next one?
+  123
+
+  Breakpoint 1, 0x0000000000400e81 in phase_2 ()
+  (gdb) disas
+  Dump of assembler code for function phase_2:
+  => 0x0000000000400e81 <+0>:     push   %rbx
+     0x0000000000400e82 <+1>:     sub    $0x20,%rsp
+     0x0000000000400e86 <+5>:     mov    %rsp,%rsi
+     0x0000000000400e89 <+8>:     callq  0x401473 <read_six_numbers>
+     0x0000000000400e8e <+13>:    cmpl   $0x0,(%rsp)
+     0x0000000000400e92 <+17>:    js     0x400e9b <phase_2+26>
+     0x0000000000400e94 <+19>:    mov    $0x1,%ebx
+     0x0000000000400e99 <+24>:    jmp    0x400eac <phase_2+43>
+     0x0000000000400e9b <+26>:    callq  0x401451 <explode_bomb>
+     0x0000000000400ea0 <+31>:    jmp    0x400e94 <phase_2+19>
+     0x0000000000400ea2 <+33>:    add    $0x1,%rbx
+     0x0000000000400ea6 <+37>:    cmp    $0x6,%rbx
+     0x0000000000400eaa <+41>:    je     0x400ebe <phase_2+61>
+     0x0000000000400eac <+43>:    mov    %ebx,%eax
+     0x0000000000400eae <+45>:    add    -0x4(%rsp,%rbx,4),%eax
+     0x0000000000400eb2 <+49>:    cmp    %eax,(%rsp,%rbx,4)
+     0x0000000000400eb5 <+52>:    je     0x400ea2 <phase_2+33>
+     0x0000000000400eb7 <+54>:    callq  0x401451 <explode_bomb>
+     0x0000000000400ebc <+59>:    jmp    0x400ea2 <phase_2+33>
+     0x0000000000400ebe <+61>:    add    $0x20,%rsp
+     0x0000000000400ec2 <+65>:    pop    %rbx
+     0x0000000000400ec3 <+66>:    retq
+  End of assembler dump.
+\end{minted}
+Again, the function tries to call another function, this time is \verb+read_six_numbers+. Let's examine it
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) disas read_six_numbers
+  Dump of assembler code for function read_six_numbers:
+     0x0000000000401473 <+0>:     sub    $0x8,%rsp
+     0x0000000000401477 <+4>:     mov    %rsi,%rdx
+     0x000000000040147a <+7>:     lea    0x4(%rsi),%rcx
+     0x000000000040147e <+11>:    lea    0x14(%rsi),%rax
+     0x0000000000401482 <+15>:    push   %rax
+     0x0000000000401483 <+16>:    lea    0x10(%rsi),%rax
+     0x0000000000401487 <+20>:    push   %rax
+     0x0000000000401488 <+21>:    lea    0xc(%rsi),%r9
+     0x000000000040148c <+25>:    lea    0x8(%rsi),%r8
+     0x0000000000401490 <+29>:    mov    $0x402523,%esi
+     0x0000000000401495 <+34>:    mov    $0x0,%eax
+     0x000000000040149a <+39>:    callq  0x400bc0 <__isoc99_sscanf@plt>
+     0x000000000040149f <+44>:    add    $0x10,%rsp
+     0x00000000004014a3 <+48>:    cmp    $0x5,%eax
+     0x00000000004014a6 <+51>:    jle    0x4014ad <read_six_numbers+58>
+     0x00000000004014a8 <+53>:    add    $0x8,%rsp
+     0x00000000004014ac <+57>:    retq
+     0x00000000004014ad <+58>:    callq  0x401451 <explode_bomb>
+  End of assembler dump.
+\end{minted}
+We can see that the function tries to invoke \verb+__isoc99_sscanf+ function. The first few lines of the function load data into registers and push some of them on the stack. The name of those registers suggests that they contain arguments to be passed into \verb+sscanf+. As we know, it takes in at least two arguments, a string $s$ and an C-formatted pattern $p$, and returns the number of matches in $s$ according to the pattern $p$. Note that the values in the address \verb+0x402523+ is moved into the \verb+%esi+ register, which is usually an argument. Inspect that memory, we obtain
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/s 0x402523
+  0x402523:       "%d %d %d %d %d %d"
+\end{minted}
+which suggests that the desired string should contain six 32-bit integers separated by spaces. The last few lines construct an if-else statement, which is roughly translated into C as
+\begin{minted}[frame=single,framesep=10pt]{c}
+  if(eax > 5){ // eax = return value of __isoc99_sscanf
+    return;
+  }
+  explode_bomb();
+\end{minted}
+We will pass this stage if $\text{eax} > 5$, i.e, the number of integers in our string is at least 6. If we continue to run our debugger, the bomb will explode since our first guess only contains one integer $123$.\\
+Reset the bomb and type in ``1 2 3 4 5 6'', we now have passed the \verb+read_six_numbers+ function. The remainning lines of codes seem comlicated, let's explore them part by part. Firstly, let's inspect what's residing in the \verb+%rsp+ register
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x $rsp
+  0x7fffffffe210: 0x00000001
+\end{minted}
+If we reset the bomb again and enter ``0 1 2 3 4 5'', we obtain another value of \verb+rsp+ in this stage
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x $rsp
+  0x7fffffffe210: 0x00000000
+\end{minted}
+which is the same as the first integer we have just inputted. To confirm our hypothesis that \verb+rsp+ contains the six inputted integers, we type in the command \verb+x/6d+ in gdb
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/6d $rsp
+  0x7fffffffe210: 1       2       3       4
+  0x7fffffffe220: 5       6
+\end{minted}
+Now we know that \verb+rsp+ holds our input, let's carry on with the following lines
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000400e8e <+13>:    cmpl   $0x0,(%rsp)
+  0x0000000000400e92 <+17>:    js     0x400e9b <phase_2+26>  
+\end{minted}
+}\noindent
+This checks if the first number is less than $0$. If it is, then the bomb will detonate, otherwise, it will continue with the following instructions
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000400e94 <+19>:    mov    $0x1,%ebx
+  0x0000000000400e99 <+24>:    jmp    0x400eac <phase_2+43>
+  0x0000000000400e9b <+26>:    callq  0x401451 <explode_bomb>
+  0x0000000000400ea0 <+31>:    jmp    0x400e94 <phase_2+19>
+  0x0000000000400ea2 <+33>:    add    $0x1,%rbx
+  0x0000000000400ea6 <+37>:    cmp    $0x6,%rbx
+  0x0000000000400eaa <+41>:    je     0x400ebe <phase_2+61>
+  0x0000000000400eac <+43>:    mov    %ebx,%eax
+  0x0000000000400eae <+45>:    add    -0x4(%rsp,%rbx,4),%eax
+  0x0000000000400eb2 <+49>:    cmp    %eax,(%rsp,%rbx,4)
+  0x0000000000400eb5 <+52>:    je     0x400ea2 <phase_2+33>
+  0x0000000000400eb7 <+54>:    callq  0x401451 <explode_bomb>
+  0x0000000000400ebc <+59>:    jmp    0x400ea2 <phase_2+33>
+\end{minted}
+}
+This part of the code is the most complicated. It has a lot of backward jumps, so it might be a loop. Further investigation confirms our hypothesis. First, \verb+ebx+ is initialized to $1$ and the value is moved to \verb+eax+. Then, the bomb executes \verb+add -0x4(%rsp,%rbx,4),%eax+, which can be translated into C code as: $\verb+eax+ \mathrel{+}= \verb+rsp+[\verb+rbx+ - 1]$, assuming that everything is of type \verb+int+. Next, the bomb will compare \verb+eax+ with $\verb+rsp+[\verb+rbx+]$, if they are equal, we continue with the line 33, otherwise, the bomb will explode. Lastly, the bomb will increment \verb+rbx+ and check if it is equal to $6$. If it is, the loop will terminate and phase 2 is defused, otherwise, the loop will continue. In summary, the assembly code can be roughly translated into the following C code
+\begin{minted}[frame=single,framesep=10pt]{c}
+  // suppose that a[6] is the array that contains the input
+  int i = 1;
+  do{
+    if(i + a[i - 1] != a[i]) explode_bomb();
+    i += 1;
+  } while(i != 6);
+\end{minted}
+This gives us a recurrence formula for the desired series of integers
+$$ a_n = \begin{cases}
+  c & \text{if }n = 0,\\
+  a_{n - 1} + n & \text{otherwise},
+\end{cases} $$
+for any arbitary integer $c \geq 0$. Solving this recurrence formula, we obtain the result
+$$ a_n = c + \dfrac{n(n + 1)}{2}. $$
+This suggests that there's more than one solution to this phase. For simplicity, let's choose $c = 0$, reset the bomb and input the string ``0 1 3 6 10 15'', which will defuse the second phase of the bomb.
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase 1 defused. How about the next one?
+  0 1 3 6 10 15
+  That's number 2.  Keep going!
+\end{minted}
+}
+
+\newpage

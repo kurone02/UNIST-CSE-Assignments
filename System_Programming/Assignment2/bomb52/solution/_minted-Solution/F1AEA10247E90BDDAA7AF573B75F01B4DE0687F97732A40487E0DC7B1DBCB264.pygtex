@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/8d \PYG{n+nv}{\PYGZdl{}r12}
+  0x7fffffffe1f0: \PYG{l+m}{1}       \PYG{l+m}{2}       \PYG{l+m}{3}       \PYG{l+m}{4}
+  0x7fffffffe200: \PYG{l+m}{5}       \PYG{l+m}{6}       \PYG{l+m}{6306096} \PYG{l+m}{0}
+\end{Verbatim}

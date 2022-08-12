@@ -1,0 +1,299 @@
+\section{Phase 4}
+This is the forth phase of the binary bomb. The bomb will greet you with the following lines
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb input.txt
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Phase 1 defused. How about the next one?
+  That's number 2.  Keep going!
+  Halfway there!
+\end{minted}
+}\noindent
+Let's entered a dummy string into the bomb, i.e. ``1 2 3''. Now, we obtain the following assembly code
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401047 <+0>:     sub    $0x18,%rsp
+  0x000000000040104b <+4>:     lea    0x8(%rsp),%rcx
+  0x0000000000401050 <+9>:     lea    0xc(%rsp),%rdx
+  0x0000000000401055 <+14>:    mov    $0x40252f,%esi
+  0x000000000040105a <+19>:    mov    $0x0,%eax
+  0x000000000040105f <+24>:    callq  0x400bc0 <__isoc99_sscanf@plt>
+  0x0000000000401064 <+29>:    cmp    $0x2,%eax
+  0x0000000000401067 <+32>:    jne    0x401070 <phase_4+41>
+  0x0000000000401069 <+34>:    cmpl   $0xe,0xc(%rsp)
+  0x000000000040106e <+39>:    jbe    0x401075 <phase_4+46>
+  0x0000000000401070 <+41>:    callq  0x401451 <explode_bomb>
+  0x0000000000401075 <+46>:    mov    $0xe,%edx
+  0x000000000040107a <+51>:    mov    $0x0,%esi
+  0x000000000040107f <+56>:    mov    0xc(%rsp),%edi
+  0x0000000000401083 <+60>:    callq  0x401013 <func4>
+  0x0000000000401088 <+65>:    cmp    $0x12,%eax
+  0x000000000040108b <+68>:    jne    0x401094 <phase_4+77>
+  0x000000000040108d <+70>:    cmpl   $0x12,0x8(%rsp)
+  0x0000000000401092 <+75>:    je     0x401099 <phase_4+82>
+  0x0000000000401094 <+77>:    callq  0x401451 <explode_bomb>
+  0x0000000000401099 <+82>:    add    $0x18,%rsp
+  0x000000000040109d <+86>:    retq
+\end{minted}
+}\noindent
+Again, the function tries to invoke \verb+sscanf+, let's see what's the pattern
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/s 0x40252f
+  0x40252f:       "%d %d"
+\end{minted}
+}\noindent
+which implies our input should contain two 32-bit integer. The two lines
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401064 <+29>:    cmp    $0x2,%eax
+  0x0000000000401067 <+32>:    jne    0x401070 <phase_4+41>
+\end{minted}
+}\noindent
+say that if we do not meet the criteria, the bomb will explode. Luckily, our dummy input statisfies the first constraint. Next, there're these two lines
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401069 <+34>:    cmpl   $0xe,0xc(%rsp)
+  0x000000000040106e <+39>:    jbe    0x401075 <phase_4+46>
+  0x0000000000401070 <+41>:    callq  0x401451 <explode_bomb>
+\end{minted}
+}\noindent
+comparing \verb+0xc(%rsp)+ with \verb+0xe+, i.e. $14$. Let's investigate \verb+0xc(%rsp)+
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/d (0xc + $rsp)
+  0x7fffffffe22c: 1
+\end{minted}
+}\noindent
+which is our first integer. So if our first integer is bigger than $14$, the bomb will also detonate. Next, let's examine the following lines
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401075 <+46>:    mov    $0xe,%edx
+  0x000000000040107a <+51>:    mov    $0x0,%esi
+  0x000000000040107f <+56>:    mov    0xc(%rsp),%edi
+  0x0000000000401083 <+60>:    callq  0x401013 <func4>
+\end{minted}
+}\noindent
+It calls another function \verb+func4+ that takes in $3$ arguments, \verb+0xe+, \verb+0x0+, and our first number. Dive in \verb+func4+
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401013 <+0>:     push   %rbx
+  0x0000000000401014 <+1>:     mov    %edx,%eax
+  0x0000000000401016 <+3>:     sub    %esi,%eax
+  0x0000000000401018 <+5>:     mov    %eax,%ebx
+  0x000000000040101a <+7>:     shr    $0x1f,%ebx
+  0x000000000040101d <+10>:    add    %eax,%ebx
+  0x000000000040101f <+12>:    sar    %ebx
+  0x0000000000401021 <+14>:    add    %esi,%ebx
+  0x0000000000401023 <+16>:    cmp    %edi,%ebx
+  0x0000000000401025 <+18>:    jg     0x40102f <func4+28>
+  0x0000000000401027 <+20>:    cmp    %edi,%ebx
+  0x0000000000401029 <+22>:    jl     0x40103b <func4+40>
+  0x000000000040102b <+24>:    mov    %ebx,%eax
+  0x000000000040102d <+26>:    pop    %rbx
+  0x000000000040102e <+27>:    retq
+  0x000000000040102f <+28>:    lea    -0x1(%rbx),%edx
+  0x0000000000401032 <+31>:    callq  0x401013 <func4>
+  0x0000000000401037 <+36>:    add    %eax,%ebx
+  0x0000000000401039 <+38>:    jmp    0x40102b <func4+24>
+  0x000000000040103b <+40>:    lea    0x1(%rbx),%esi
+  0x000000000040103e <+43>:    callq  0x401013 <func4>
+  0x0000000000401043 <+48>:    add    %eax,%ebx
+  0x0000000000401045 <+50>:    jmp    0x40102b <func4+24>
+\end{minted}
+}\noindent
+We can see that it calls itself at the line $31$ and $43$, so it is a recursive function. Note that it takes $3$ arguments, let's call them $x, y, z$, which are \verb+%edx+, \verb+%esi+, and \verb+%edi+ respectively. Firstly, let's try to understand these first lines of codes
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401014 <+1>:     mov    %edx,%eax
+  0x0000000000401016 <+3>:     sub    %esi,%eax
+  0x0000000000401018 <+5>:     mov    %eax,%ebx
+  0x000000000040101a <+7>:     shr    $0x1f,%ebx
+  0x000000000040101d <+10>:    add    %eax,%ebx
+  0x000000000040101f <+12>:    sar    %ebx
+  0x0000000000401021 <+14>:    add    %esi,%ebx
+\end{minted}
+}\noindent
+which can be translated line by line as
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  eax = edx;
+  eax -= esi;
+  ebx = eax;
+  ebx = (unsigned)ebx >> 0x1f;
+  ebx += eax;
+  ebx >>= 1;
+  ebx += esi;
+\end{minted}
+}\noindent
+let's instroduce new variables and subtitute $x, y, z$ in the correct registers
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  int a = x - y;
+  int b = a;
+  b = (unsigned)b >> 0x1f;
+  b += a;
+  b >>= 1;
+  b += y;
+\end{minted}
+}\noindent
+The next instructions construct an if-else statement
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401023 <+16>:    cmp    %edi,%ebx
+  0x0000000000401025 <+18>:    jg     0x40102f <func4+28>
+  0x0000000000401027 <+20>:    cmp    %edi,%ebx
+  0x0000000000401029 <+22>:    jl     0x40103b <func4+40>
+  0x000000000040102b <+24>:    mov    %ebx,%eax
+  0x000000000040102d <+26>:    pop    %rbx
+  0x000000000040102e <+27>:    retq
+\end{minted}
+}\noindent
+Let's translate into C:
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  if(b > z){
+    // func4+28
+  } else if(b < z){
+    // func4+40
+  }
+  a = b;
+  return a;
+\end{minted}
+}\noindent
+Let's explore the line 28 of the function
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x000000000040102f <+28>:    lea    -0x1(%rbx),%edx
+  0x0000000000401032 <+31>:    callq  0x401013 <func4>
+  0x0000000000401037 <+36>:    add    %eax,%ebx
+  0x0000000000401039 <+38>:    jmp    0x40102b <func4+24>
+\end{minted}
+}\noindent
+Translating into C, we obtain
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  x = b - 1;
+  a = func4(x, y, z);
+  b += a;
+\end{minted}
+}\noindent
+As for the line 40:
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x000000000040103b <+40>:    lea    0x1(%rbx),%esi
+  0x000000000040103e <+43>:    callq  0x401013 <func4>
+  0x0000000000401043 <+48>:    add    %eax,%ebx
+  0x0000000000401045 <+50>:    jmp    0x40102b <func4+24>
+\end{minted}
+}\noindent
+Translating into C, we obtain
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  y = b + 1;
+  a = func4(x, y, z);
+  b += a;
+\end{minted}
+}\noindent
+Now, we have completely reverse engineered \verb+func4+. The C code is as follow
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+  int func4(int x, int y, int z){
+    int a = x - y;
+    int b = a;
+    b = (unsigned)b >> 31;
+    b += a;
+    b >>= 1;
+    b += y;
+    if(b - z > 0){
+        x = b - 1;
+        a = func4(x, y, z);
+        b += a;
+    } else if(b - z < 0){
+        y = b + 1;
+        a = func4(x, y, z);
+        b += a;
+    }
+    a = b;
+    return a;
+  }
+\end{minted}
+}\noindent
+Now, we have known what \verb+func4+ is doing, let's continue with the assembly code of \verb+phase_4+
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401088 <+65>:    cmp    $0x12,%eax
+  0x000000000040108b <+68>:    jne    0x401094 <phase_4+77>
+  0x000000000040108d <+70>:    cmpl   $0x12,0x8(%rsp)
+  0x0000000000401092 <+75>:    je     0x401099 <phase_4+82>
+  0x0000000000401094 <+77>:    callq  0x401451 <explode_bomb>
+  0x0000000000401099 <+82>:    add    $0x18,%rsp
+  0x000000000040109d <+86>:    retq
+\end{minted}
+}\noindent
+where \verb+%eax+ is the returned value of \verb+func4+. If it is not \verb+0x12+, i.e. $18$, then the bomb will explode, otherwise, it continue to compare \verb+0x8(%rsp)+ with $18$. Let's see what's inside
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/d (0x8+$rsp)
+  0x7fffffffe228: 2
+\end{minted}
+which is our second integer. So if it is not the same as $18$, the bomb will detonate, otherwise, we successfully defuse the bomb. The only problem left is that what should the first number, let's call it $z$, be in order for the output of \verb+func4+ to be $18$. Fortunately, we know the range of the input, which is $z \leq 14$, and we also know the C code of \verb+func4+. The task is now trivial as we only need to bruteforce through $15$ different values of $z$, i.e. $\{0, 1, 2, \dots, 14\}$ with a simple C code
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{c}
+#include <stdio.h>
+int func4(int x, int y, int z){
+    int a = x - y;
+    int b = a;
+    b = (unsigned)b >> 31;
+    b += a; b >>= 1; b += y;
+    if(b > z){
+        a = func4(b - 1, y, z);
+        b += a;
+    } else if(b < z){
+        a = func4(x, b + 1, z);
+        b += a;
+    }
+    a = b;
+    return a;
+}
+int main() {
+    for(int i = 0; i <= 14; i++)
+        printf("i = %d -> %d\n", i, func4(14, 0, i));
+    return 0;
+}
+\end{minted}
+}\noindent
+The output is
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  i = 0 -> 11
+  i = 1 -> 11
+  i = 2 -> 13
+  i = 3 -> 10
+  i = 4 -> 19
+  i = 5 -> 15
+  i = 6 -> 21
+  i = 7 -> 7
+  i = 8 -> 35
+  i = 9 -> 27
+  i = 10 -> 37
+  i = 11 -> 18
+  i = 12 -> 43
+  i = 13 -> 31
+  i = 14 -> 45
+\end{minted}
+From this, we know that our first number should be $11$. Resetting the bomb and enter ``\verb+11 18+'', this phase will be defused successfully.
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb input.txt
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Phase 1 defused. How about the next one?
+  That's number 2.  Keep going!
+  Halfway there!
+  11 18
+  So you got that one.  Try this one.
+\end{minted}
+}
+
+
+\newpage

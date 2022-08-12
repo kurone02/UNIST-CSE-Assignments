@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{[}edusc03\PYGZhy{}052@cheetah022 bomb52\PYG{o}{]}\PYGZdl{} gdb bomb
+  \PYG{o}{(}gdb\PYG{o}{)} b phase\PYGZus{}1
+  Breakpoint \PYG{l+m}{1} at 0x400e63
+  \PYG{o}{(}gdb\PYG{o}{)} r
+  Starting program: /home/edusc03/edusc03\PYGZhy{}052/bomb52/bomb
+  Welcome to my fiendish little bomb. You have \PYG{l+m}{6} phases with
+  which to blow yourself up. Have a nice day!
+  \PYG{l+m}{123}
+
+  Breakpoint \PYG{l+m}{1}, 0x0000000000400e63 \PYG{k}{in} phase\PYGZus{}1 \PYG{o}{()}
+  \PYG{o}{(}gdb\PYG{o}{)}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/s 0x402523
+  0x402523:       \PYG{l+s+s2}{\PYGZdq{}\PYGZpc{}d \PYGZpc{}d \PYGZpc{}d \PYGZpc{}d \PYGZpc{}d \PYGZpc{}d\PYGZdq{}}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} disas read\PYGZus{}six\PYGZus{}numbers
+  Dump of assembler code \PYG{k}{for} \PYG{k}{function} read\PYGZus{}six\PYGZus{}numbers:
+     0x0000000000401473 \PYGZlt{}+0\PYGZgt{}:     sub    \PYG{n+nv}{\PYGZdl{}0}x8,\PYGZpc{}rsp
+     0x0000000000401477 \PYGZlt{}+4\PYGZgt{}:     mov    \PYGZpc{}rsi,\PYGZpc{}rdx
+     0x000000000040147a \PYGZlt{}+7\PYGZgt{}:     lea    0x4\PYG{o}{(}\PYGZpc{}rsi\PYG{o}{)},\PYGZpc{}rcx
+     0x000000000040147e \PYGZlt{}+11\PYGZgt{}:    lea    0x14\PYG{o}{(}\PYGZpc{}rsi\PYG{o}{)},\PYGZpc{}rax
+     0x0000000000401482 \PYGZlt{}+15\PYGZgt{}:    push   \PYGZpc{}rax
+     0x0000000000401483 \PYGZlt{}+16\PYGZgt{}:    lea    0x10\PYG{o}{(}\PYGZpc{}rsi\PYG{o}{)},\PYGZpc{}rax
+     0x0000000000401487 \PYGZlt{}+20\PYGZgt{}:    push   \PYGZpc{}rax
+     0x0000000000401488 \PYGZlt{}+21\PYGZgt{}:    lea    0xc\PYG{o}{(}\PYGZpc{}rsi\PYG{o}{)},\PYGZpc{}r9
+     0x000000000040148c \PYGZlt{}+25\PYGZgt{}:    lea    0x8\PYG{o}{(}\PYGZpc{}rsi\PYG{o}{)},\PYGZpc{}r8
+     0x0000000000401490 \PYGZlt{}+29\PYGZgt{}:    mov    \PYG{n+nv}{\PYGZdl{}0}x402523,\PYGZpc{}esi
+     0x0000000000401495 \PYGZlt{}+34\PYGZgt{}:    mov    \PYG{n+nv}{\PYGZdl{}0}x0,\PYGZpc{}eax
+     0x000000000040149a \PYGZlt{}+39\PYGZgt{}:    callq  0x400bc0 \PYGZlt{}\PYGZus{}\PYGZus{}isoc99\PYGZus{}sscanf@plt\PYGZgt{}
+     0x000000000040149f \PYGZlt{}+44\PYGZgt{}:    add    \PYG{n+nv}{\PYGZdl{}0}x10,\PYGZpc{}rsp
+     0x00000000004014a3 \PYGZlt{}+48\PYGZgt{}:    cmp    \PYG{n+nv}{\PYGZdl{}0}x5,\PYGZpc{}eax
+     0x00000000004014a6 \PYGZlt{}+51\PYGZgt{}:    jle    0x4014ad \PYGZlt{}read\PYGZus{}six\PYGZus{}numbers+58\PYGZgt{}
+     0x00000000004014a8 \PYGZlt{}+53\PYGZgt{}:    add    \PYG{n+nv}{\PYGZdl{}0}x8,\PYGZpc{}rsp
+     0x00000000004014ac \PYGZlt{}+57\PYGZgt{}:    retq
+     0x00000000004014ad \PYGZlt{}+58\PYGZgt{}:    callq  0x401451 \PYGZlt{}explode\PYGZus{}bomb\PYGZgt{}
+  End of assembler dump.
+\end{Verbatim}

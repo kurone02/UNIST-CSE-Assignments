@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401023}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{16}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{cmp}\PYG{+w}{    }\PYG{n+nv}{\PYGZpc{}edi}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}ebx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401025}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{18}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jg}\PYG{+w}{     }\PYG{l+m+mh}{0x40102f} \PYG{p}{\PYGZlt{}}\PYG{n+no}{func4}\PYG{p}{+}\PYG{l+m+mi}{28}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401027}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{20}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{cmp}\PYG{+w}{    }\PYG{n+nv}{\PYGZpc{}edi}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}ebx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401029}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{22}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jl}\PYG{+w}{     }\PYG{l+m+mh}{0x40103b} \PYG{p}{\PYGZlt{}}\PYG{n+no}{func4}\PYG{p}{+}\PYG{l+m+mi}{40}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040102b}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{24}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{mov}\PYG{+w}{    }\PYG{n+nv}{\PYGZpc{}ebx}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}eax}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040102d}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{26}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{pop}\PYG{+w}{    }\PYG{n+nv}{\PYGZpc{}rbx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040102e}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{27}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{retq}
+\end{Verbatim}

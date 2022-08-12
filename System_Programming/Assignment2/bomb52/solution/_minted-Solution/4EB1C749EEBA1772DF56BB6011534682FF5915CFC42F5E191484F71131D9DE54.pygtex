@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401069}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{34}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{cmpl}\PYG{+w}{   }\PYG{n+no}{\PYGZdl{}0xe}\PYG{p}{,}\PYG{l+m+mi}{0xc}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rsp}\PYG{p}{)}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040106e}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{39}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jbe}\PYG{+w}{    }\PYG{l+m+mh}{0x401075} \PYG{p}{\PYGZlt{}}\PYG{n+no}{phase\PYGZus{}4}\PYG{p}{+}\PYG{l+m+mi}{46}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401070}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{41}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{callq}\PYG{+w}{  }\PYG{l+m+mh}{0x401451} \PYG{p}{\PYGZlt{}}\PYG{n+no}{explode\PYGZus{}bomb}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

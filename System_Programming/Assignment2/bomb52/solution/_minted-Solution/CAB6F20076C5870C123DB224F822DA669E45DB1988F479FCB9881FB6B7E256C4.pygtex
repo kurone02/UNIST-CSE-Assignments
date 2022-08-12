@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n}{eax}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{0x72}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{l+m+mh}{0x10f}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{(}\PYG{n}{rsp}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mh}{0x8}\PYG{p}{))}\PYG{+w}{ }\PYG{n}{explode\PYGZus{}bomb}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k}{break}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x 0x8+\PYG{n+nv}{\PYGZdl{}rsp}
+  0x7fffffffe228: \PYG{l+m}{6} \PYG{c+c1}{\PYGZsh{} our second input}
+  \PYG{o}{(}gdb\PYG{o}{)} print \PYG{n+nv}{\PYGZdl{}ecx}
+  \PYG{n+nv}{\PYGZdl{}1} \PYG{o}{=} \PYG{l+m}{115}
+\end{Verbatim}

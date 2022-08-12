@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} disas strings\PYGZus{}not\PYGZus{}equal
+  Dump of assembler code \PYG{k}{for} \PYG{k}{function} strings\PYGZus{}not\PYGZus{}equal:
+    0x0000000000401354 \PYGZlt{}+0\PYGZgt{}:     push   \PYGZpc{}r12
+    0x0000000000401356 \PYGZlt{}+2\PYGZgt{}:     push   \PYGZpc{}rbp
+    0x0000000000401357 \PYGZlt{}+3\PYGZgt{}:     push   \PYGZpc{}rbx
+    0x0000000000401358 \PYGZlt{}+4\PYGZgt{}:     mov    \PYGZpc{}rdi,\PYGZpc{}rbx
+    0x000000000040135b \PYGZlt{}+7\PYGZgt{}:     mov    \PYGZpc{}rsi,\PYGZpc{}rbp
+    0x000000000040135e \PYGZlt{}+10\PYGZgt{}:    callq  0x401337 \PYGZlt{}string\PYGZus{}length\PYGZgt{}
+    0x0000000000401363 \PYGZlt{}+15\PYGZgt{}:    mov    \PYGZpc{}eax,\PYGZpc{}r12d
+    0x0000000000401366 \PYGZlt{}+18\PYGZgt{}:    mov    \PYGZpc{}rbp,\PYGZpc{}rdi
+    0x0000000000401369 \PYGZlt{}+21\PYGZgt{}:    callq  0x401337 \PYGZlt{}string\PYGZus{}length\PYGZgt{}
+    0x000000000040136e \PYGZlt{}+26\PYGZgt{}:    mov    \PYG{n+nv}{\PYGZdl{}0}x1,\PYGZpc{}edx
+    0x0000000000401373 \PYGZlt{}+31\PYGZgt{}:    cmp    \PYGZpc{}eax,\PYGZpc{}r12d
+    0x0000000000401376 \PYGZlt{}+34\PYGZgt{}:    je     0x40137f \PYGZlt{}strings\PYGZus{}not\PYGZus{}equal+43\PYGZgt{}
+  \PYGZhy{}\PYGZhy{}\PYGZhy{}Type \PYGZlt{}\PYG{k}{return}\PYGZgt{} to \PYG{k}{continue}, or q \PYGZlt{}\PYG{k}{return}\PYGZgt{} to quit\PYGZhy{}\PYGZhy{}\PYGZhy{}q
+\end{Verbatim}

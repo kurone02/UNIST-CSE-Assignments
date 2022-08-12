@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/d \PYG{n+nv}{\PYGZdl{}rbp}
+  0x7fffffffe1f0: \PYG{l+m}{1}
+  \PYG{o}{(}gdb\PYG{o}{)} x/d \PYG{n+nv}{\PYGZdl{}rsp}+\PYG{n+nv}{\PYGZdl{}rax}*4+0x30
+  0x7fffffffe1f4: \PYG{l+m}{2}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x 0x6032f0
+  0x6032f0 \PYGZlt{}node1\PYGZgt{}:       \PYG{l+m}{385}
+\end{Verbatim}

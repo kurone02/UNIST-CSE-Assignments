@@ -1,0 +1,25 @@
+=~=~=~=~=~=~=~=~=~=~=~= MobaXterm log 2022.05.19 13:49:48 =~=~=~=~=~=~=~=~=~=~=~=
+edusc03-052@10.0.7.44's password: 
+    
+                      MobaXterm Personal Edition v22.0                  
+                   (SSH client, X server and network tools)               
+                                                                          
+      SSH session to edusc03-052@10.0.7.44                               
+        Direct SSH      :                                               
+        SSH compression :                                               
+        SSH-browser     :                                               
+        X11-forwarding  :    (remote display is forwarded through SSH)  
+                                                                          
+      For more info, ctrl+click on help or visit our website.            
+    
+
+Last login: Thu May 19 13:46:38 2022 from 10.64.130.37
+[edusc03-052@cheetah ~]$ exit
+logout
+
+
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file

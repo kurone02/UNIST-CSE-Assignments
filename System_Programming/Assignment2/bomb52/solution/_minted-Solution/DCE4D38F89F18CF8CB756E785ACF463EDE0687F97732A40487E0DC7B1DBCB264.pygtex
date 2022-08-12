@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/d \PYG{o}{(}0x8+\PYG{n+nv}{\PYGZdl{}rsp}\PYG{o}{)}
+  0x7fffffffe228: \PYG{l+m}{2}
+\end{Verbatim}

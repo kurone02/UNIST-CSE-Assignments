@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} disas
+  Dump of assembler code \PYG{k}{for} \PYG{k}{function} phase\PYGZus{}1:
+  \PYG{o}{=}\PYGZgt{} 0x0000000000400e63 \PYGZlt{}+0\PYGZgt{}:     sub    \PYG{n+nv}{\PYGZdl{}0}x8,\PYGZpc{}rsp
+     0x0000000000400e67 \PYGZlt{}+4\PYGZgt{}:     mov    \PYG{n+nv}{\PYGZdl{}0}x402330,\PYGZpc{}esi
+     0x0000000000400e6c \PYGZlt{}+9\PYGZgt{}:     callq  0x401354 \PYGZlt{}strings\PYGZus{}not\PYGZus{}equal\PYGZgt{}
+     0x0000000000400e71 \PYGZlt{}+14\PYGZgt{}:    \PYG{n+nb}{test}   \PYGZpc{}eax,\PYGZpc{}eax
+     0x0000000000400e73 \PYGZlt{}+16\PYGZgt{}:    jne    0x400e7a \PYGZlt{}phase\PYGZus{}1+23\PYGZgt{}
+     0x0000000000400e75 \PYGZlt{}+18\PYGZgt{}:    add    \PYG{n+nv}{\PYGZdl{}0}x8,\PYGZpc{}rsp
+     0x0000000000400e79 \PYGZlt{}+22\PYGZgt{}:    retq
+     0x0000000000400e7a \PYGZlt{}+23\PYGZgt{}:    callq  0x401451 \PYGZlt{}explode\PYGZus{}bomb\PYGZgt{}
+     0x0000000000400e7f \PYGZlt{}+28\PYGZgt{}:    jmp    0x400e75 \PYGZlt{}phase\PYGZus{}1+18\PYGZgt{}
+  End of assembler dump.
+\end{Verbatim}

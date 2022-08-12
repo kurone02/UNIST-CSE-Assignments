@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} r
+  Starting program: /home/edusc03/edusc03\PYGZhy{}052/bomb52/bomb
+  Welcome to my fiendish little bomb. You have \PYG{l+m}{6} phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase \PYG{l+m}{1} defused. How about the next one?
+  \PYG{l+m}{123}
+
+  Breakpoint \PYG{l+m}{1}, 0x0000000000400e81 \PYG{k}{in} phase\PYGZus{}2 \PYG{o}{()}
+  \PYG{o}{(}gdb\PYG{o}{)} disas
+  Dump of assembler code \PYG{k}{for} \PYG{k}{function} phase\PYGZus{}2:
+  \PYG{o}{=}\PYGZgt{} 0x0000000000400e81 \PYGZlt{}+0\PYGZgt{}:     push   \PYGZpc{}rbx
+     0x0000000000400e82 \PYGZlt{}+1\PYGZgt{}:     sub    \PYG{n+nv}{\PYGZdl{}0}x20,\PYGZpc{}rsp
+     0x0000000000400e86 \PYGZlt{}+5\PYGZgt{}:     mov    \PYGZpc{}rsp,\PYGZpc{}rsi
+     0x0000000000400e89 \PYGZlt{}+8\PYGZgt{}:     callq  0x401473 \PYGZlt{}read\PYGZus{}six\PYGZus{}numbers\PYGZgt{}
+     0x0000000000400e8e \PYGZlt{}+13\PYGZgt{}:    cmpl   \PYG{n+nv}{\PYGZdl{}0}x0,\PYG{o}{(}\PYGZpc{}rsp\PYG{o}{)}
+     0x0000000000400e92 \PYGZlt{}+17\PYGZgt{}:    js     0x400e9b \PYGZlt{}phase\PYGZus{}2+26\PYGZgt{}
+     0x0000000000400e94 \PYGZlt{}+19\PYGZgt{}:    mov    \PYG{n+nv}{\PYGZdl{}0}x1,\PYGZpc{}ebx
+     0x0000000000400e99 \PYGZlt{}+24\PYGZgt{}:    jmp    0x400eac \PYGZlt{}phase\PYGZus{}2+43\PYGZgt{}
+     0x0000000000400e9b \PYGZlt{}+26\PYGZgt{}:    callq  0x401451 \PYGZlt{}explode\PYGZus{}bomb\PYGZgt{}
+     0x0000000000400ea0 \PYGZlt{}+31\PYGZgt{}:    jmp    0x400e94 \PYGZlt{}phase\PYGZus{}2+19\PYGZgt{}
+     0x0000000000400ea2 \PYGZlt{}+33\PYGZgt{}:    add    \PYG{n+nv}{\PYGZdl{}0}x1,\PYGZpc{}rbx
+     0x0000000000400ea6 \PYGZlt{}+37\PYGZgt{}:    cmp    \PYG{n+nv}{\PYGZdl{}0}x6,\PYGZpc{}rbx
+     0x0000000000400eaa \PYGZlt{}+41\PYGZgt{}:    je     0x400ebe \PYGZlt{}phase\PYGZus{}2+61\PYGZgt{}
+     0x0000000000400eac \PYGZlt{}+43\PYGZgt{}:    mov    \PYGZpc{}ebx,\PYGZpc{}eax
+     0x0000000000400eae \PYGZlt{}+45\PYGZgt{}:    add    \PYGZhy{}0x4\PYG{o}{(}\PYGZpc{}rsp,\PYGZpc{}rbx,4\PYG{o}{)},\PYGZpc{}eax
+     0x0000000000400eb2 \PYGZlt{}+49\PYGZgt{}:    cmp    \PYGZpc{}eax,\PYG{o}{(}\PYGZpc{}rsp,\PYGZpc{}rbx,4\PYG{o}{)}
+     0x0000000000400eb5 \PYGZlt{}+52\PYGZgt{}:    je     0x400ea2 \PYGZlt{}phase\PYGZus{}2+33\PYGZgt{}
+     0x0000000000400eb7 \PYGZlt{}+54\PYGZgt{}:    callq  0x401451 \PYGZlt{}explode\PYGZus{}bomb\PYGZgt{}
+     0x0000000000400ebc \PYGZlt{}+59\PYGZgt{}:    jmp    0x400ea2 \PYGZlt{}phase\PYGZus{}2+33\PYGZgt{}
+     0x0000000000400ebe \PYGZlt{}+61\PYGZgt{}:    add    \PYG{n+nv}{\PYGZdl{}0}x20,\PYGZpc{}rsp
+     0x0000000000400ec2 \PYGZlt{}+65\PYGZgt{}:    pop    \PYGZpc{}rbx
+     0x0000000000400ec3 \PYGZlt{}+66\PYGZgt{}:    retq
+  End of assembler dump.
+\end{Verbatim}

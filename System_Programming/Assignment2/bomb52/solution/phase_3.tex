@@ -1,0 +1,132 @@
+\section{Phase 3}
+This is the third phase of the binary bomb. The bomb will greet you with the following lines
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb  input.txt
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Phase 1 defused. How about the next one?
+  That's number 2.  Keep going!
+  1 2 3 4 5 6
+\end{minted}
+}\noindent
+Let's entered a dummy string into the bomb, i.e. ``1 2 3 4 5 6''.\\
+As usual, let's investigate the phase by \textbf{gdb}. Since the assembly code is too long, I will break it down into different sections.
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000400ec4 <+0>:     sub    $0x18,%rsp
+  0x0000000000400ec8 <+4>:     lea    0x8(%rsp),%r8
+  0x0000000000400ecd <+9>:     lea    0x7(%rsp),%rcx
+  0x0000000000400ed2 <+14>:    lea    0xc(%rsp),%rdx
+  0x0000000000400ed7 <+19>:    mov    $0x40238e,%esi
+  0x0000000000400edc <+24>:    mov    $0x0,%eax
+  0x0000000000400ee1 <+29>:    callq  0x400bc0 <__isoc99_sscanf@plt>
+  0x0000000000400ee6 <+34>:    cmp    $0x2,%eax
+  0x0000000000400ee9 <+37>:    jle    0x400f01 <phase_3+61>
+\end{minted}
+}\noindent
+As we can see, this function also invoke \verb+sscanf+, let's investigate what is the pattern \verb+sscanf+ takes as argument
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/s 0x40238e
+  0x40238e:       "%d %c %d"
+\end{minted}
+}\noindent
+This implies that our input should have \verb+int+, \verb+char+, and \verb+int+ respectively. Since our dummy input satisfies the constraint, we pass this stage.\\
+The next two lines also form an if-else statement. If \verb+0xc(%rsp)+$ > 7$, the bomb will explode, otherwise, it will move the data into \verb+%eax+ and continue into the next stage.
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000400eeb <+39>:    cmpl   $0x7,0xc(%rsp)
+  0x0000000000400ef0 <+44>:    ja     0x400ff9 <phase_3+309>
+  0x0000000000400ef6 <+50>:    mov    0xc(%rsp),%eax
+  0x0000000000400efa <+54>:    jmpq   *0x4023a0(,%rax,8)
+\end{minted}
+}\noindent
+Let's explore what's inside \verb+0xc(%rsp)+ and \verb+0x4023a0+
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x $rsp + 0xc
+  0x7fffffffe22c: 0x00000001 # our first integer
+  (gdb) x 0x4023a0
+  0x4023a0:       0x0000000000400f08
+\end{minted}
+The last instruction jumps to the $*(\verb+0x4023a0+ + 8 \times$ \verb+%rax+$)$ line, where \verb+%rax+ is our first integer. This kind of behavior suggests a switch statement in C. Since \verb+%rax+ must be less than $7$, there are only eight cases needed to be handled, i.e. from $0$ to $7$.
+\begin{minted}[frame=single,framesep=10pt]{c}
+  switch(/*our first integer*/){
+    case 0: // do something
+    case 1: // do something
+    case 2: // do something
+    case 3: // do something
+    case 4: // do something
+    case 5: // do something
+    case 6: // do something
+    case 7: // do something
+    default: explode_bomb();
+  }
+\end{minted}
+In our dummy input, our first number is $1$, so we jump to the line \verb|0x0000000000400f2a <+102>|
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000400f2a <+102>:   mov    $0x72,%eax
+  0x0000000000400f2f <+107>:   cmpl   $0x10f,0x8(%rsp)
+  0x0000000000400f37 <+115>:   je     0x401003 <phase_3+319>
+  0x0000000000400f3d <+121>:   callq  0x401451 <explode_bomb>
+\end{minted}
+}\noindent
+Let's first see what's inside \verb+0x8(%rsp)+
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) print *(int*)(0x8 + $rsp)
+  $17 = 3
+\end{minted}
+which is our third integer. Now, let's translate the above assembly code into C code
+\begin{minted}[frame=single,framesep=10pt]{c}
+  case 1:
+    eax = 0x72;
+    if(0x10f != *(rsp + 0x8)) explode_bomb();
+    break;
+\end{minted}
+This means that our third number must be equal to \verb+0x10f+, i.e. $271$, which is not the case here. Let's reset the bomb and modify the input string
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase 1 defused. How about the next one?
+  0 1 3 6 10 15
+  That's number 2.  Keep going!
+  1 a 271
+\end{minted}
+}\noindent
+We have now passed the switch statement, and left with just a few instructions
+{\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{gas}
+  0x0000000000401003 <+319>:   cmp    %al,0x7(%rsp)
+  0x0000000000401007 <+323>:   je     0x40100e <phase_3+330>
+  0x0000000000401009 <+325>:   callq  0x401451 <explode_bomb>
+  0x000000000040100e <+330>:   add    $0x18,%rsp
+  0x0000000000401012 <+334>:   retq
+\end{minted}
+}\noindent
+It's comparing two values at \verb+%al+ and \verb+0x7(%rsp)+. Let's see what's in \verb+0x7(%rsp)+
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x (int*)(0x7 + $rsp)
+  0x7fffffffe227: 97 'a'
+\end{minted}
+which is our second input character. As for the register \verb+%al+
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) print (char)$al
+  $21 = 114 'r'
+\end{minted}
+So now, we know that the second character must be `\verb+r+'. Resetting the bomb and entering the string ``1 r 271'', we have now defused the third phase.
+{\renewcommand\fcolorbox[4][]{\textcolor{black}{\strut#4}}
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb input.txt
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Phase 1 defused. How about the next one?
+  That's number 2.  Keep going!
+  1 r 271
+  Halfway there!
+\end{minted}
+}\noindent
+
+\newpage

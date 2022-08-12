@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}\PYG{+w}{             }\PYG{c+cm}{/* Get input                   */}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}1}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}\PYG{+w}{                  }\PYG{c+cm}{/* Run the phase               */}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}\PYG{+w}{                 }\PYG{c+cm}{/* Drat!  They figured it out!}
+\PYG{c+cm}{            * Let me know how they did it. */}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Phase 1 defused. How about the next one?}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+cm}{/* The second phase is harder.  No one will ever figure out}
+\PYG{c+cm}{    * how to defuse this... */}
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}2}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}That\PYGZsq{}s number 2.  Keep going!}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+cm}{/* I guess this is too easy so far.  Some more complex code will}
+\PYG{c+cm}{    * confuse people. */}
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}3}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Halfway there!}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+cm}{/* Oh yeah?  Well, how good is your math?  Try on this saucy problem! */}
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}4}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}So you got that one.  Try this one.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+cm}{/* Round and \PYGZsq{}round in memory we go, where we stop, the bomb blows! */}
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}5}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Good work!  On to the next...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+cm}{/* This phase will never be used, since no one will get past the}
+\PYG{c+cm}{    * earlier ones.  But just in case, make this one extra hard. */}
+\PYG{+w}{  }\PYG{n}{input}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{read\PYGZus{}line}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}6}\PYG{p}{(}\PYG{n}{input}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{phase\PYGZus{}defused}\PYG{p}{();}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{k}{if}\PYG{p}{(}\PYG{n}{eax}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{)\PYGZob{}}\PYG{+w}{ }\PYG{c+c1}{// eax = return value of \PYGZus{}\PYGZus{}isoc99\PYGZus{}sscanf}
+\PYG{+w}{    }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{n}{explode\PYGZus{}bomb}\PYG{p}{();}
+\end{Verbatim}

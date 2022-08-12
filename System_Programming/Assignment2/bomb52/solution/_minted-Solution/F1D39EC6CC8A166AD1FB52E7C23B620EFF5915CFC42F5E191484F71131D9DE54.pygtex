@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040103b}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{40}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{lea}\PYG{+w}{    }\PYG{l+m+mi}{0x1}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rbx}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}esi}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x000000000040103e}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{43}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{callq}\PYG{+w}{  }\PYG{l+m+mh}{0x401013} \PYG{p}{\PYGZlt{}}\PYG{n+no}{func4}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401043}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{48}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{add}\PYG{+w}{    }\PYG{n+nv}{\PYGZpc{}eax}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}ebx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000401045}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{50}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jmp}\PYG{+w}{    }\PYG{l+m+mh}{0x40102b} \PYG{p}{\PYGZlt{}}\PYG{n+no}{func4}\PYG{p}{+}\PYG{l+m+mi}{24}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

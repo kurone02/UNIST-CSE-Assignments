@@ -1,0 +1,3003 @@
+kurone@kurone:~/unist/cse251/assignment2/bomb52$ ./bomb defuse.txt 
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+BOOM!!!
+The bomb has blown up.
+kurone@kurone:~/unist/cse251/assignment2/bomb52$ gdb bomb 
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bomb...
+(gdb) b secret_phase 
+Breakpoint 1 at 0x401273
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+(gdb) disas
+Dump of assembler code for function secret_phase:
+=> 0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) print 0x3e8
+$1 = 1000
+(gdb) x 0x402368
+0x402368:	0x21776f57
+(gdb) x/s 0x402368
+0x402368:	"Wow! You've defused the secret stage!"
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+(gdb) display/oi $pc
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+(gdb) nexti
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) 
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) 
+0x00000000004012a7 in secret_phase ()
+1: x/i $pc
+=> 0x4012a7 <secret_phase+52>:	je     0x4012ae <secret_phase+59>
+(gdb) print $eax
+$2 = 0
+(gdb) nexti
+0x00000000004012a9 in secret_phase ()
+1: x/i $pc
+=> 0x4012a9 <secret_phase+54>:	callq  0x401451 <explode_bomb>
+(gdb) 
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 153881) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) print 0xa
+$3 = 10
+(gdb) 
+$4 = 10
+(gdb) nexti
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) print $rax
+$5 = 6306176
+(gdb) x $rax
+0x603980 <input_strings+480>:	"1 1"
+(gdb) nexti
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$6 = 0
+(gdb) print $rax
+$7 = 0
+(gdb) print ($rax-1)
+$8 = -1
+(gdb) nexti
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) nexti
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) x $eax
+0x0:	<error: Cannot access memory at address 0x0>
+(gdb) disas fun7 
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) pritn $edx
+Undefined command: "pritn".  Try "help".
+(gdb) print $edx
+$9 = 1
+(gdb) print $esx
+$10 = void
+(gdb) print $esi
+$11 = 1
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+=> 0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) stepi
+0x00000000004012a7 in secret_phase ()
+1: x/i $pc
+=> 0x4012a7 <secret_phase+52>:	je     0x4012ae <secret_phase+59>
+(gdb) 
+0x00000000004012a9 in secret_phase ()
+1: x/i $pc
+=> 0x4012a9 <secret_phase+54>:	callq  0x401451 <explode_bomb>
+(gdb) 
+0x0000000000401451 in explode_bomb ()
+1: x/i $pc
+=> 0x401451 <explode_bomb>:	sub    $0x8,%rsp
+(gdb) 
+0x0000000000401455 in explode_bomb ()
+1: x/i $pc
+=> 0x401455 <explode_bomb+4>:	mov    $0x402503,%edi
+(gdb) x 0x603110
+0x603110 <n1>:	"$"
+(gdb) x/d 0x603110
+0x603110 <n1>:	36
+(gdb) n
+Single stepping until exit from function explode_bomb,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 176109) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) stepi
+0x00000000004012bf in secret_phase ()
+1: x/i $pc
+=> 0x4012bf <secret_phase+76>:	callq  0x401451 <explode_bomb>
+(gdb) 
+0x0000000000401451 in explode_bomb ()
+1: x/i $pc
+=> 0x401451 <explode_bomb>:	sub    $0x8,%rsp
+(gdb) 
+0x0000000000401455 in explode_bomb ()
+1: x/i $pc
+=> 0x401455 <explode_bomb+4>:	mov    $0x402503,%edi
+(gdb) 
+0x000000000040145a in explode_bomb ()
+1: x/i $pc
+=> 0x40145a <explode_bomb+9>:	callq  0x400ae0 <puts@plt>
+(gdb) 
+0x0000000000400ae0 in puts@plt ()
+1: x/i $pc
+=> 0x400ae0 <puts@plt>:	jmpq   *0x20254a(%rip)        # 0x603030 <puts@got.plt>
+(gdb) 
+__GI__IO_puts (str=0x402503 "\nBOOM!!!") at ioputs.c:33
+33	ioputs.c: No such file or directory.
+1: x/i $pc
+=> 0x7ffff7e42450 <__GI__IO_puts>:	endbr64 
+(gdb) 
+35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e42454 <__GI__IO_puts+4>:	push   %r14
+(gdb) 
+0x00007ffff7e42456	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e42456 <__GI__IO_puts+6>:	push   %r13
+(gdb) 
+0x00007ffff7e42458	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e42458 <__GI__IO_puts+8>:	push   %r12
+(gdb) 
+0x00007ffff7e4245a	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e4245a <__GI__IO_puts+10>:	mov    %rdi,%r12
+(gdb) 
+0x00007ffff7e4245d	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e4245d <__GI__IO_puts+13>:	push   %rbp
+(gdb) 
+0x00007ffff7e4245e	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e4245e <__GI__IO_puts+14>:	push   %rbx
+(gdb) 
+0x00007ffff7e4245f	35	in ioputs.c
+1: x/i $pc
+=> 0x7ffff7e4245f <__GI__IO_puts+15>:	callq  0x7ffff7de0460 <*ABS*+0x9f660@plt>
+(gdb) 
+0x00007ffff7de0460 in *ABS*+0x9f660@plt () from /lib/x86_64-linux-gnu/libc.so.6
+1: x/i $pc
+=> 0x7ffff7de0460 <*ABS*+0x9f660@plt>:	endbr64 
+(gdb) Quit
+(gdb) Quit
+(gdb) 
+0x00007ffff7de0464 in *ABS*+0x9f660@plt () from /lib/x86_64-linux-gnu/libc.so.6
+1: x/i $pc
+=> 0x7ffff7de0464 <*ABS*+0x9f660@plt+4>:	
+    bnd jmpq *0x1c9c3d(%rip)        # 0x7ffff7faa0a8 <*ABS*@got.plt>
+(gdb) 
+__strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:42
+42	../sysdeps/x86_64/multiarch/strlen-avx2.S: No such file or directory.
+1: x/i $pc
+=> 0x7ffff7f465e0 <__strlen_avx2>:	endbr64 
+(gdb) 
+55	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465e4 <__strlen_avx2+4>:	mov    %edi,%ecx
+(gdb) 
+56	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465e6 <__strlen_avx2+6>:	mov    %rdi,%rdx
+(gdb) n
+57	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465e9 <__strlen_avx2+9>:	vpxor  %xmm0,%xmm0,%xmm0
+(gdb) n
+60	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465ed <__strlen_avx2+13>:	and    $0x3f,%ecx
+(gdb) n
+61	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465f0 <__strlen_avx2+16>:	cmp    $0x20,%ecx
+(gdb) n
+62	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465f3 <__strlen_avx2+19>:	ja     0x7ffff7f46620 <__strlen_avx2+64>
+(gdb) n
+65	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465f5 <__strlen_avx2+21>:	vpcmpeqb (%rdi),%ymm0,%ymm1
+(gdb) n
+66	in ../sysdeps/x86_64/multiarch/strlen-avx2.S
+1: x/i $pc
+=> 0x7ffff7f465f9 <__strlen_avx2+25>:	vpmovmskb %ymm1,%eax
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 271746] will be killed.
+
+Quit anyway? (y or n) n
+Not confirmed.
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+=> 0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) print $eax
+$12 = 6306176
+(gdb) next
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 273095) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) next
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 274445) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$13 = -1
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+=> 0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) print 0x603110
+$14 = 6304016
+(gdb) print *0x603110
+$15 = 36
+(gdb) $pc
+Undefined command: "$pc".  Try "help".
+(gdb) print $pc
+$16 = (void (*)()) 0x401273 <secret_phase>
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$17 = 0
+(gdb) print $eax
+$18 = 0
+(gdb) print $rax
+$19 = 0
+(gdb) print $rbx
+$20 = 1
+(gdb) nexti
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+=> 0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) nexti
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) print $edi
+$21 = 6304016
+(gdb) print *$edi
+$22 = 36
+(gdb) disas fun7
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) print $rdi
+$23 = 6304016
+(gdb) x $rdi
+0x603110 <n1>:	36
+(gdb) x $rdi+0x10
+0x603120 <n1+16>:	80
+(gdb) x $rdi+0xd
+0x60311d <n1+13>:	0
+(gdb) x $rdi+0x4
+0x603114 <n1+4>:	0
+(gdb) x/100d $rdi
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0
+(gdb) x/200d $rdi
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+(gdb) x/500d $rdi
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+0x6031d8 <n34+8>:	48	50	96	0	0	0	0	0
+0x6031e0 <n34+16>:	-48	50	96	0	0	0	0	0
+0x6031e8:	0	0	0	0	0	0	0	0
+0x6031f0 <n45>:	40	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6031f8 <n45+8>:	0	0	0	0	0	0	0	0
+0x603200 <n45+16>:	0	0	0	0	0	0	0	0
+0x603208:	0	0	0	0	0	0	0	0
+0x603210 <n41>:	1	0	0	0	0	0	0	0
+0x603218 <n41+8>:	0	0	0	0	0	0	0	0
+0x603220 <n41+16>:	0	0	0	0	0	0	0	0
+0x603228:	0	0	0	0	0	0	0	0
+0x603230 <n47>:	99	0	0	0	0	0	0	0
+0x603238 <n47+8>:	0	0	0	0	0	0	0	0
+0x603240 <n47+16>:	0	0	0	0	0	0	0	0
+0x603248:	0	0	0	0	0	0	0	0
+0x603250 <n44>:	35	0	0	0	0	0	0	0
+0x603258 <n44+8>:	0	0	0	0	0	0	0	0
+0x603260 <n44+16>:	0	0	0	0	0	0	0	0
+0x603268:	0	0	0	0	0	0	0	0
+0x603270 <n42>:	7	0	0	0	0	0	0	0
+0x603278 <n42+8>:	0	0	0	0	0	0	0	0
+0x603280 <n42+16>:	0	0	0	0	0	0	0	0
+0x603288:	0	0	0	0	0	0	0	0
+0x603290 <n43>:	20	0	0	0	0	0	0	0
+0x603298 <n43+8>:	0	0	0	0	0	0	0	0
+0x6032a0 <n43+16>:	0	0	0	0	0	0	0	0
+0x6032a8:	0	0	0	0	0	0	0	0
+0x6032b0 <n46>:	47	0	0	0	0	0	0	0
+0x6032b8 <n46+8>:	0	0	0	0	0	0	0	0
+0x6032c0 <n46+16>:	0	0	0	0	0	0	0	0
+0x6032c8:	0	0	0	0	0	0	0	0
+0x6032d0 <n48>:	-23	3	0	0	0	0	0	0
+0x6032d8 <n48+8>:	0	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6032e0 <n48+16>:	0	0	0	0	0	0	0	0
+0x6032e8:	0	0	0	0	0	0	0	0
+0x6032f0 <node1>:	-127	1	0	0	1	0	0	0
+0x6032f8 <node1+8>:	32	51	96	0	0	0	0	0
+0x603300 <node2>:	12	1	0	0
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+=> 0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) nexti
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+=> 0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) print $eax
+$24 = 0
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) disas
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+=> 0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) nexti
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) stepi
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) 
+0x0000000000401234 in fun7 ()
+1: x/i $pc
+=> 0x401234 <fun7>:	test   %rdi,%rdi
+(gdb) print $rdi
+$25 = 6304016
+(gdb) disas
+Dump of assembler code for function fun7:
+=> 0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) nexti
+0x0000000000401237 in fun7 ()
+1: x/i $pc
+=> 0x401237 <fun7+3>:	je     0x40126d <fun7+57>
+(gdb) 
+0x0000000000401239 in fun7 ()
+1: x/i $pc
+=> 0x401239 <fun7+5>:	sub    $0x8,%rsp
+(gdb) print $rsp
+$26 = (void *) 0x7fffffffdda8
+(gdb) x $rsp
+0x7fffffffdda8:	-92
+(gdb) nexti
+0x000000000040123d in fun7 ()
+1: x/i $pc
+=> 0x40123d <fun7+9>:	mov    (%rdi),%edx
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+=> 0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) nexti
+0x000000000040123f in fun7 ()
+1: x/i $pc
+=> 0x40123f <fun7+11>:	cmp    %esi,%edx
+(gdb) print $esi
+$27 = 1
+(gdb) print $edx
+$28 = 36
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+=> 0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) nexti
+0x0000000000401241 in fun7 ()
+1: x/i $pc
+=> 0x401241 <fun7+13>:	jg     0x401251 <fun7+29>
+(gdb) 
+0x0000000000401251 in fun7 ()
+1: x/i $pc
+=> 0x401251 <fun7+29>:	mov    0x8(%rdi),%rdi
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+=> 0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) print $rdi
+$29 = 6304016
+(gdb) print *$rdi
+$30 = 36
+(gdb) x $rdi
+0x603110 <n1>:	36
+(gdb) x/100x 0x603110
+0x603110 <n1>:	0x24	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603118 <n1+8>:	0x30	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603120 <n1+16>:	0x50	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603128:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603130 <n21>:	0x08	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603138 <n21+8>:	0xb0	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603140 <n21+16>:	0x70	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603148:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603150 <n22>:	0x32	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603158 <n22+8>:	0x90	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603160 <n22+16>:	0xd0	0x31	0x60	0x00	0x00	0x00	0x00	0x00
+0x603168:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x603170 <n32>:	0x16	0x00	0x00	0x00
+(gdb) print $rdi +0x8
+$31 = 6304024
+(gdb) print *($rdi +0x8)
+$32 = 6304048
+(gdb) print/x *($rdi +0x8)
+$33 = 0x603130
+(gdb) print/x *($rdi +0x16)
+$34 = 0x0
+(gdb) print/x ($rdi +0x16)
+$35 = 0x603126
+(gdb) print/x ($rdi +0x8)
+$36 = 0x603118
+(gdb) 
+$37 = 0x603118
+(gdb) print/x *($rdi +0x8)
+$38 = 0x603130
+(gdb) print/x *($rdi +0x10)
+$39 = 0x603150
+(gdb) x/200d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+(gdb) x/250d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+0x6031d8 <n34+8>:	48	50	96	0	0	0	0	0
+0x6031e0 <n34+16>:	-48	50	96	0	0	0	0	0
+0x6031e8:	0	0	0	0	0	0	0	0
+0x6031f0 <n45>:	40	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6031f8 <n45+8>:	0	0	0	0	0	0	0	0
+0x603200 <n45+16>:	0	0	0	0	0	0	0	0
+0x603208:	0	0
+(gdb) x/300d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+0x6031d8 <n34+8>:	48	50	96	0	0	0	0	0
+0x6031e0 <n34+16>:	-48	50	96	0	0	0	0	0
+0x6031e8:	0	0	0	0	0	0	0	0
+0x6031f0 <n45>:	40	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6031f8 <n45+8>:	0	0	0	0	0	0	0	0
+0x603200 <n45+16>:	0	0	0	0	0	0	0	0
+0x603208:	0	0	0	0	0	0	0	0
+0x603210 <n41>:	1	0	0	0	0	0	0	0
+0x603218 <n41+8>:	0	0	0	0	0	0	0	0
+0x603220 <n41+16>:	0	0	0	0	0	0	0	0
+0x603228:	0	0	0	0	0	0	0	0
+0x603230 <n47>:	99	0	0	0	0	0	0	0
+0x603238 <n47+8>:	0	0	0	0
+(gdb) x/500d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+0x6031d8 <n34+8>:	48	50	96	0	0	0	0	0
+0x6031e0 <n34+16>:	-48	50	96	0	0	0	0	0
+0x6031e8:	0	0	0	0	0	0	0	0
+0x6031f0 <n45>:	40	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6031f8 <n45+8>:	0	0	0	0	0	0	0	0
+0x603200 <n45+16>:	0	0	0	0	0	0	0	0
+0x603208:	0	0	0	0	0	0	0	0
+0x603210 <n41>:	1	0	0	0	0	0	0	0
+0x603218 <n41+8>:	0	0	0	0	0	0	0	0
+0x603220 <n41+16>:	0	0	0	0	0	0	0	0
+0x603228:	0	0	0	0	0	0	0	0
+0x603230 <n47>:	99	0	0	0	0	0	0	0
+0x603238 <n47+8>:	0	0	0	0	0	0	0	0
+0x603240 <n47+16>:	0	0	0	0	0	0	0	0
+0x603248:	0	0	0	0	0	0	0	0
+0x603250 <n44>:	35	0	0	0	0	0	0	0
+0x603258 <n44+8>:	0	0	0	0	0	0	0	0
+0x603260 <n44+16>:	0	0	0	0	0	0	0	0
+0x603268:	0	0	0	0	0	0	0	0
+0x603270 <n42>:	7	0	0	0	0	0	0	0
+0x603278 <n42+8>:	0	0	0	0	0	0	0	0
+0x603280 <n42+16>:	0	0	0	0	0	0	0	0
+0x603288:	0	0	0	0	0	0	0	0
+0x603290 <n43>:	20	0	0	0	0	0	0	0
+0x603298 <n43+8>:	0	0	0	0	0	0	0	0
+0x6032a0 <n43+16>:	0	0	0	0	0	0	0	0
+0x6032a8:	0	0	0	0	0	0	0	0
+0x6032b0 <n46>:	47	0	0	0	0	0	0	0
+0x6032b8 <n46+8>:	0	0	0	0	0	0	0	0
+0x6032c0 <n46+16>:	0	0	0	0	0	0	0	0
+0x6032c8:	0	0	0	0	0	0	0	0
+0x6032d0 <n48>:	-23	3	0	0	0	0	0	0
+0x6032d8 <n48+8>:	0	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6032e0 <n48+16>:	0	0	0	0	0	0	0	0
+0x6032e8:	0	0	0	0	0	0	0	0
+0x6032f0 <node1>:	-127	1	0	0	1	0	0	0
+0x6032f8 <node1+8>:	32	51	96	0	0	0	0	0
+0x603300 <node2>:	12	1	0	0
+(gdb) Quit
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+=> 0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) define pl
+Type commands for definition of "pl".
+End with a line saying just "end".
+>    set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, left=%p right=%p", $current, *$current, $current + 0x8, $current + 0x10
+ >        pl *($current + 0x8)
+ >        pl *($current + 0x10)
+ >end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, left=0x603118 right=0x603120A syntax error in expression, near `'.
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>    set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, left=%p right=%p", $current, *$current, $current + 0x8, $current + 0x10
+ >pl (*($current + 0x8))
+ >        pl (*($current + 0x10))
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, left=0x603118 right=0x603120A syntax error in expression, near `'.
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, left=%p right=%p", $current, *$current, $current + 0x8, $current + 0x10
+ >
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, left=0x603118 right=0x603120(gdb) define pl
+Redefine command "pl"? (y or n)     set var $current = $arg0
+Please answer y or n.
+Redefine command "pl"? (y or n)     if $current != 0
+Please answer y or n.
+Redefine command "pl"? (y or n)         printf "%p: val=%d, left=%p right=%p\n", $current, *$current, $current + 0x8, $current + 0x10
+Please answer y or n.
+Redefine command "pl"? (y or n)         pl (*($current + 0x8))
+Please answer y or n.
+Redefine command "pl"? (y or n)     end
+Please answer y or n.
+Redefine command "pl"? (y or n) end
+Please answer y or n.
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, left=%p right=%p\n", $current, *$current, $current + 0x8, $current + 0x10
+ >        pl (*($current + 0x8))
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, left=0x603118 right=0x603120
+A syntax error in expression, near `'.
+(gdb) pl 0x603110+0x30
+0x603140: val=6304112, left=0x603148 right=0x603150
+A syntax error in expression, near `'.
+(gdb) pl *(0x603110+0x30)
+0x603170: val=22, left=0x603178 right=0x603180
+A syntax error in expression, near `'.
+(gdb) pl (*(0x603110+0x30))
+0x603170: val=22, left=0x603178 right=0x603180
+A syntax error in expression, near `'.
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        set var $left = *($current + 0x8)
+ >        set var $right = *($current + 0x10)
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, $left, $right
+ >        pl $left
+ >        pl $right
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x603210: val=1, (left=(nil) | right=(nil))
+(gdb) pl 0x603150
+0x603150: val=50, (left=0x603190 | right=0x6031d0)
+0x603190: val=45, (left=0x6031f0 | right=0x6032b0)
+0x6031f0: val=40, (left=(nil) | right=(nil))
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        set var $left = *($current + 0x8)
+ >        set var $right = *($current + 0x10)
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, $left, $right
+ >        pl $left
+ >        printf "DONE LEFT\n"
+ >        pl $right
+ >        printf "DONE RIGHT\n"
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x603210: val=1, (left=(nil) | right=(nil))
+DONE LEFT
+DONE RIGHT
+DONE LEFT
+DONE RIGHT
+DONE LEFT
+DONE RIGHT
+DONE LEFT
+DONE RIGHT
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        set var $left = *($current + 0x8)
+ >        set var $right = *($current + 0x10)
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, $left, $right
+ >        pl $left
+ >        printf "DONE LEFT, continue to %p\n", $right
+ >        pl $right
+ >        printf "DONE RIGHT\n"
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x603210: val=1, (left=(nil) | right=(nil))
+DONE LEFT, continue to (nil)
+DONE RIGHT
+DONE LEFT, continue to (nil)
+DONE RIGHT
+DONE LEFT, continue to (nil)
+DONE RIGHT
+DONE LEFT, continue to (nil)
+DONE RIGHT
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, *($current + 0x8), *($current + 0x10)
+ >        set var $left = *($current + 0x8)
+ >        pl $left
+ >        set var $right = *($current + 0x10)
+ >        pl $right
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x603210: val=1, (left=(nil) | right=(nil))
+Cannot access memory at address 0x10
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $current = $arg0
+>    if $current != 0
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, *($current + 0x8), *($current + 0x10)
+ >        set var $x = $current
+ >        set var $left = *($x+ 0x8)
+ >        pl $left
+ >        set var $right = *($x+ 0x10)
+ >        pl $right
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x603210: val=1, (left=(nil) | right=(nil))
+(gdb) x/500d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49	96	0	0	0	0	0
+0x603120 <n1+16>:	80	49	96	0	0	0	0	0
+0x603128:	0	0	0	0	0	0	0	0
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0	0	0	0	0
+0x603198 <n33+8>:	-16	49	96	0	0	0	0	0
+0x6031a0 <n33+16>:	-80	50	96	0	0	0	0	0
+0x6031a8:	0	0	0	0	0	0	0	0
+0x6031b0 <n31>:	6	0	0	0	0	0	0	0
+0x6031b8 <n31+8>:	16	50	96	0	0	0	0	0
+0x6031c0 <n31+16>:	112	50	96	0	0	0	0	0
+0x6031c8:	0	0	0	0	0	0	0	0
+0x6031d0 <n34>:	107	0	0	0	0	0	0	0
+0x6031d8 <n34+8>:	48	50	96	0	0	0	0	0
+0x6031e0 <n34+16>:	-48	50	96	0	0	0	0	0
+0x6031e8:	0	0	0	0	0	0	0	0
+0x6031f0 <n45>:	40	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6031f8 <n45+8>:	0	0	0	0	0	0	0	0
+0x603200 <n45+16>:	0	0	0	0	0	0	0	0
+0x603208:	0	0	0	0	0	0	0	0
+0x603210 <n41>:	1	0	0	0	0	0	0	0
+0x603218 <n41+8>:	0	0	0	0	0	0	0	0
+0x603220 <n41+16>:	0	0	0	0	0	0	0	0
+0x603228:	0	0	0	0	0	0	0	0
+0x603230 <n47>:	99	0	0	0	0	0	0	0
+0x603238 <n47+8>:	0	0	0	0	0	0	0	0
+0x603240 <n47+16>:	0	0	0	0	0	0	0	0
+0x603248:	0	0	0	0	0	0	0	0
+0x603250 <n44>:	35	0	0	0	0	0	0	0
+0x603258 <n44+8>:	0	0	0	0	0	0	0	0
+0x603260 <n44+16>:	0	0	0	0	0	0	0	0
+0x603268:	0	0	0	0	0	0	0	0
+0x603270 <n42>:	7	0	0	0	0	0	0	0
+0x603278 <n42+8>:	0	0	0	0	0	0	0	0
+0x603280 <n42+16>:	0	0	0	0	0	0	0	0
+0x603288:	0	0	0	0	0	0	0	0
+0x603290 <n43>:	20	0	0	0	0	0	0	0
+0x603298 <n43+8>:	0	0	0	0	0	0	0	0
+0x6032a0 <n43+16>:	0	0	0	0	0	0	0	0
+0x6032a8:	0	0	0	0	0	0	0	0
+0x6032b0 <n46>:	47	0	0	0	0	0	0	0
+0x6032b8 <n46+8>:	0	0	0	0	0	0	0	0
+0x6032c0 <n46+16>:	0	0	0	0	0	0	0	0
+0x6032c8:	0	0	0	0	0	0	0	0
+0x6032d0 <n48>:	-23	3	0	0	0	0	0	0
+0x6032d8 <n48+8>:	0	0	0	0	0	0	0	0
+--Type <RET> for more, q to quit, c to continue without paging--
+0x6032e0 <n48+16>:	0	0	0	0	0	0	0	0
+0x6032e8:	0	0	0	0	0	0	0	0
+0x6032f0 <node1>:	-127	1	0	0	1	0	0	0
+0x6032f8 <node1+8>:	32	51	96	0	0	0	0	0
+0x603300 <node2>:	12	1	0	0
+(gdb) define pl
+Redefine command "pl"? (y or n) y
+Type commands for definition of "pl".
+End with a line saying just "end".
+>set var $i = 0
+>    while $i < 15
+ >        set var $current = $arg0 + 0x20 * $i
+ >        printf "%p: val=%d, (left=%p | right=%p)\n", $current, *$current, *($current + 0x8), *($current + 0x10)
+ >        set var $i = $i + 1
+ >    end
+>end
+(gdb) pl 0x603110
+0x603110: val=36, (left=0x603130 | right=0x603150)
+0x603130: val=8, (left=0x6031b0 | right=0x603170)
+0x603150: val=50, (left=0x603190 | right=0x6031d0)
+0x603170: val=22, (left=0x603290 | right=0x603250)
+0x603190: val=45, (left=0x6031f0 | right=0x6032b0)
+0x6031b0: val=6, (left=0x603210 | right=0x603270)
+0x6031d0: val=107, (left=0x603230 | right=0x6032d0)
+0x6031f0: val=40, (left=(nil) | right=(nil))
+0x603210: val=1, (left=(nil) | right=(nil))
+0x603230: val=99, (left=(nil) | right=(nil))
+0x603250: val=35, (left=(nil) | right=(nil))
+0x603270: val=7, (left=(nil) | right=(nil))
+0x603290: val=20, (left=(nil) | right=(nil))
+0x6032b0: val=47, (left=(nil) | right=(nil))
+0x6032d0: val=1001, (left=(nil) | right=(nil))
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) disas fun7 
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+=> 0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) print 0xffffffff
+$40 = 4294967295
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) n
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 418038) exited with code 010]
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+   0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) 
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$41 = -8
+(gdb) nexti
+0x00000000004012a7 in secret_phase ()
+1: x/i $pc
+=> 0x4012a7 <secret_phase+52>:	je     0x4012ae <secret_phase+59>
+(gdb) 
+0x00000000004012a9 in secret_phase ()
+1: x/i $pc
+=> 0x4012a9 <secret_phase+54>:	callq  0x401451 <explode_bomb>
+(gdb) 
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 420057) exited with code 010]
+(gdb) disas fun7
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) x $rsp
+No registers.
+(gdb) x/d $rsp
+No registers.
+(gdb) nexti
+The program is not being run.
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) stepi
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x0000000000400ba0 in strtol@plt ()
+1: x/i $pc
+=> 0x400ba0 <strtol@plt>:	jmpq   *0x2024ea(%rip)        # 0x603090 <strtol@got.plt>
+(gdb) nexti
+0x0000000000400ba6 in strtol@plt ()
+1: x/i $pc
+=> 0x400ba6 <strtol@plt+6>:	pushq  $0xf
+(gdb) 
+0x0000000000400bab in strtol@plt ()
+1: x/i $pc
+=> 0x400bab <strtol@plt+11>:	jmpq   0x400aa0
+(gdb) 
+0x0000000000400aa0 in ?? ()
+1: x/i $pc
+=> 0x400aa0:	pushq  0x202562(%rip)        # 0x603008
+(gdb) 
+0x0000000000400aa6 in ?? ()
+1: x/i $pc
+=> 0x400aa6:	jmpq   *0x202564(%rip)        # 0x603010
+(gdb) 
+0x00007ffff7fe7bb0 in ?? () from /lib64/ld-linux-x86-64.so.2
+1: x/i $pc
+=> 0x7ffff7fe7bb0:	endbr64 
+(gdb) 
+0x00007ffff7fe7bb4 in ?? () from /lib64/ld-linux-x86-64.so.2
+1: x/i $pc
+=> 0x7ffff7fe7bb4:	push   %rbx
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 421401] will be killed.
+
+Quit anyway? (y or n) n
+Not confirmed.
+(gdb) Quit
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) 
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) stepi
+0x0000000000401234 in fun7 ()
+1: x/i $pc
+=> 0x401234 <fun7>:	test   %rdi,%rdi
+(gdb) disas
+Dump of assembler code for function fun7:
+=> 0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) print $rsp
+$42 = (void *) 0x7fffffffdda8
+(gdb) x $rsp
+0x7fffffffdda8:	-92
+(gdb) x/d $rsp
+0x7fffffffdda8:	-92
+(gdb) nexti
+0x0000000000401237 in fun7 ()
+1: x/i $pc
+=> 0x401237 <fun7+3>:	je     0x40126d <fun7+57>
+(gdb) 
+0x0000000000401239 in fun7 ()
+1: x/i $pc
+=> 0x401239 <fun7+5>:	sub    $0x8,%rsp
+(gdb) 
+0x000000000040123d in fun7 ()
+1: x/i $pc
+=> 0x40123d <fun7+9>:	mov    (%rdi),%edx
+(gdb) x/d $rsp
+0x7fffffffdda0:	0
+(gdb) nexti
+0x000000000040123f in fun7 ()
+1: x/i $pc
+=> 0x40123f <fun7+11>:	cmp    %esi,%edx
+(gdb) 
+0x0000000000401241 in fun7 ()
+1: x/i $pc
+=> 0x401241 <fun7+13>:	jg     0x401251 <fun7+29>
+(gdb) 
+0x0000000000401251 in fun7 ()
+1: x/i $pc
+=> 0x401251 <fun7+29>:	mov    0x8(%rdi),%rdi
+(gdb) 
+0x0000000000401255 in fun7 ()
+1: x/i $pc
+=> 0x401255 <fun7+33>:	callq  0x401234 <fun7>
+(gdb) x/d $rdi
+0x603130 <n21>:	8
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+=> 0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) x/d $rsp
+0x7fffffffdda0:	0
+(gdb) x/100d $rsp
+0x7fffffffdda0:	0	0	0	0	0	0	0	0
+0x7fffffffdda8:	-92	18	64	0	0	0	0	0
+0x7fffffffddb0:	40	-33	-1	-1	-1	127	0	0
+0x7fffffffddb8:	87	22	64	0	0	0	0	0
+0x7fffffffddc0:	16	51	96	0	0	0	0	0
+0x7fffffffddc8:	18	0	0	0	11	0	0	0
+0x7fffffffddd0:	68	114	69	118	105	108	0	0
+0x7fffffffddd8:	0	51	96	0	0	0	0	0
+0x7fffffffdde0:	5	0	0	0	6	0	0	0
+0x7fffffffdde8:	3	0	0	0	1	0	0	0
+0x7fffffffddf0:	4	0	0	0	2	0	0	0
+0x7fffffffddf8:	48	57	96	0	0	0	0	0
+0x7fffffffde00:	40	-33	-1	-1
+(gdb) x/100d $rsi
+0x2:	Cannot access memory at address 0x2
+(gdb) x/100d $rdx
+0x24:	Cannot access memory at address 0x24
+(gdb) x/100d $edx
+0x24:	Cannot access memory at address 0x24
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+=> 0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) x/d $esi
+0x2:	Cannot access memory at address 0x2
+(gdb) print $esi
+$43 = 2
+(gdb) print $edx
+$44 = 36
+(gdb) print $rdx
+$45 = 36
+(gdb) print $rdi
+$46 = 6304048
+(gdb) x/100d $rdi
+0x603130 <n21>:	8	0	0	0	0	0	0	0
+0x603138 <n21+8>:	-80	49	96	0	0	0	0	0
+0x603140 <n21+16>:	112	49	96	0	0	0	0	0
+0x603148:	0	0	0	0	0	0	0	0
+0x603150 <n22>:	50	0	0	0	0	0	0	0
+0x603158 <n22+8>:	-112	49	96	0	0	0	0	0
+0x603160 <n22+16>:	-48	49	96	0	0	0	0	0
+0x603168:	0	0	0	0	0	0	0	0
+0x603170 <n32>:	22	0	0	0	0	0	0	0
+0x603178 <n32+8>:	-112	50	96	0	0	0	0	0
+0x603180 <n32+16>:	80	50	96	0	0	0	0	0
+0x603188:	0	0	0	0	0	0	0	0
+0x603190 <n33>:	45	0	0	0
+(gdb) print $rax
+$47 = 1
+(gdb) disas
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+=> 0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) n
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 443013) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) 
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x00000000004012bf in secret_phase ()
+1: x/i $pc
+=> 0x4012bf <secret_phase+76>:	callq  0x401451 <explode_bomb>
+(gdb) 
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 443683) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) print $rdi
+$48 = 6306176
+(gdb) print *$rdi
+$49 = 0
+(gdb) print $rax
+$50 = 0
+(gdb) disas strtol
+Dump of assembler code for function __strtol:
+   0x00007ffff7e06ad0 <+0>:	endbr64 
+   0x00007ffff7e06ad4 <+4>:	mov    0x1a32ed(%rip),%rax        # 0x7ffff7fa9dc8
+   0x00007ffff7e06adb <+11>:	xor    %ecx,%ecx
+   0x00007ffff7e06add <+13>:	mov    %fs:(%rax),%r8
+   0x00007ffff7e06ae1 <+17>:	jmpq   0x7ffff7e06b30 <__GI_____strtol_l_internal>
+End of assembler dump.
+(gdb) nexti
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) print $eax
+$51 = 0
+(gdb) nexti
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$52 = -1
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) nexti
+0x0000000000401274 in secret_phase ()
+1: x/i $pc
+=> 0x401274 <secret_phase+1>:	callq  0x4014b2 <read_line>
+(gdb) 
+0x0000000000401279 in secret_phase ()
+1: x/i $pc
+=> 0x401279 <secret_phase+6>:	mov    $0xa,%edx
+(gdb) 
+0x000000000040127e in secret_phase ()
+1: x/i $pc
+=> 0x40127e <secret_phase+11>:	mov    $0x0,%esi
+(gdb) 
+0x0000000000401283 in secret_phase ()
+1: x/i $pc
+=> 0x401283 <secret_phase+16>:	mov    %rax,%rdi
+(gdb) 
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) 
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) 
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$53 = 6
+(gdb) 
+$54 = 6
+(gdb) nexti
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) 
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$55 = 4
+(gdb) disas fun7
+Dump of assembler code for function fun7:
+   0x0000000000401234 <+0>:	test   %rdi,%rdi
+   0x0000000000401237 <+3>:	je     0x40126d <fun7+57>
+   0x0000000000401239 <+5>:	sub    $0x8,%rsp
+   0x000000000040123d <+9>:	mov    (%rdi),%edx
+   0x000000000040123f <+11>:	cmp    %esi,%edx
+   0x0000000000401241 <+13>:	jg     0x401251 <fun7+29>
+   0x0000000000401243 <+15>:	mov    $0x0,%eax
+   0x0000000000401248 <+20>:	cmp    %esi,%edx
+   0x000000000040124a <+22>:	jne    0x40125e <fun7+42>
+   0x000000000040124c <+24>:	add    $0x8,%rsp
+   0x0000000000401250 <+28>:	retq   
+   0x0000000000401251 <+29>:	mov    0x8(%rdi),%rdi
+   0x0000000000401255 <+33>:	callq  0x401234 <fun7>
+   0x000000000040125a <+38>:	add    %eax,%eax
+   0x000000000040125c <+40>:	jmp    0x40124c <fun7+24>
+   0x000000000040125e <+42>:	mov    0x10(%rdi),%rdi
+   0x0000000000401262 <+46>:	callq  0x401234 <fun7>
+   0x0000000000401267 <+51>:	lea    0x1(%rax,%rax,1),%eax
+   0x000000000040126b <+55>:	jmp    0x40124c <fun7+24>
+   0x000000000040126d <+57>:	mov    $0xffffffff,%eax
+   0x0000000000401272 <+62>:	retq   
+End of assembler dump.
+(gdb) x/10d 0x603110
+0x603110 <n1>:	36	0	0	0	0	0	0	0
+0x603118 <n1+8>:	48	49
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+=> 0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) next 13
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 475638) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) next 10
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 475640) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 13
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$56 = 4
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) 
+Please answer y or n.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 13
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$57 = 0
+(gdb) disas sec
+No symbol "sec" in current context.
+(gdb) disas sec
+secret_phase     secure-getenv.c  secure_getenv    
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+=> 0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) print $esi
+$58 = 8
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti13
+Undefined command: "nexti13".  Try "help".
+(gdb) nexti 13
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $esi
+$59 = 7
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) n
+Single stepping until exit from function secret_phase,
+which has no line number information.
+
+BOOM!!!
+The bomb has blown up.
+[Inferior 1 (process 481080) exited with code 010]
+(gdb) r defuse.txt 
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 13
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$60 = -8
+(gdb) print $esi
+$61 = 2
+(gdb) disas secret_phase 
+Dump of assembler code for function secret_phase:
+   0x0000000000401273 <+0>:	push   %rbx
+   0x0000000000401274 <+1>:	callq  0x4014b2 <read_line>
+   0x0000000000401279 <+6>:	mov    $0xa,%edx
+   0x000000000040127e <+11>:	mov    $0x0,%esi
+   0x0000000000401283 <+16>:	mov    %rax,%rdi
+   0x0000000000401286 <+19>:	callq  0x400ba0 <strtol@plt>
+   0x000000000040128b <+24>:	mov    %rax,%rbx
+   0x000000000040128e <+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401291 <+30>:	cmp    $0x3e8,%eax
+   0x0000000000401296 <+35>:	ja     0x4012bf <secret_phase+76>
+   0x0000000000401298 <+37>:	mov    %ebx,%esi
+   0x000000000040129a <+39>:	mov    $0x603110,%edi
+   0x000000000040129f <+44>:	callq  0x401234 <fun7>
+=> 0x00000000004012a4 <+49>:	cmp    $0x1,%eax
+   0x00000000004012a7 <+52>:	je     0x4012ae <secret_phase+59>
+   0x00000000004012a9 <+54>:	callq  0x401451 <explode_bomb>
+   0x00000000004012ae <+59>:	mov    $0x402368,%edi
+   0x00000000004012b3 <+64>:	callq  0x400ae0 <puts@plt>
+   0x00000000004012b8 <+69>:	callq  0x4015e0 <phase_defused>
+   0x00000000004012bd <+74>:	pop    %rbx
+   0x00000000004012be <+75>:	retq   
+   0x00000000004012bf <+76>:	callq  0x401451 <explode_bomb>
+   0x00000000004012c4 <+81>:	jmp    0x401298 <secret_phase+37>
+End of assembler dump.
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 5
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) nexti
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) print $rax
+$62 = 2
+(gdb) nexti
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) print $eax
+$63 = 2
+(gdb) nexti
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$64 = 1
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 13
+0x00000000004012a4 in secret_phase ()
+1: x/i $pc
+=> 0x4012a4 <secret_phase+49>:	cmp    $0x1,%eax
+(gdb) print $eax
+$65 = -8
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 6
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) print $rax
+$66 = 3
+(gdb) nexti
+0x000000000040128e in secret_phase ()
+1: x/i $pc
+=> 0x40128e <secret_phase+27>:	lea    -0x1(%rax),%eax
+(gdb) 
+0x0000000000401291 in secret_phase ()
+1: x/i $pc
+=> 0x401291 <secret_phase+30>:	cmp    $0x3e8,%eax
+(gdb) print $eax
+$67 = 2
+(gdb) nexti
+0x0000000000401296 in secret_phase ()
+1: x/i $pc
+=> 0x401296 <secret_phase+35>:	ja     0x4012bf <secret_phase+76>
+(gdb) 
+0x0000000000401298 in secret_phase ()
+1: x/i $pc
+=> 0x401298 <secret_phase+37>:	mov    %ebx,%esi
+(gdb) 
+0x000000000040129a in secret_phase ()
+1: x/i $pc
+=> 0x40129a <secret_phase+39>:	mov    $0x603110,%edi
+(gdb) 
+0x000000000040129f in secret_phase ()
+1: x/i $pc
+=> 0x40129f <secret_phase+44>:	callq  0x401234 <fun7>
+(gdb) stepi
+0x0000000000401234 in fun7 ()
+1: x/i $pc
+=> 0x401234 <fun7>:	test   %rdi,%rdi
+(gdb) 
+0x0000000000401237 in fun7 ()
+1: x/i $pc
+=> 0x401237 <fun7+3>:	je     0x40126d <fun7+57>
+(gdb) 
+0x0000000000401239 in fun7 ()
+1: x/i $pc
+=> 0x401239 <fun7+5>:	sub    $0x8,%rsp
+(gdb) 
+0x000000000040123d in fun7 ()
+1: x/i $pc
+=> 0x40123d <fun7+9>:	mov    (%rdi),%edx
+(gdb) print $rdi
+$68 = 6304016
+(gdb) print *$rdi
+$69 = 36
+(gdb) stepi
+0x000000000040123f in fun7 ()
+1: x/i $pc
+=> 0x40123f <fun7+11>:	cmp    %esi,%edx
+(gdb) 
+0x0000000000401241 in fun7 ()
+1: x/i $pc
+=> 0x401241 <fun7+13>:	jg     0x401251 <fun7+29>
+(gdb) 
+0x0000000000401251 in fun7 ()
+1: x/i $pc
+=> 0x401251 <fun7+29>:	mov    0x8(%rdi),%rdi
+(gdb) 
+0x0000000000401255 in fun7 ()
+1: x/i $pc
+=> 0x401255 <fun7+33>:	callq  0x401234 <fun7>
+(gdb) print $esi
+$70 = 3
+(gdb) r defuse.txt 
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/kurone/unist/cse251/assignment2/bomb52/bomb defuse.txt
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+
+Breakpoint 1, 0x0000000000401273 in secret_phase ()
+1: x/i $pc
+=> 0x401273 <secret_phase>:	push   %rbx
+(gdb) nexti 5
+0x0000000000401286 in secret_phase ()
+1: x/i $pc
+=> 0x401286 <secret_phase+19>:	callq  0x400ba0 <strtol@plt>
+(gdb) nexti
+0x000000000040128b in secret_phase ()
+1: x/i $pc
+=> 0x40128b <secret_phase+24>:	mov    %rax,%rbx
+(gdb) print $rbx
+$71 = 140737488346920
+(gdb) print $rax
+$72 = 50
+(gdb) n
+Single stepping until exit from function secret_phase,
+which has no line number information.
+Wow! You've defused the secret stage!
+0x0000000000401657 in phase_defused ()
+1: x/i $pc
+=> 0x401657 <phase_defused+119>:	jmp    0x401617 <phase_defused+55>
+(gdb) clear
+No source file specified.
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 502823] will be killed.
+
+Quit anyway? (y or n) y
+kurone@kurone:~/unist/cse251/assignment2/bomb52$ ./bomb defuse.txt 
+Welcome to my fiendish little bomb. You have 6 phases with
+which to blow yourself up. Have a nice day!
+Phase 1 defused. How about the next one?
+That's number 2.  Keep going!
+Halfway there!
+So you got that one.  Try this one.
+Good work!  On to the next...
+Curses, you've found the secret phase!
+But finding it and solving it are quite different...
+Wow! You've defused the secret stage!
+Congratulations! You've defused the bomb!
+kurone@kurone:~/unist/cse251/assignment2/bomb52$ 

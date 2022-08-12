@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ec4}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{0}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{     }\PYG{n+no}{sub}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}0x18}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}rsp}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ec8}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{4}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{     }\PYG{n+no}{lea}\PYG{+w}{    }\PYG{l+m+mi}{0x8}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rsp}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}r8}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ecd}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{9}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{     }\PYG{n+no}{lea}\PYG{+w}{    }\PYG{l+m+mi}{0x7}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rsp}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}rcx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ed2}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{14}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{lea}\PYG{+w}{    }\PYG{l+m+mi}{0xc}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rsp}\PYG{p}{),}\PYG{n+nv}{\PYGZpc{}rdx}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ed7}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{19}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{mov}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}0x40238e}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}esi}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400edc}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{24}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{mov}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}0x0}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}eax}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ee1}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{29}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{callq}\PYG{+w}{  }\PYG{l+m+mh}{0x400bc0} \PYG{p}{\PYGZlt{}}\PYG{n+no}{\PYGZus{}\PYGZus{}isoc99\PYGZus{}sscanf@plt}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ee6}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{34}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{cmp}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}0x2}\PYG{p}{,}\PYG{n+nv}{\PYGZpc{}eax}
+\PYG{+w}{  }\PYG{err}{0}\PYG{n+nf}{x0000000000400ee9}\PYG{+w}{ }\PYG{err}{\PYGZlt{}+}\PYG{l+m+mi}{37}\PYG{err}{\PYGZgt{}}\PYG{p}{:}\PYG{+w}{    }\PYG{n+no}{jle}\PYG{+w}{    }\PYG{l+m+mh}{0x400f01} \PYG{p}{\PYGZlt{}}\PYG{n+no}{phase\PYGZus{}3}\PYG{p}{+}\PYG{l+m+mi}{61}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

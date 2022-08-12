@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} print \PYG{o}{(}char\PYG{o}{)}\PYG{n+nv}{\PYGZdl{}al}
+  \PYG{n+nv}{\PYGZdl{}21} \PYG{o}{=} \PYG{l+m}{114} \PYG{l+s+s1}{\PYGZsq{}r\PYGZsq{}}
+\end{Verbatim}

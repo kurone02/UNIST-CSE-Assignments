@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} pa \PYG{n+nv}{\PYGZdl{}rsp}
+  a\PYG{o}{[}\PYG{l+m}{1}\PYG{o}{]} \PYG{o}{=} 0x3bb
+  a\PYG{o}{[}\PYG{l+m}{2}\PYG{o}{]} \PYG{o}{=} 0x3bd
+  a\PYG{o}{[}\PYG{l+m}{3}\PYG{o}{]} \PYG{o}{=} 0x125
+  a\PYG{o}{[}\PYG{l+m}{4}\PYG{o}{]} \PYG{o}{=} 0x356
+  a\PYG{o}{[}\PYG{l+m}{5}\PYG{o}{]} \PYG{o}{=} 0x10c
+  a\PYG{o}{[}\PYG{l+m}{6}\PYG{o}{]} \PYG{o}{=} 0x181
+\end{Verbatim}

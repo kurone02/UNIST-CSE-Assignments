@@ -1,0 +1,88 @@
+\section{Phase 1}
+This is the first phase of the binary bomb. The bomb will greet you with the following lines
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+\end{minted}
+Entering a random string ``123'' will result in an explosion.
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  123
+
+  BOOM!!!
+  The bomb has blown up.
+  [edusc03-052@cheetah022 bomb52]$
+\end{minted}
+In order to obtain the correct string, we have to use the \textbf{gdb} tool. Now we know that the function that handle the first phase is \verb+phase_1+, we can set a breakpoint at that function. Starting the bomb with the command \verb+r+ and inputting the random string ```123''' again, we obtain
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ gdb bomb
+  (gdb) b phase_1
+  Breakpoint 1 at 0x400e63
+  (gdb) r
+  Starting program: /home/edusc03/edusc03-052/bomb52/bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  123
+
+  Breakpoint 1, 0x0000000000400e63 in phase_1 ()
+  (gdb)
+\end{minted}
+Disassembling the function, we have
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) disas
+  Dump of assembler code for function phase_1:
+  => 0x0000000000400e63 <+0>:     sub    $0x8,%rsp
+     0x0000000000400e67 <+4>:     mov    $0x402330,%esi
+     0x0000000000400e6c <+9>:     callq  0x401354 <strings_not_equal>
+     0x0000000000400e71 <+14>:    test   %eax,%eax
+     0x0000000000400e73 <+16>:    jne    0x400e7a <phase_1+23>
+     0x0000000000400e75 <+18>:    add    $0x8,%rsp
+     0x0000000000400e79 <+22>:    retq
+     0x0000000000400e7a <+23>:    callq  0x401451 <explode_bomb>
+     0x0000000000400e7f <+28>:    jmp    0x400e75 <phase_1+18>
+  End of assembler dump.
+\end{minted}
+As the name suggests, the intruction \verb+callq  0x401354 <strings_not_equal>+ might compare two strings to see whether they are not equal. The previous instruction \verb+mov $0x402330,%esi+ also suggests one of the arguments will be in the address \verb+$0x402330+. By examining the address with the command \textbf{x/s}, we obtain the following string
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/s 0x402330
+  0x402330:       "Verbosity leads to unclear, inarticulate things."
+\end{minted}
+which has a high chance to be the desired string. The following lines conducts an if-else statement, if the function returns true, the bomb will detonate, otherwise, the phase will be defused. Let's investigate the \verb+strings_not_equal+ function
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) disas strings_not_equal
+  Dump of assembler code for function strings_not_equal:
+    0x0000000000401354 <+0>:     push   %r12
+    0x0000000000401356 <+2>:     push   %rbp
+    0x0000000000401357 <+3>:     push   %rbx
+    0x0000000000401358 <+4>:     mov    %rdi,%rbx
+    0x000000000040135b <+7>:     mov    %rsi,%rbp
+    0x000000000040135e <+10>:    callq  0x401337 <string_length>
+    0x0000000000401363 <+15>:    mov    %eax,%r12d
+    0x0000000000401366 <+18>:    mov    %rbp,%rdi
+    0x0000000000401369 <+21>:    callq  0x401337 <string_length>
+    0x000000000040136e <+26>:    mov    $0x1,%edx
+    0x0000000000401373 <+31>:    cmp    %eax,%r12d
+    0x0000000000401376 <+34>:    je     0x40137f <strings_not_equal+43>
+  ---Type <return> to continue, or q <return> to quit---q
+\end{minted}
+It is clear that the function is comparing the two strings reside in \verb+%rdi+ and \verb+%rsi+ registers. By a direct examination, we obtain the two strings
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  (gdb) x/s $rsi
+  0x402330:       "Verbosity leads to unclear, inarticulate things."
+  (gdb) x/s $rdi
+  0x6037a0 <input_strings>:       "123"
+\end{minted}
+of which one of them is our inputted string. We can conclude that for any string we entered, the bomb compares it with the string ``Verbosity leads to unclear, inarticulate things.''\\
+Reset the bomb and enter the newly found string, we have defused the first phase
+\begin{minted}[frame=single,framesep=10pt]{bash}
+  [edusc03-052@cheetah022 bomb52]$ ./bomb
+  Welcome to my fiendish little bomb. You have 6 phases with
+  which to blow yourself up. Have a nice day!
+  Verbosity leads to unclear, inarticulate things.
+  Phase 1 defused. How about the next one?
+\end{minted}
+
+\newpage

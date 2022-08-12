@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  define pa
+    \PYG{n+nb}{set} var \PYG{n+nv}{\PYGZdl{}i} \PYG{o}{=} \PYG{l+m}{1}
+    \PYG{k}{while} \PYG{n+nv}{\PYGZdl{}i} \PYGZlt{}\PYG{o}{=} \PYG{l+m}{6}
+      \PYG{n+nb}{printf} \PYG{l+s+s2}{\PYGZdq{}a[\PYGZpc{}d] = \PYGZpc{}x\PYGZbs{}n\PYGZdq{}}, \PYG{n+nv}{\PYGZdl{}i}, **\PYG{o}{(}int*\PYG{o}{)(}\PYG{n+nv}{\PYGZdl{}arg0} + 0x8*\PYG{o}{(}\PYG{n+nv}{\PYGZdl{}i}\PYGZhy{}1\PYG{o}{))}
+      \PYG{n+nb}{set} var \PYG{n+nv}{\PYGZdl{}i} \PYG{o}{=} \PYG{n+nv}{\PYGZdl{}i} + \PYG{l+m}{1}
+    end
+  end
+\end{Verbatim}

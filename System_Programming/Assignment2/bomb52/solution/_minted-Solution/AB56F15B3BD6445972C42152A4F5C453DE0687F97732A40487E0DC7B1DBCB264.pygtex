@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/6d \PYG{n+nv}{\PYGZdl{}rsp}
+  0x7fffffffe210: \PYG{l+m}{1}       \PYG{l+m}{2}       \PYG{l+m}{3}       \PYG{l+m}{4}
+  0x7fffffffe220: \PYG{l+m}{5}       \PYG{l+m}{6}
+\end{Verbatim}

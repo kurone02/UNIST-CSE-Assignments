@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x 0x4023e0 + \PYG{l+m}{4}*\PYG{n+nv}{\PYGZdl{}rax}
+  0x4023e4 \PYGZlt{}array.3237+4\PYGZgt{}:        \PYG{l+m}{2}
+\end{Verbatim}

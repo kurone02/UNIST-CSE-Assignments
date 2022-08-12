@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x \PYG{n+nv}{\PYGZdl{}rsp} + 0xc
+  0x7fffffffe22c: 0x00000001 \PYG{c+c1}{\PYGZsh{} our first integer}
+  \PYG{o}{(}gdb\PYG{o}{)} x 0x4023a0
+  0x4023a0:       0x0000000000400f08
+\end{Verbatim}

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/100d 0x4023e0
+  0x4023e0 \PYGZlt{}array.3237\PYGZgt{}:    \PYG{l+m}{10} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{2}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x4023e8 \PYGZlt{}array.3237+8\PYGZgt{}:  \PYG{l+m}{14} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{7}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x4023f0 \PYGZlt{}array.3237+16\PYGZgt{}: \PYG{l+m}{8}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{12} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x4023f8 \PYGZlt{}array.3237+24\PYGZgt{}: \PYG{l+m}{15} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{11} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x402400 \PYGZlt{}array.3237+32\PYGZgt{}: \PYG{l+m}{0}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{4}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x402408 \PYGZlt{}array.3237+40\PYGZgt{}: \PYG{l+m}{1}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{13} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x402410 \PYGZlt{}array.3237+48\PYGZgt{}: \PYG{l+m}{3}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{9}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x402418 \PYGZlt{}array.3237+56\PYGZgt{}: \PYG{l+m}{6}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{5}  \PYG{l+m}{0} \PYG{l+m}{0} \PYG{l+m}{0}
+  0x402420: \PYG{l+m}{83}  \PYG{l+m}{111} \PYG{l+m}{32}  \PYG{l+m}{121} \PYG{l+m}{111} \PYG{l+m}{117} \PYG{l+m}{32}  \PYG{l+m}{116}
+  0x402428: \PYG{l+m}{104} \PYG{l+m}{105} \PYG{l+m}{110} \PYG{l+m}{107} \PYG{l+m}{32}  \PYG{l+m}{121} \PYG{l+m}{111} \PYG{l+m}{117}
+  0x402430: \PYG{l+m}{32}  \PYG{l+m}{99}  \PYG{l+m}{97}  \PYG{l+m}{110} \PYG{l+m}{32}  \PYG{l+m}{115} \PYG{l+m}{116} \PYG{l+m}{111}
+  0x402438: \PYG{l+m}{112} \PYG{l+m}{32}  \PYG{l+m}{116} \PYG{l+m}{104} \PYG{l+m}{101} \PYG{l+m}{32}  \PYG{l+m}{98}  \PYG{l+m}{111}
+  0x402440: \PYG{l+m}{109} \PYG{l+m}{98}  \PYG{l+m}{32}  \PYG{l+m}{119}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/s \PYG{n+nv}{\PYGZdl{}rsi}
+  0x402330:       \PYG{l+s+s2}{\PYGZdq{}Verbosity leads to unclear, inarticulate things.\PYGZdq{}}
+  \PYG{o}{(}gdb\PYG{o}{)} x/s \PYG{n+nv}{\PYGZdl{}rdi}
+  0x6037a0 \PYGZlt{}input\PYGZus{}strings\PYGZgt{}:       \PYG{l+s+s2}{\PYGZdq{}123\PYGZdq{}}
+\end{Verbatim}

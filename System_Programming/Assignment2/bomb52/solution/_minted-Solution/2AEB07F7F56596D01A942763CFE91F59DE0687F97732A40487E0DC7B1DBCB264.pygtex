@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{[}edusc03\PYGZhy{}052@cheetah022 bomb52\PYG{o}{]}\PYGZdl{} ./bomb  input.txt
+  Welcome to my fiendish little bomb. You have \PYG{l+m}{6} phases with
+  which to blow yourself up. Have a nice day!
+  Phase \PYG{l+m}{1} defused. How about the next one?
+  That\PYG{err}{\PYGZsq{}}s number \PYG{l+m}{2}.  Keep going!
+  \PYG{l+m}{1} \PYG{l+m}{2} \PYG{l+m}{3} \PYG{l+m}{4} \PYG{l+m}{5} \PYG{l+m}{6}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{o}{(}gdb\PYG{o}{)} x/3 \PYG{n+nv}{\PYGZdl{}rdx}
+  0x6032f0 \PYGZlt{}node1\PYGZgt{}: 0x00000181 0x00000001 0x00603300
+\end{Verbatim}
