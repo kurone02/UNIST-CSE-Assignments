@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/kurone/unist/cse241/3/Gail'
+g++ -Wall -g -std=c++17 -pedantic -fsanitize=address   -c -o 1.o 1.cpp
+g++ -o gail 1.o -fsanitize=address
+make: Leaving directory '/home/kurone/unist/cse241/3/Gail'
+ 
