@@ -1,7 +1,8 @@
 /* 
  * CS:APP Data Lab 
  * 
- * <Please put your name and userid here>
+ * Student name: Nguyen Minh Duc
+ * Student ID:   20202026
  * 
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -12,7 +13,6 @@
  * it's not good practice to ignore compiler warnings, but in this
  * case it's OK.  
  */
-
 #if 0
 /*
  * Instructions to Students:
@@ -209,7 +209,17 @@ NOTES:
  *   Rating: 2
  */
 unsigned floatAbsVal(unsigned uf) {
-  return 2;
+  /**
+   * 
+   * NaN = 01111111100000000000000000000001
+   * 2147483647 = 01111111111111111111111111111111
+   * uf & 2147483647 -> change the sign bit to 0
+   * if uf is NaN, returns uf
+  */
+  unsigned NaN = 2139095041;
+  unsigned res = uf & 2147483647;
+  if(res >= NaN) return uf;
+  return res;
 }
 /* 
  * floatNegate - Return bit-level equivalent of expression -f for
@@ -223,7 +233,22 @@ unsigned floatAbsVal(unsigned uf) {
  *   Rating: 2
  */
 unsigned floatNegate(unsigned uf) {
- return 2;
+  /**
+   * NaN = 01111111100000000000000000000001
+   * -NaN = 11111111100000000000000000000001
+   * 2147483648 = 10000000000000000000000000000000
+   * uf ^ 2147483648 -> flip the sign bit to 0
+   * if uf is NaN, returns uf
+  */
+  unsigned NaN = 2139095041;
+  unsigned minus_NaN = 0xFF800001;
+  unsigned res = uf ^ 0x80000000;
+  if(res & (1 << 31)){
+    if(res >= minus_NaN) return uf;
+    return res;
+  }
+  if(res >= NaN) return uf;
+  return res;
 }
 /* 
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
@@ -239,7 +264,19 @@ unsigned floatNegate(unsigned uf) {
  *   Rating: 4
  */
 unsigned floatPower2(int x) {
-    return 2;
+  /**
+   *  (s)(exp)(frac)
+   *   1   8    23
+   * if exp has more than 8 bits => INF
+   * For 2^8 < exp < 0 => Normalized: exp = x + bias, frac = 0
+   * For exp == 0 => Denormalized: exp = 0, frac = 2^(23 + x + bias - 1)
+  */
+  int INF = 2139095040;
+  int bias = 127;
+  if(x > 128) return INF;
+  if(x > -127) return (x + bias) << 23;
+  if(x > -150) return 1 << (22 + x + bias);
+  return 0;
 }
 //#include "floatScale2.c"
 //#include "isLess.c"
@@ -252,7 +289,18 @@ unsigned floatPower2(int x) {
  *   Rating: 4
  */
 int isPower2(int x) {
-  return 2;
+  /**
+   * (x & (x - 1)) = 0 if (x = 2^k) else 1
+   * is_zero = 11...1 if x == 0 else 00...0
+   * if x == 0 return 0
+   * else 
+   *    if x is negative return 0
+   *    else 
+   */
+  int is_zero = (!x << 31) >> 31;
+  int is_neg = x >> 31;
+  int res_if_not_zero = (is_neg & 0) | (~is_neg & !(x & (x + ~0)));
+  return (is_zero & 0) | (~is_zero & res_if_not_zero);
 }
 /* 
  * logicalNeg - implement the ! operator, using all of 
@@ -263,7 +311,18 @@ int isPower2(int x) {
  *   Rating: 4 
  */
 int logicalNeg(int x) {
-  return 2;
+  /**
+   * sign_x = 111...1 if x < 0 else 000....0
+   * sign_neg_x = 000...0 if x < 0 else 111...1
+   * Note that:
+   *    sign_0 = 000...0
+   *    sign_neg_0 = 000...0
+   * sign_neg_x | sign_x == 0 <-> x == 0
+   */
+  int sign_neg_x = (~x + 1) >> 31;
+  int sign_x = x >> 31;
+  int is_not_zero = sign_neg_x | sign_x;
+  return 1 + is_not_zero;
 }
 /* 
  * logicalShift - shift x to the right by n, using a logical shift
@@ -274,7 +333,16 @@ int logicalNeg(int x) {
  *   Rating: 3 
  */
 int logicalShift(int x, int n) {
-  return 2;
+  /**
+   * padding = 000...011...1
+   *            n 0's
+   * x >> n = right shift by n
+   * padding & (x >> n) = make the first n bits become 0
+   */
+  int padding = (1 << 31) >> n;
+  padding <<= 1;
+  padding = ~padding;
+  return padding & (x >> n);
 }
 /* 
  * replaceByte(x,n,c) - Replace byte n in x with c
@@ -286,20 +354,34 @@ int logicalShift(int x, int n) {
  *   Rating: 3
  */
 int replaceByte(int x, int n, int c) {
-  return 2;
+  /**
+   * steps = 8 * n
+   *       mask          = 000...0cccccccc0...0
+   * x & ~(255 << steps) = xxx...x00000000x...x
+   *      return         = xxx...xccccccccx...x
+   */
+  int steps = n << 3;
+  int mask = (c << steps);
+  return (x & ~(255 << steps)) | mask;
 }
 /* 
  * rotateRight - Rotate x to the right by n
  *   Can assume that 0 <= n <= 31
  *   Examples: rotateRight(0x87654321,4) = 0x18765432
- *    10000111011001010100001100100001
- *    00011000011101100101010000110010
  *   Legal ops: ~ & ^ | + << >> !
  *   Max ops: 25
  *   Rating: 3 
  */
 int rotateRight(int x, int n) {
-  return 2;
+  /**
+   * least significant bits = shift x logically right by n
+   * most significant bits = lowest n bits of x
+   */
+  int padding = (1 << 31) >> n;
+  int lsb = ~(padding << 1) & (x >> n);
+  int left_shift_amount = (33 + ~n) & ((1 << 5) + ~0);
+  int msb = x << left_shift_amount;
+  return lsb | msb;
 }
 /*
  * satMul2 - multiplies by 2, saturating to Tmin or Tmax if overflow
@@ -311,7 +393,26 @@ int rotateRight(int x, int n) {
  *   Rating: 3
  */
 int satMul2(int x) {
-  return 2;
+  /**
+   * Implementation of [if(x) y else z] operator:
+   *    (~x & y) | (x & z)
+   * Check overflow(x):
+   *    the sign bit is changed 
+   *    <-> sign(2x) != sign(x)
+   *    <-> sign(2x) ^ sign(x) == 1
+   * if overflow:
+   *    if over  -> tmax
+   *    if under -> tmin
+   * else:
+   *    -> x * 2
+   */
+  int res = x << 1;
+  int sign_of_res = res >> 31;
+  int tmin = 1 << 31;
+  int tmax = tmin + ~0;
+  int is_overflow = (res ^ x) >> 31;
+  int overflow_result = (sign_of_res & tmax) | (~sign_of_res & tmin);
+  return (~is_overflow & res) | (is_overflow & overflow_result);
 }
 /* 
  * sign - return 1 if positive, 0 if zero, and -1 if negative
@@ -322,7 +423,17 @@ int satMul2(int x) {
  *  Rating: 2
  */
 int sign(int x) {
-    return 2;
+  /**
+   * check_zero = 1 if x == 0 else 0
+   * (x >> 31) << 1 = -2 if x < 0 else 0
+   * 1 + check_zero + ((x >> 31) << 1)
+   *    -> 1  if x > 0
+   *    -> 0  if x == 0
+   *    -> -1 if x < 0
+   */
+  int check_zero = !x;
+  check_zero = ~check_zero + 1;
+  return 1 + check_zero + ((x >> 31) << 1);
 }
 //#include "subtractionOK.c"
 /* 
@@ -332,7 +443,14 @@ int sign(int x) {
  *   Rating: 1
  */
 int thirdBits(void) {
-  return 2;
+  /**
+   * x = 73 = 001001001
+   * x | (x << 9) = 001001001|001001001
+   * y | (y << 18) = 001001001|001001001|001001001|001001001
+   */
+  int x = 73;
+  int y = x | (x << 9);
+  return y | (y << 18);
 }
 /* 
  * upperBits - pads n upper bits with 1's
@@ -343,5 +461,15 @@ int thirdBits(void) {
  *  Rating: 1
  */
 int upperBits(int n) {
-  return 2;
+  /**
+   * Just need to shift 100...0 right by n - 1
+   * n_is_0 = (check n == 0)
+   * mask = 111...1 if n != 0
+   *      = 000...0 if n == 0
+   * the ammount of left shift = (-n) mod 2^32 
+   */
+  int n_is_0 = !n;
+  int mask = n_is_0 + ~0;
+  int left_shift_amount = (33 + ~n) & mask;
+  return mask << left_shift_amount;
 }
