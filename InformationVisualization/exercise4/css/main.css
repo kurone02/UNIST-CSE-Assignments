@@ -1,0 +1,28 @@
+.scrollable-list {
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.bubbles {
+  stroke-width: 2px;
+  stroke: white;
+}
+.bubbles:hover {
+  stroke: black;
+}
+
+.tooltip {
+  display: inline;
+  position: fixed;
+}
+
+#year_picker {
+  width: 2000px;
+}
