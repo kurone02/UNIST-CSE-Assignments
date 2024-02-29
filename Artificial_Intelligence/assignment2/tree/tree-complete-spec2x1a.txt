@@ -1,0 +1,10 @@
+-- s0 parent=nil children={ s1 s2 } payoff=0
+..
+-- s1 parent=s0 children={ s3 } payoff=0
+O.
+-- s2 parent=s0 children={ s4 } payoff=0
+.O
+-- s3 parent=s1 DRAW payoff=0
+OX
+-- s4 parent=s2 DRAW payoff=0
+XO

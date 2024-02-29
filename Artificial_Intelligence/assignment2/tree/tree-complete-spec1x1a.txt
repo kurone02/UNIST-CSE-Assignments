@@ -1,0 +1,4 @@
+- s0 parent=nil children={ s1 } payoff=1
+.
+- s1 parent=s0 WIN payoff=1
+O

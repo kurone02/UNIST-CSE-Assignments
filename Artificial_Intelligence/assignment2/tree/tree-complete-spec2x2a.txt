@@ -1,0 +1,87 @@
+-- s0 parent=nil children={ s1 s2 s3 s4 } payoff=1
+..
+..
+-- s1 parent=s0 children={ s5 s6 s7 } payoff=1
+O.
+..
+-- s2 parent=s0 children={ s8 s9 s10 } payoff=1
+.O
+..
+-- s3 parent=s0 children={ s11 s12 s13 } payoff=1
+..
+O.
+-- s4 parent=s0 children={ s14 s15 s16 } payoff=1
+..
+.O
+-- s5 parent=s1 children={ s17 s18 } payoff=1
+OX
+..
+-- s6 parent=s1 children={ s19 s20 } payoff=1
+O.
+X.
+-- s7 parent=s1 children={ s21 s22 } payoff=1
+O.
+.X
+-- s8 parent=s2 children={ s23 s24 } payoff=1
+XO
+..
+-- s9 parent=s2 children={ s19 s25 } payoff=1
+.O
+X.
+-- s10 parent=s2 children={ s21 s26 } payoff=1
+.O
+.X
+-- s11 parent=s3 children={ s23 s27 } payoff=1
+X.
+O.
+-- s12 parent=s3 children={ s17 s28 } payoff=1
+.X
+O.
+-- s13 parent=s3 children={ s22 s26 } payoff=1
+..
+OX
+-- s14 parent=s4 children={ s24 s27 } payoff=1
+X.
+.O
+-- s15 parent=s4 children={ s18 s28 } payoff=1
+.X
+.O
+-- s16 parent=s4 children={ s20 s25 } payoff=1
+..
+XO
+-- s17 parent=s5 WIN payoff=1
+OX
+O.
+-- s18 parent=s5 WIN payoff=1
+OX
+.O
+-- s19 parent=s6 WIN payoff=1
+OO
+X.
+-- s20 parent=s6 WIN payoff=1
+O.
+XO
+-- s21 parent=s7 WIN payoff=1
+OO
+.X
+-- s22 parent=s7 WIN payoff=1
+O.
+OX
+-- s23 parent=s8 WIN payoff=1
+XO
+O.
+-- s24 parent=s8 WIN payoff=1
+XO
+.O
+-- s25 parent=s9 WIN payoff=1
+.O
+XO
+-- s26 parent=s10 WIN payoff=1
+.O
+OX
+-- s27 parent=s11 WIN payoff=1
+X.
+OO
+-- s28 parent=s12 WIN payoff=1
+.X
+OO

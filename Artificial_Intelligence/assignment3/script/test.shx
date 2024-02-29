@@ -1,0 +1,58 @@
+#!/bin/bash
+
+usage() {
+  echo "Usage: $0 [-m] NUM_TESTS" 1>&2
+  echo "where: NUM_TESTS is the number of tests" 1>&2
+  echo "       -m specifies that you only want to test the maximum size of the problem" 1>&2
+  exit 1
+}
+
+max_size=no
+
+while getopts "mv" opt; do
+    case "${opt}" in
+        m) max_size=yes;;
+        *) usage ;;
+    esac
+done
+shift $((OPTIND-1))
+
+if (( $# < 1 )); then
+  usage
+fi
+
+test_start=`date +%s`
+for (( i=1; i<=$1; i++ ))
+do
+    echo "------------------TEST ${i}-------------------"
+    if [[ $max_size == "yes" ]]; then
+        echo "Generating problem..."
+        ./make-problem.py 28 24 > problem.dat
+    else
+        m=$((1 + $RANDOM % 28))
+        n_up=$((52 - $m))
+        n=$((1 + $RANDOM % $n_up))
+        echo "Generating problem for m=${m}, n=${n}..."
+        ./make-problem.py ${m} ${n} > problem.dat
+    fi
+
+    echo "Running..."
+    start=`date +%s`
+    ./solve.sh problem.dat > NUL
+    exitcode=$?
+    end=`date +%s`
+
+    runtime=$(($end-$start))
+    echo "Done after ${runtime}s"
+
+    if (( $exitcode != 0 )); then
+        echo "Wrong answer!"
+        exit 1
+    fi
+    echo "Accepted!"
+done
+test_end=`date +%s`
+
+echo "------------------SUCCESS-------------------"
+test_time=$(($test_end-$test_start))
+echo "$1 tests finished in ${test_time}s"

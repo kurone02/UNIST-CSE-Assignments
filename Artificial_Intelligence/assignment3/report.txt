@@ -1,0 +1,91 @@
+
+THE REPORT OF THE ASSIGNMENT 3
+Student Name: Nguyen Minh Duc
+Student ID: 20202026
+
+1. PREDICATES IN DOMAIN
+
+    (in-deck ?x - CARD) is to check if the card x is in the deck
+    (in-waste ?x - CARD) is to check if the card x is in the waste
+    (in-pyramid ?x - CARD) is to check if the card x is in the pyramid
+    (available ?x - CARD) is to check if the card x is available for matching
+
+    (top-deck ?x - CARD) is to check if the card x is on the top of the deck
+    (top-waste ?x - CARD) is to check if the card x is on the top of the waste
+    (not-covered ?x - CARD) is to check if the card x is not covered by another card
+
+    (covers ?x - CARD ?y - CARD) is true if x covers y, false otherwise
+    (value ?x - CARD ?y - INT) is true if the card x has value of y, false otherwise
+    (sum-int-13 ?x - INT ?y - INT) is true if x + y = 13, false otherwise
+
+    (empty-deck) is to check if the deck is empty
+    (empty-waste) is to check if the waste is empty
+    (empty-pyramid) is to check if the pyramid is empty
+
+    (in-cycle2) is True if the deck has been cycled twice
+    (in-cycle3) is True if the deck has been cycled thrice
+
+
+
+2. ACTIONS IN DOMAIN
+
+    2.1. MATCH-KING(x)
+        To match the king card x
+        Precondition:
+            x must be the king 
+            x is available for matching
+        Effect:
+            x does not covers any card
+            Remove the card from everything
+    
+    2.2. MATCH(x, y, x_val, y_val)
+        The action to match card x and y, given its value x_val and y_val
+        Precondition:
+            x has the value x_val
+            y has the value y_val
+            x_val + y_val = 13
+            x is available for matching
+            y is available for matching
+        Effect:
+            x and y does not cover any card
+            Remove x from everything
+            Remove y from everything
+    
+    2.3. DECK-CYCLE()
+        The action to cycle the deck
+        Precondition:
+            The deck has not cycled thrice
+            The deck is not empty
+            The waste is not empty
+        Effect:
+            Change the number of cycles
+            Reverse the cover link between every pair (x covers y) to (y covers x) in the waste, i.e., reverse the waste
+            Move every card in the waste to the deck
+
+    2.4. DRAW(x)
+        The action ot draw a card
+        Precondition:
+            x must be on top of the deck
+        Effect:
+            x uncovers every card in the deck
+            x covers the top card in the deck
+            Move x into the waste
+
+
+
+3. INITAL STATE IN PROBLEM
+
+    in-pyramid of every card in the pyramid to true
+    in-deck of every card in the deck to true
+    Assign the value of every card
+    Declare every possible pairs that x + y = 13
+    Declare the cover relationship between two cards in the pyramid
+            The card at (i, j) covers (i - 1, j - 1) and (i - 1, j)
+    Declare the cover relationship between two cards in the deck
+            The card on top covers the card below it
+    
+
+
+4. GOAL CONDITION in PROBLEM
+
+    Just simply the pyramid is empty, i.e., there is no card that IN-PYRAMID(x) is true

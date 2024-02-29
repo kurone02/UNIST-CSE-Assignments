@@ -1,0 +1,531 @@
+--- s0 parent=nil children={ s1 s2 s3 s4 s5 s6 } payoff=1
+...
+...
+--- s1 parent=s0 children={ s7 s8 s9 s10 s11 } payoff=1
+O..
+...
+--- s2 parent=s0 children={ s12 s13 s14 s15 s16 } payoff=1
+.O.
+...
+--- s3 parent=s0 children={ s17 s18 s19 s20 s21 } payoff=1
+..O
+...
+--- s4 parent=s0 children={ s22 s23 s24 s25 s26 } payoff=1
+...
+O..
+--- s5 parent=s0 children={ s27 s28 s29 s30 s31 } payoff=1
+...
+.O.
+--- s6 parent=s0 children={ s32 s33 s34 s35 s36 } payoff=1
+...
+..O
+--- s7 parent=s1 children={ s37 s38 s39 s40 } payoff=1
+OX.
+...
+--- s8 parent=s1 children={ s41 s42 s43 s44 } payoff=1
+O.X
+...
+--- s9 parent=s1 children={ s45 s46 s47 s48 } payoff=1
+O..
+X..
+--- s10 parent=s1 children={ s49 s50 s51 s52 } payoff=1
+O..
+.X.
+--- s11 parent=s1 children={ s53 s54 s55 s56 } payoff=1
+O..
+..X
+--- s12 parent=s2 children={ s57 s58 s59 s60 } payoff=1
+XO.
+...
+--- s13 parent=s2 children={ s41 s61 s62 s63 } payoff=1
+.OX
+...
+--- s14 parent=s2 children={ s45 s64 s65 s66 } payoff=1
+.O.
+X..
+--- s15 parent=s2 children={ s49 s67 s68 s69 } payoff=1
+.O.
+.X.
+--- s16 parent=s2 children={ s53 s70 s71 s72 } payoff=1
+.O.
+..X
+--- s17 parent=s3 children={ s57 s73 s74 s75 } payoff=1
+X.O
+...
+--- s18 parent=s3 children={ s37 s76 s77 s78 } payoff=1
+.XO
+...
+--- s19 parent=s3 children={ s46 s64 s79 s80 } payoff=1
+..O
+X..
+--- s20 parent=s3 children={ s50 s67 s81 s82 } payoff=1
+..O
+.X.
+--- s21 parent=s3 children={ s54 s70 s83 s84 } payoff=1
+..O
+..X
+--- s22 parent=s4 children={ s58 s73 s85 s86 } payoff=1
+X..
+O..
+--- s23 parent=s4 children={ s38 s76 s87 s88 } payoff=1
+.X.
+O..
+--- s24 parent=s4 children={ s42 s61 s89 s90 } payoff=1
+..X
+O..
+--- s25 parent=s4 children={ s51 s68 s81 s91 } payoff=1
+...
+OX.
+--- s26 parent=s4 children={ s55 s71 s83 s92 } payoff=1
+...
+O.X
+--- s27 parent=s5 children={ s59 s74 s85 s93 } payoff=1
+X..
+.O.
+--- s28 parent=s5 children={ s39 s77 s87 s94 } payoff=1
+.X.
+.O.
+--- s29 parent=s5 children={ s43 s62 s89 s95 } payoff=1
+..X
+.O.
+--- s30 parent=s5 children={ s47 s65 s79 s96 } payoff=1
+...
+XO.
+--- s31 parent=s5 children={ s56 s72 s84 s92 } payoff=1
+...
+.OX
+--- s32 parent=s6 children={ s60 s75 s86 s93 } payoff=1
+X..
+..O
+--- s33 parent=s6 children={ s40 s78 s88 s94 } payoff=1
+.X.
+..O
+--- s34 parent=s6 children={ s44 s63 s90 s95 } payoff=1
+..X
+..O
+--- s35 parent=s6 children={ s48 s66 s80 s96 } payoff=1
+...
+X.O
+--- s36 parent=s6 children={ s52 s69 s82 s91 } payoff=1
+...
+.XO
+--- s37 parent=s7 children={ s97 s98 s99 } payoff=-1
+OXO
+...
+--- s38 parent=s7 WIN payoff=1
+OX.
+O..
+--- s39 parent=s7 WIN payoff=1
+OX.
+.O.
+--- s40 parent=s7 children={ s100 s101 s102 } payoff=-1
+OX.
+..O
+--- s41 parent=s8 children={ s103 s104 s105 } payoff=-1
+OOX
+...
+--- s42 parent=s8 WIN payoff=1
+O.X
+O..
+--- s43 parent=s8 WIN payoff=1
+O.X
+.O.
+--- s44 parent=s8 children={ s100 s106 s107 } payoff=-1
+O.X
+..O
+--- s45 parent=s9 children={ s103 s108 s109 } payoff=1
+OO.
+X..
+--- s46 parent=s9 children={ s97 s110 s111 } payoff=-1
+O.O
+X..
+--- s47 parent=s9 WIN payoff=1
+O..
+XO.
+--- s48 parent=s9 children={ s101 s106 s112 } payoff=-1
+O..
+X.O
+--- s49 parent=s10 children={ s104 s108 s113 } payoff=-1
+OO.
+.X.
+--- s50 parent=s10 children={ s98 s110 s114 } payoff=-1
+O.O
+.X.
+--- s51 parent=s10 WIN payoff=1
+O..
+OX.
+--- s52 parent=s10 children={ s102 s107 s112 } payoff=-1
+O..
+.XO
+--- s53 parent=s11 children={ s105 s109 s113 } payoff=-1
+OO.
+..X
+--- s54 parent=s11 children={ s99 s111 s114 } payoff=-1
+O.O
+..X
+--- s55 parent=s11 WIN payoff=1
+O..
+O.X
+--- s56 parent=s11 WIN payoff=1
+O..
+.OX
+--- s57 parent=s12 children={ s115 s116 s117 } payoff=-1
+XOO
+...
+--- s58 parent=s12 WIN payoff=1
+XO.
+O..
+--- s59 parent=s12 WIN payoff=1
+XO.
+.O.
+--- s60 parent=s12 WIN payoff=1
+XO.
+..O
+--- s61 parent=s13 WIN payoff=1
+.OX
+O..
+--- s62 parent=s13 WIN payoff=1
+.OX
+.O.
+--- s63 parent=s13 WIN payoff=1
+.OX
+..O
+--- s64 parent=s14 children={ s115 s118 s119 } payoff=-1
+.OO
+X..
+--- s65 parent=s14 WIN payoff=1
+.O.
+XO.
+--- s66 parent=s14 WIN payoff=1
+.O.
+X.O
+--- s67 parent=s15 children={ s116 s118 s120 } payoff=-1
+.OO
+.X.
+--- s68 parent=s15 WIN payoff=1
+.O.
+OX.
+--- s69 parent=s15 WIN payoff=1
+.O.
+.XO
+--- s70 parent=s16 children={ s117 s119 s120 } payoff=1
+.OO
+..X
+--- s71 parent=s16 WIN payoff=1
+.O.
+O.X
+--- s72 parent=s16 WIN payoff=1
+.O.
+.OX
+--- s73 parent=s17 children={ s121 s122 s123 } payoff=-1
+X.O
+O..
+--- s74 parent=s17 WIN payoff=1
+X.O
+.O.
+--- s75 parent=s17 WIN payoff=1
+X.O
+..O
+--- s76 parent=s18 children={ s121 s124 s125 } payoff=-1
+.XO
+O..
+--- s77 parent=s18 WIN payoff=1
+.XO
+.O.
+--- s78 parent=s18 WIN payoff=1
+.XO
+..O
+--- s79 parent=s19 WIN payoff=1
+..O
+XO.
+--- s80 parent=s19 WIN payoff=1
+..O
+X.O
+--- s81 parent=s20 children={ s122 s124 s126 } payoff=-1
+..O
+OX.
+--- s82 parent=s20 WIN payoff=1
+..O
+.XO
+--- s83 parent=s21 children={ s123 s125 s126 } payoff=-1
+..O
+O.X
+--- s84 parent=s21 WIN payoff=1
+..O
+.OX
+--- s85 parent=s22 children={ s127 s128 s129 } payoff=1
+X..
+OO.
+--- s86 parent=s22 children={ s130 s131 s132 } payoff=-1
+X..
+O.O
+--- s87 parent=s23 children={ s127 s133 s134 } payoff=-1
+.X.
+OO.
+--- s88 parent=s23 children={ s130 s135 s136 } payoff=-1
+.X.
+O.O
+--- s89 parent=s24 children={ s128 s133 s137 } payoff=-1
+..X
+OO.
+--- s90 parent=s24 children={ s131 s135 s138 } payoff=-1
+..X
+O.O
+--- s91 parent=s25 children={ s132 s136 s138 } payoff=-1
+...
+OXO
+--- s92 parent=s26 children={ s129 s134 s137 } payoff=-1
+...
+OOX
+--- s93 parent=s27 children={ s139 s140 s141 } payoff=-1
+X..
+.OO
+--- s94 parent=s28 children={ s139 s142 s143 } payoff=-1
+.X.
+.OO
+--- s95 parent=s29 children={ s140 s142 s144 } payoff=1
+..X
+.OO
+--- s96 parent=s30 children={ s141 s143 s144 } payoff=-1
+...
+XOO
+--- s97 parent=s37 LOSE payoff=-1
+OXO
+X..
+--- s98 parent=s37 LOSE payoff=-1
+OXO
+.X.
+--- s99 parent=s37 LOSE payoff=-1
+OXO
+..X
+--- s100 parent=s40 children={ s145 s146 } payoff=1
+OXX
+..O
+--- s101 parent=s40 LOSE payoff=-1
+OX.
+X.O
+--- s102 parent=s40 LOSE payoff=-1
+OX.
+.XO
+--- s103 parent=s41 children={ s147 s148 } payoff=1
+OOX
+X..
+--- s104 parent=s41 LOSE payoff=-1
+OOX
+.X.
+--- s105 parent=s41 LOSE payoff=-1
+OOX
+..X
+--- s106 parent=s44 children={ s148 s149 } payoff=1
+O.X
+X.O
+--- s107 parent=s44 LOSE payoff=-1
+O.X
+.XO
+--- s108 parent=s45 children={ s150 s151 } payoff=1
+OO.
+XX.
+--- s109 parent=s45 children={ s152 s153 } payoff=1
+OO.
+X.X
+--- s110 parent=s46 children={ s150 s154 } payoff=1
+O.O
+XX.
+--- s111 parent=s46 children={ s152 s155 } payoff=1
+O.O
+X.X
+--- s112 parent=s48 children={ s151 s154 } payoff=1
+O..
+XXO
+--- s113 parent=s49 children={ s156 s157 } payoff=1
+OO.
+.XX
+--- s114 parent=s50 children={ s156 s158 } payoff=1
+O.O
+.XX
+--- s115 parent=s57 LOSE payoff=-1
+XOO
+X..
+--- s116 parent=s57 LOSE payoff=-1
+XOO
+.X.
+--- s117 parent=s57 children={ s159 s160 } payoff=1
+XOO
+..X
+--- s118 parent=s64 children={ s150 s161 } payoff=1
+.OO
+XX.
+--- s119 parent=s64 children={ s152 s162 } payoff=1
+.OO
+X.X
+--- s120 parent=s67 children={ s156 s163 } payoff=1
+.OO
+.XX
+--- s121 parent=s73 children={ s164 s165 } payoff=1
+XXO
+O..
+--- s122 parent=s73 LOSE payoff=-1
+X.O
+OX.
+--- s123 parent=s73 children={ s159 s166 } payoff=1
+X.O
+O.X
+--- s124 parent=s76 LOSE payoff=-1
+.XO
+OX.
+--- s125 parent=s76 LOSE payoff=-1
+.XO
+O.X
+--- s126 parent=s81 children={ s158 s163 } payoff=1
+..O
+OXX
+--- s127 parent=s85 children={ s164 s167 } payoff=1
+XX.
+OO.
+--- s128 parent=s85 children={ s168 s169 } payoff=1
+X.X
+OO.
+--- s129 parent=s85 children={ s170 s166 } payoff=1
+X..
+OOX
+--- s130 parent=s86 children={ s165 s167 } payoff=1
+XX.
+O.O
+--- s131 parent=s86 children={ s171 s169 } payoff=1
+X.X
+O.O
+--- s132 parent=s86 LOSE payoff=-1
+X..
+OXO
+--- s133 parent=s87 children={ s172 s173 } payoff=1
+.XX
+OO.
+--- s134 parent=s87 LOSE payoff=-1
+.X.
+OOX
+--- s135 parent=s88 children={ s145 s173 } payoff=1
+.XX
+O.O
+--- s136 parent=s88 LOSE payoff=-1
+.X.
+OXO
+--- s137 parent=s89 LOSE payoff=-1
+..X
+OOX
+--- s138 parent=s90 LOSE payoff=-1
+..X
+OXO
+--- s139 parent=s93 children={ s174 s167 } payoff=1
+XX.
+.OO
+--- s140 parent=s93 children={ s175 s169 } payoff=1
+X.X
+.OO
+--- s141 parent=s93 LOSE payoff=-1
+X..
+XOO
+--- s142 parent=s94 children={ s146 s173 } payoff=1
+.XX
+.OO
+--- s143 parent=s94 LOSE payoff=-1
+.X.
+XOO
+--- s144 parent=s95 children={ s149 s176 } payoff=1
+..X
+XOO
+--- s145 parent=s100 WIN payoff=1
+OXX
+O.O
+--- s146 parent=s100 WIN payoff=1
+OXX
+.OO
+--- s147 parent=s103 WIN payoff=1
+OOX
+XO.
+--- s148 parent=s103 WIN payoff=1
+OOX
+X.O
+--- s149 parent=s106 WIN payoff=1
+O.X
+XOO
+--- s150 parent=s108 WIN payoff=1
+OOO
+XX.
+--- s151 parent=s108 WIN payoff=1
+OO.
+XXO
+--- s152 parent=s109 WIN payoff=1
+OOO
+X.X
+--- s153 parent=s109 WIN payoff=1
+OO.
+XOX
+--- s154 parent=s110 WIN payoff=1
+O.O
+XXO
+--- s155 parent=s111 WIN payoff=1
+O.O
+XOX
+--- s156 parent=s113 WIN payoff=1
+OOO
+.XX
+--- s157 parent=s113 WIN payoff=1
+OO.
+OXX
+--- s158 parent=s114 WIN payoff=1
+O.O
+OXX
+--- s159 parent=s117 WIN payoff=1
+XOO
+O.X
+--- s160 parent=s117 WIN payoff=1
+XOO
+.OX
+--- s161 parent=s118 WIN payoff=1
+.OO
+XXO
+--- s162 parent=s119 WIN payoff=1
+.OO
+XOX
+--- s163 parent=s120 WIN payoff=1
+.OO
+OXX
+--- s164 parent=s121 WIN payoff=1
+XXO
+OO.
+--- s165 parent=s121 WIN payoff=1
+XXO
+O.O
+--- s166 parent=s123 WIN payoff=1
+X.O
+OOX
+--- s167 parent=s127 WIN payoff=1
+XX.
+OOO
+--- s168 parent=s128 WIN payoff=1
+XOX
+OO.
+--- s169 parent=s128 WIN payoff=1
+X.X
+OOO
+--- s170 parent=s129 WIN payoff=1
+XO.
+OOX
+--- s171 parent=s131 WIN payoff=1
+XOX
+O.O
+--- s172 parent=s133 WIN payoff=1
+OXX
+OO.
+--- s173 parent=s133 WIN payoff=1
+.XX
+OOO
+--- s174 parent=s139 WIN payoff=1
+XXO
+.OO
+--- s175 parent=s140 WIN payoff=1
+XOX
+.OO
+--- s176 parent=s144 WIN payoff=1
+.OX
+XOO

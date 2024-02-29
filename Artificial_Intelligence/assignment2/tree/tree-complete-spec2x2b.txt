@@ -1,0 +1,39 @@
+-- s0 parent=nil children={ s1 s2 s3 } payoff=1
+..
+.#
+-- s1 parent=s0 children={ s4 s5 } payoff=1
+O.
+.#
+-- s2 parent=s0 children={ s6 s7 } payoff=0
+.O
+.#
+-- s3 parent=s0 children={ s8 s9 } payoff=0
+..
+O#
+-- s4 parent=s1 children={ s10 } payoff=1
+OX
+.#
+-- s5 parent=s1 children={ s11 } payoff=1
+O.
+X#
+-- s6 parent=s2 children={ s12 } payoff=0
+XO
+.#
+-- s7 parent=s2 children={ s11 } payoff=1
+.O
+X#
+-- s8 parent=s3 children={ s12 } payoff=0
+X.
+O#
+-- s9 parent=s3 children={ s10 } payoff=1
+.X
+O#
+-- s10 parent=s4 WIN payoff=1
+OX
+O#
+-- s11 parent=s5 WIN payoff=1
+OO
+X#
+-- s12 parent=s6 DRAW payoff=0
+XO
+O#
