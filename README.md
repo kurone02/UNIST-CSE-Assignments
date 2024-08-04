@@ -11,6 +11,7 @@ My CS and IE assignments at UNIST
 1. Computer Architecture [Computer_Architecture](/Computer_Architecture)
 1. Data Structures [Data_structures](/Data_structures)
 1. Principles of Programming Languages [Principle_of_programming_languages](/Principle_of_programming_languages/)
+1. Number Theory [Elementary_Number_Theory](/Elementary_Number_Theory/)
 ### Forth semester
 1. Advanced Programming [Advanced_Programming](/Advanced_Programming/)
 1. Introduction to Algorithm [Intro_To_Algorithm](/Intro_To_Algorithm/)
