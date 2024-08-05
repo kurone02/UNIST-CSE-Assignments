@@ -1,0 +1,70 @@
+2024-06-07 17:57:05.458947 Buy
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:05:54.248702 Buy
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:09:17.820385 Buy
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:10:50.797870 Buy
+2024-06-07 18:12:32.806513 Buy
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:13:33.278742 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:14:33.752345 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:15:34.212243 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:16:34.668817 Sell
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:17:35.227512 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:18:35.662149 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:19:36.124534 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:20:36.602367 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:21:37.085134 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:22:37.543003 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:23:38.030970 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:24:38.505792 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:25:38.973106 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:26:39.405881 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 18:27:39.875277 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 22:00:52.019408 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 22:01:52.701385 No position
+Garthering data for 1 seconds
+==============================
+2024-06-07 22:02:53.333284 Buy
+Garthering data for 1 seconds
+==============================
+2024-06-07 22:03:53.944199 Sell
+Garthering data for 1 seconds
+==============================

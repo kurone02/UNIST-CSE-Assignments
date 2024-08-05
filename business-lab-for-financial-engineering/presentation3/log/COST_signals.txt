@@ -1,0 +1,978 @@
+2024-05-31 00:03:38.779722 Buy
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:06:39.356847 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:09:39.805295 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:12:40.219853 Sell
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:15:40.649964 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:18:41.067715 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:21:41.504291 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:24:41.944927 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:27:42.359405 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:30:42.818904 Buy
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:33:43.280255 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:36:43.691841 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:39:44.121261 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:42:44.564582 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:45:45.001880 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:48:45.428623 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:51:45.846442 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:54:46.282124 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 00:57:46.718164 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:00:47.139189 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:03:47.575425 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:06:47.999184 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:09:48.474187 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:12:48.901005 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:15:49.321256 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:18:49.758830 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:21:50.195049 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:24:50.632443 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:27:51.065076 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:30:51.509350 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:33:51.943614 Sell
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:36:52.379234 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:39:52.804205 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:42:53.216647 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:45:53.649252 Buy
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:48:54.077935 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:51:54.515692 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:54:54.934493 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 01:57:55.381323 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:00:55.812851 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:03:56.300446 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:06:56.790241 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:09:57.309007 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:12:57.749452 Buy
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:15:58.171339 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:18:58.598380 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:21:59.036576 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:24:59.474281 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:27:59.908074 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:31:00.325175 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:34:00.806916 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:37:01.230308 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:40:01.739411 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:43:02.156424 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:46:02.606315 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:49:03.026783 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:52:03.469359 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:55:03.912100 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 02:58:04.363672 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:01:04.805423 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:04:05.232437 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:07:05.659101 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:10:06.091506 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:13:06.548609 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:16:07.118560 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:19:07.635438 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:22:08.082963 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:25:08.507773 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:28:08.925993 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:31:09.372548 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:34:09.821240 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:37:10.262510 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:40:10.691232 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:43:11.112631 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:46:11.631990 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:49:12.064193 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:52:12.518965 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:55:12.963208 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 03:58:13.451447 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:01:13.904821 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:04:14.330169 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:07:14.860836 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:10:15.303359 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:13:15.740146 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:16:16.146372 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:19:16.573463 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:22:17.015933 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:25:17.450885 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:28:17.881399 Sell
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:31:18.374588 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:34:18.807031 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:37:19.250456 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:40:19.680697 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:43:20.142161 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:46:20.575290 Buy
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:49:21.026639 No position
+Garthering data for 3 seconds
+==============================
+2024-05-31 04:52:21.453618 No position
+Garthering data for 3 seconds
+==============================
+2024-06-07 23:05:04.847243 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:06:05.324126 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:07:05.859426 Buy
+Garthering data for 1 minute
+==============================
+2024-06-07 23:08:06.455774 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:09:06.986027 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:10:07.439192 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:11:07.858447 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:12:08.315960 Sell
+Garthering data for 1 minute
+==============================
+2024-06-07 23:13:08.888200 No position
+Garthering data for 1 minute
+==============================
+2024-06-07 23:47:44.526869 No position
+Garthering data for 3 minutes
+==============================
+2024-06-07 23:50:44.962641 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:02:10.666820 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:10:31.038659 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:37:21.495334 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:40:22.051384 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:43:22.643506 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:46:23.109960 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:49:23.712490 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:52:24.139268 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:55:24.544038 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-08 00:58:24.987281 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:01:25.429544 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:04:25.870306 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:07:26.446511 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:10:26.864953 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:13:27.293304 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:16:27.729214 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:19:28.158504 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:22:28.748326 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:25:29.178540 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:28:29.589166 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:31:30.011872 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:34:30.446413 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:37:30.853250 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:40:31.276396 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:43:31.722695 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:46:32.155578 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:49:32.578180 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:52:32.989778 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:55:33.452203 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-08 01:58:33.871529 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:01:34.287908 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:04:34.713663 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:07:35.137078 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:10:35.551433 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:13:35.984422 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:16:36.405986 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:19:36.829044 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:22:37.434676 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:25:37.871513 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:28:38.285156 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:31:38.718560 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:34:39.138896 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:37:39.577008 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:40:39.996483 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:43:40.428598 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:46:40.854133 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:49:41.287760 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:52:41.697573 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:55:42.130229 Sell
+Garthering data for 3 minutes
+==============================
+2024-06-08 02:58:42.572385 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:01:43.022391 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:04:43.441477 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:07:43.882008 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:10:44.538637 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:13:44.980323 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:16:45.413039 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:19:45.853682 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:22:46.291851 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:25:46.754271 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:28:47.179567 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:31:47.637022 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:34:48.074518 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:37:48.510179 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:40:48.938384 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:43:49.359250 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:46:49.782517 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:49:50.234144 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:52:50.673597 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:55:51.105946 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 03:58:51.550391 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:01:51.975090 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:04:52.415142 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:07:52.845722 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:10:53.260740 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:13:53.680045 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:16:54.102924 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:19:54.525448 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:22:54.950221 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:25:55.634238 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:28:56.195054 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:31:56.662090 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:34:57.081238 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:37:57.505130 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:40:57.931188 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:43:58.357009 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:46:58.769691 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:49:59.200562 No position
+Garthering data for 3 minutes
+==============================
+2024-06-08 04:52:59.622191 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:14:56.987318 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:17:57.440069 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:20:57.851921 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:23:58.272843 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:26:58.705174 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:29:59.157106 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:32:59.580644 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:36:00.017052 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:39:00.425326 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:42:00.861087 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:45:01.284211 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:48:01.710591 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:51:02.135930 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:54:02.529177 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 02:57:02.944585 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:00:03.390924 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:03:03.834407 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:06:04.260745 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:09:04.692424 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:12:05.130424 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:15:05.562629 Sell
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:18:06.137167 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:21:06.569184 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:24:06.986543 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:27:07.404478 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:30:07.822636 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:33:08.270565 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:36:08.681387 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:39:09.114818 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:42:09.553696 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:45:09.963394 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:48:10.409827 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:51:10.833195 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:54:11.252326 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 03:57:11.684586 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:00:12.099354 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:03:12.536913 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:06:12.974820 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:09:13.389415 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:12:13.819809 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:15:14.246770 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:18:14.679893 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:21:15.101480 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:24:15.515825 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:27:16.042801 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:30:16.492505 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:33:16.953888 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:36:17.385895 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:39:17.812333 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:42:18.243660 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:45:18.665868 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:48:19.087977 No position
+Garthering data for 3 minutes
+==============================
+2024-06-13 04:51:19.517667 Sell
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:04:04.518727 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:07:04.950160 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:10:05.439271 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:13:05.861556 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:16:06.286117 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:19:06.746273 Buy
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:22:07.157603 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:25:07.592784 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:28:08.009652 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:31:08.445361 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:34:08.871758 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:37:09.302587 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:40:09.789598 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:43:10.206410 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:46:10.635569 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:49:11.044229 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:52:11.477169 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:55:11.917915 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 01:58:12.339171 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:01:12.758612 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:04:13.177964 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:07:13.619886 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:10:14.039542 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:13:14.450864 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:16:14.882040 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:19:15.304496 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:22:15.738836 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:25:16.162622 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:28:16.651318 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:31:17.061601 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:34:17.491273 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:37:17.921573 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:40:18.351046 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:43:18.785676 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:46:19.211319 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:49:19.647189 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:52:20.071858 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:55:20.494243 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 02:58:21.028041 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:01:21.459246 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:04:22.014421 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:07:22.433284 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:10:22.857113 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:13:23.293003 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:16:23.701686 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:19:24.128807 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:22:24.554725 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:25:24.987202 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:28:25.410577 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:31:25.838323 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:34:26.272022 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:37:26.711488 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:40:27.136154 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:43:27.568104 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:46:27.993035 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:49:28.424317 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:52:28.848163 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:55:29.959614 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 03:58:30.562315 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:01:31.224806 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:04:31.645614 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:07:32.055804 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:10:32.491305 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:13:33.077800 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:16:33.538791 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:19:33.961372 Sell
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:22:34.391361 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:25:34.831455 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:28:35.247735 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:31:35.675189 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:34:36.115510 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:37:36.564252 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:40:36.990425 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:43:37.422222 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:46:37.855533 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:49:38.293235 No position
+Garthering data for 3 minutes
+==============================
+2024-06-14 04:52:38.729805 No position
+Garthering data for 3 minutes
+==============================
