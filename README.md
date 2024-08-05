@@ -25,7 +25,7 @@ My CS and IE assignments at UNIST
 1. Theory of Computation [Theory_Of_Computation](/Theory_Of_Computation/)
 ### Sixth semester
 1. AI for Finance [AI4Finance](/AI4Finance/)
-1. Introduction to Human Computer Interaction [HCI](/HCI/)
+1. Introduction to Human-Computer Interaction [HCI](/HCI/)
 1. Information Visualization [InformationVisualization](/InformationVisualization/)
 1. Natural Language Processing [NLP](/NLP/)
 1. Software Engineering [SoftwareEngineering](/SoftwareEngineering/)
@@ -41,3 +41,4 @@ My CS and IE assignments at UNIST
 1. Data Mining [statistical-computing](/statistical-computing/)
 1. Undergraduate Thesis [AutoLP](https://github.com/kurone02/AutoLP)
 ---
+Graduated with a Bachelor of Science in Computer Science and Engineering, minor in Industrial Engineering
