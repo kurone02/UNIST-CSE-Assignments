@@ -36,6 +36,8 @@ My CS and IE assignments at UNIST
 1. Data Mining [Data-Mining](/Data-Mining/)
 1. Time Series Analysis [Time-Series-Analysis](/Time-Series-Analysis/)
 ### Eighth semester
-Comming soon...
-
+1. Business Lab for Financial Engineering [business-lab-for-financial-engineering](/business-lab-for-financial-engineering/) and [ml-trading](https://github.com/kurone02/ml-trading)
+1. Operating System [pintos](https://github.com/kurone02/pintos/) 
+1. Data Mining [statistical-computing](/statistical-computing/)
+1. Undergraduate Thesis [AutoLP](https://github.com/kurone02/AutoLP)
 ---
