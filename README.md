@@ -41,4 +41,4 @@ My CS and IE assignments at UNIST
 1. Data Mining [statistical-computing](/statistical-computing/)
 1. Undergraduate Thesis [AutoLP](https://github.com/kurone02/AutoLP)
 ---
-Graduated with a Bachelor of Science in Computer Science and Engineering, minor in Industrial Engineering
+Graduated with a Bachelor of Science in Computer Science and Engineering (major), and Industrial Engineering (minor)
